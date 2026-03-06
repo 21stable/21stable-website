@@ -385,9 +385,9 @@ export default function DatenschutzPage() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="prose prose-neutral max-w-none">
+        <section className="py-16 sm:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="prose prose-neutral max-w-none text-sm sm:text-base">
               
               {/* Introduction */}
               <div className="space-y-6 text-muted leading-relaxed">

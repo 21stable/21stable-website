@@ -3,10 +3,8 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Mail, MapPin, User, Check, AlertCircle, Send } from 'lucide-react'
+import { Mail, MapPin, User, Send } from 'lucide-react'
 import { useLang } from '@/lib/i18n'
-
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function KontaktPage() {
   const { lang, t } = useLang()
@@ -17,41 +15,6 @@ export default function KontaktPage() {
     subject: '',
     message: ''
   })
-  
-  const [gdprAccepted, setGdprAccepted] = useState(false)
-  const [status, setStatus] = useState<FormStatus>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('submitting')
-    setErrorMessage('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          gdprAccepted,
-          language: lang
-        })
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message')
-      }
-
-      setStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      setGdprAccepted(false)
-    } catch (error) {
-      setStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'Unknown error')
-    }
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -59,6 +22,19 @@ export default function KontaktPage() {
       [e.target.name]: e.target.value
     }))
   }
+
+  // Generate mailto link with pre-filled content
+  const handleSend = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    const mailtoLink = `mailto:21stable@proton.me?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`
+    
+    window.location.href = mailtoLink
+  }
+
+  const CONTACT_EMAIL = '21stable@proton.me'
 
   return (
     <>
@@ -91,73 +67,44 @@ export default function KontaktPage() {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <section className="py-16 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
               
               {/* Contact Form */}
               <div>
-                <h2 className="font-serif text-2xl text-foreground mb-6">
+                <h2 className="font-serif text-xl sm:text-2xl text-foreground mb-4 sm:mb-6">
                   {lang === 'de' ? 'Schreiben Sie uns' : 'Send us a message'}
                 </h2>
 
-                {status === 'success' ? (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                    <div className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-green-600 mt-0.5" />
-                      <div>
-                        <h3 className="font-medium text-green-900 mb-1">
-                          {lang === 'de' ? 'Nachricht gesendet!' : 'Message sent!'}
-                        </h3>
-                        <p className="text-green-700 text-sm">
-                          {lang === 'de' 
-                            ? 'Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb eines Werktages bei Ihnen.'
-                            : 'Thank you for your message. We will get back to you within one business day.'}
-                        </p>
-                        <button
-                          onClick={() => setStatus('idle')}
-                          className="mt-4 text-sm text-green-700 hover:text-green-900 underline"
-                        >
-                          {lang === 'de' ? 'Weitere Nachricht senden' : 'Send another message'}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ) : status === 'error' ? (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
-                    <div className="flex items-start gap-3">
-                      <AlertCircle className="w-6 h-6 text-red-600 mt-0.5" />
-                      <div>
-                        <h3 className="font-medium text-red-900 mb-1">
-                          {lang === 'de' ? 'Fehler beim Senden' : 'Error sending message'}
-                        </h3>
-                        <p className="text-red-700 text-sm">{errorMessage}</p>
-                      </div>
-                    </div>
-                  </div>
-                ) : null}
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+                  <p className="text-xs sm:text-sm text-blue-900">
+                    {lang === 'de' 
+                      ? '💡 Hinweis: Das Öffnen Ihres E-Mail-Programms wird vorbereitet. Bitte senden Sie die E-Mail manuell ab.'
+                      : '💡 Note: Your email program will open. Please send the email manually.'}
+                  </p>
+                </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSend} className="space-y-4 sm:space-y-6">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      {lang === 'de' ? 'Name' : 'Name'} *
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
+                      {lang === 'de' ? 'Name' : 'Name'}
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all rounded"
                       placeholder={lang === 'de' ? 'Ihr vollständiger Name' : 'Your full name'}
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       {lang === 'de' ? 'E-Mail' : 'Email'} *
                     </label>
                     <input
@@ -167,14 +114,14 @@ export default function KontaktPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all rounded"
                       placeholder={lang === 'de' ? 'ihre.email@beispiel.de' : 'your.email@example.com'}
                     />
                   </div>
 
                   {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       {lang === 'de' ? 'Betreff' : 'Subject'} *
                     </label>
                     <input
@@ -184,106 +131,86 @@ export default function KontaktPage() {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all rounded"
                       placeholder={lang === 'de' ? 'Worum geht es?' : 'What is this about?'}
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1 sm:mb-2">
                       {lang === 'de' ? 'Nachricht' : 'Message'} *
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       required
-                      rows={6}
+                      rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all resize-none"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-border bg-white text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all resize-none rounded"
                       placeholder={lang === 'de' ? 'Beschreiben Sie Ihr Projekt oder Ihre Frage...' : 'Describe your project or question...'}
                     />
-                  </div>
-
-                  {/* GDPR Checkbox */}
-                  <div className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      id="gdpr"
-                      checked={gdprAccepted}
-                      onChange={(e) => setGdprAccepted(e.target.checked)}
-                      required
-                      className="mt-1 w-4 h-4 border-border rounded text-foreground focus:ring-foreground/20"
-                    />
-                    <label htmlFor="gdpr" className="text-sm text-muted leading-relaxed">
-                      {lang === 'de' 
-                        ? 'Ich habe die '
-                        : 'I have read the '}
-                      <a href="/datenschutz" target="_blank" rel="noopener noreferrer" className="text-foreground hover:underline">
-                        {lang === 'de' ? 'Datenschutzerklärung' : 'privacy policy'}
-                      </a>
-                      {lang === 'de'
-                        ? ' gelesen und stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.'
-                        : ' and agree to the processing of my data in accordance with the privacy policy.'}
-                      {' *'}
-                    </label>
                   </div>
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    disabled={status === 'submitting' || !gdprAccepted}
-                    className="w-full px-6 py-4 bg-foreground text-background font-medium hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3 sm:py-4 bg-foreground text-background text-sm sm:text-base font-medium hover:bg-muted transition-all flex items-center justify-center gap-2 rounded"
                   >
-                    {status === 'submitting' ? (
-                      <>
-                        <span className="animate-spin">⟳</span>
-                        {lang === 'de' ? 'Wird gesendet...' : 'Sending...'}
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" />
-                        {lang === 'de' ? 'Nachricht senden' : 'Send message'}
-                      </>
-                    )}
+                    <Send className="w-4 h-4" />
+                    {lang === 'de' ? 'E-Mail öffnen & senden' : 'Open email & send'}
                   </button>
 
                   <p className="text-xs text-muted text-center">
                     {lang === 'de' 
-                      ? '* Pflichtfelder. Wir antworten innerhalb eines Werktages.'
-                      : '* Required fields. We respond within one business day.'}
+                      ? 'Öffnet Ihr Standard-E-Mail-Programm'
+                      : 'Opens your default email program'}
                   </p>
                 </form>
+
+                {/* Alternative: Direct Email Link */}
+                <div className="mt-8 pt-8 border-t border-border">
+                  <p className="text-sm text-muted mb-3 text-center">
+                    {lang === 'de' ? 'Oder kontaktieren Sie uns direkt per E-Mail:' : 'Or contact us directly via email:'}
+                  </p>
+                  <a 
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="inline-flex items-center gap-2 text-foreground hover:text-muted transition-colors font-medium"
+                  >
+                    <Mail className="w-4 h-4" />
+                    {CONTACT_EMAIL}
+                  </a>
+                </div>
               </div>
 
               {/* Contact Info */}
               <div className="lg:pl-8">
-                <h2 className="font-serif text-2xl text-foreground mb-6">
+                <h2 className="font-serif text-xl sm:text-2xl text-foreground mb-4 sm:mb-6">
                   {lang === 'de' ? 'Kontaktinformationen' : 'Contact information'}
                 </h2>
 
-                <div className="space-y-8 mb-12">
+                <div className="space-y-6 sm:space-y-8 mb-8 sm:mb-12">
                   {/* CEO Contact */}
-                  <div className="flex items-start gap-4">
-                    <User className="w-5 h-5 text-muted mt-0.5 flex-shrink-0" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <User className="w-4 h-4 sm:w-5 sm:h-5 text-muted mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-xs uppercase tracking-wider text-subtle mb-1">
                         {lang === 'de' ? 'Geschäftsführung' : 'CEO'}
                       </p>
-                      <p className="text-foreground font-medium">Dr. rer. nat. Sina Stäble</p>
-                      <p className="text-sm text-muted">Chief Executive Officer</p>
+                      <p className="text-foreground font-medium text-sm sm:text-base">Dr. rer. nat. Sina Stäble</p>
+                      <p className="text-xs sm:text-sm text-muted">Chief Executive Officer</p>
                     </div>
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-5 h-5 text-muted mt-0.5 flex-shrink-0" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-muted mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-xs uppercase tracking-wider text-subtle mb-1">
                         {lang === 'de' ? 'Adresse' : 'Address'}
                       </p>
-                      <p className="text-foreground">
+                      <p className="text-foreground text-sm sm:text-base">
                         21Stable<br />
                         Krähenweg 7<br />
                         76646 Bruchsal<br />
@@ -293,23 +220,23 @@ export default function KontaktPage() {
                   </div>
 
                   {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-5 h-5 text-muted mt-0.5 flex-shrink-0" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-muted mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-xs uppercase tracking-wider text-subtle mb-1">E-Mail</p>
-                      <a href="mailto:21stable@proton.me" className="text-foreground hover:text-muted transition-colors duration-200">
-                        21stable@proton.me
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm sm:text-base text-foreground hover:text-muted transition-colors duration-200">
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </div>
                 </div>
 
                 {/* What to expect */}
-                <div className="border border-border p-6">
-                  <h3 className="font-serif text-lg text-foreground mb-4">
+                <div className="border border-border p-4 sm:p-6 rounded">
+                  <h3 className="font-serif text-base sm:text-lg text-foreground mb-3 sm:mb-4">
                     {lang === 'de' ? 'Was Sie erwarten können' : 'What to expect'}
                   </h3>
-                  <ul className="space-y-3 text-sm text-muted">
+                  <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted">
                     <li className="flex items-start gap-3">
                       <span className="text-foreground">—</span>
                       {lang === 'de' ? 'Antwort innerhalb eines Werktages' : 'Response within one business day'}
@@ -327,6 +254,17 @@ export default function KontaktPage() {
                       {lang === 'de' ? 'NDA auf Anfrage verfügbar' : 'NDA available upon request'}
                     </li>
                   </ul>
+                </div>
+
+                {/* Privacy Note */}
+                <div className="mt-6 p-4 bg-surface border border-border rounded">
+                  <p className="text-xs text-muted">
+                    <strong>🔒 Datenschutz:</strong>{' '}
+                    {lang === 'de' 
+                      ? 'Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfrage verwendet. Weitere Informationen finden Sie in unserer '
+                      : 'Your data is used exclusively to answer your inquiry. More information in our '}
+                    <a href="/datenschutz" className="text-foreground hover:underline">{lang === 'de' ? 'Datenschutzerklärung' : 'privacy policy'}.</a>
+                  </p>
                 </div>
               </div>
             </div>

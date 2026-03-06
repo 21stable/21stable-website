@@ -8,16 +8,16 @@ export default function Footer() {
   
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <svg viewBox="0 0 60 60" className="w-10 h-10">
+              <svg viewBox="0 0 60 60" className="w-8 h-8 sm:w-10 sm:h-10">
                 <circle cx="30" cy="30" r="28" stroke="currentColor" strokeWidth="2" fill="none" className="text-foreground"/>
                 <text x="8" y="40" fontSize="26" fill="currentColor" className="text-foreground" style={{fontFamily: 'Georgia, serif'}}>21</text>
                 <line x1="12" y1="48" x2="48" y2="48" stroke="currentColor" strokeWidth="2" className="text-foreground"/>
               </svg>
-              <span className="font-serif text-2xl text-foreground">21Stable</span>
+              <span className="font-serif text-xl sm:text-2xl text-foreground">21Stable</span>
             </div>
             <p className="text-sm text-muted leading-relaxed">
               KI-gestützte Biostatistik-Beratung für frühe Arzneimittelentwicklung.

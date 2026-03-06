@@ -31,9 +31,9 @@ export default function ImpressumPage() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="max-w-xl space-y-8 text-muted">
+        <section className="py-16 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-xl space-y-6 sm:space-y-8 text-muted text-sm sm:text-base">
               <div>
                 <h2 className="font-serif text-lg text-foreground mb-2">
                   {lang === 'de' ? 'Angaben gemäß § 5 TMG' : 'Information according to § 5 TMG'}
