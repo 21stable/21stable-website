@@ -29,7 +29,7 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Stats
     'stats.years': 'Jahre Erfahrung in Phase I–II',
-    'stats.designs': 'Adaptive Studiendesigns',
+    'stats.designs': 'Komplexe Studiendesigns',
     'stats.indications': 'Indikationsbereiche',
     'stats.powered': 'KI-gestützt',
     
@@ -112,7 +112,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'methods.title': 'Worauf unsere Analysen beruhen',
     'methods.01.title': 'Statistische Inferenz',
     'methods.01.desc': 'Einbeziehung von Vorinformationen und schrittweise Aktualisierung der Evidenz – ideal für kleine Fallzahlen, seltene Erkrankungen und iterative Entwicklungsprogramme.',
-    'methods.02.title': 'Adaptive Designs',
+    'methods.02.title': 'Flexible Studiendesigns',
     'methods.02.desc': 'Prospektiv geplante Protokollanpassungen auf Basis kumulierter Studiendaten: Dosisanpassung, Stichprobenerweiterung, Armdropping, nahtlose Phase-II/III-Designs.',
     'methods.03.title': 'Simulation & Modellierung',
     'methods.03.desc': 'Umfangreiche Monte-Carlo-Simulationen zur Charakterisierung von Operationseigenschaften (Typ-I-Fehler, Power, mittlere Stichprobengröße) vor Studienbeginn.',
@@ -309,7 +309,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'methods.title': 'The basis of our analyses',
     'methods.01.title': 'Statistical Inference',
     'methods.01.desc': 'Incorporation of prior information and stepwise updating of evidence – ideal for small sample sizes, rare diseases, and iterative development programs.',
-    'methods.02.title': 'Adaptive Designs',
+    'methods.02.title': 'Flexible Study Designs',
     'methods.02.desc': 'Prospectively planned protocol amendments based on cumulative study data: dose adaptation, sample size extension, arm dropping, seamless Phase II/III designs.',
     'methods.03.title': 'Simulation & Modeling',
     'methods.03.desc': 'Extensive Monte Carlo simulations to characterize operating properties (type I error, power, mean sample size) before study initiation.',
