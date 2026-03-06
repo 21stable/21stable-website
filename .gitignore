@@ -1,1 +1,21 @@
 .vercel
+
+# Development builds
+dist/
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
