@@ -59,13 +59,13 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Products
     'products.01.tag': 'Kernkompetenz',
-    'products.01.title': 'Adaptive Bayesianische Studiendesigns',
-    'products.01.desc': 'Entwicklung und Implementierung adaptiver klinischer Studien auf Basis Bayesianischer Inferenz – für schnellere Entscheidungen, geringere Patientenzahlen und höhere Erfolgswahrscheinlichkeiten.',
-    'products.01.f1': 'Kontinuierliche Dosisanpassung (CRM, BOIN)',
-    'products.01.f2': 'Adaptive Randomisierung & Response Adaptive Designs',
-    'products.01.f3': 'Vorzeitiger Studienabbruch (Futility / Efficacy)',
-    'products.01.f4': 'Plattformstudien & Basket-Designs',
-    'products.01.f5': 'Simulation und Operationscharakteristiken',
+    'products.01.title': 'Biostatistische Studienplanung',
+    'products.01.desc': 'Umfassende statistische Beratung und Planung klinischer Studien – von Phase I bis zur regulatorischen Einreichung.',
+    'products.01.f1': 'Studienkonzepte & Protokolle',
+    'products.01.f2': 'Fallzahlplanung & Power-Analysen',
+    'products.01.f3': 'Statistische Analysepläne (SAP)',
+    'products.01.f4': 'Randomisierungspläne',
+    'products.01.f5': 'Beratung zu Studiendesigns',
     
     'products.02.tag': 'Phase I / FIH',
     'products.02.title': 'Dosisfindung & Sicherheitsmonitoring',
@@ -256,13 +256,13 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Products
     'products.01.tag': 'Core Competency',
-    'products.01.title': 'Adaptive Bayesian Study Designs',
-    'products.01.desc': 'Development and implementation of adaptive clinical trials based on Bayesian inference – for faster decisions, smaller sample sizes, and higher success probabilities.',
-    'products.01.f1': 'Continuous dose escalation (CRM, BOIN)',
-    'products.01.f2': 'Adaptive randomization & response adaptive designs',
-    'products.01.f3': 'Early stopping (futility / efficacy)',
-    'products.01.f4': 'Platform trials & basket designs',
-    'products.01.f5': 'Simulation and operating characteristics',
+    'products.01.title': 'Biostatistical Study Planning',
+    'products.01.desc': 'Comprehensive statistical consulting and planning for clinical trials – from Phase I to regulatory submission.',
+    'products.01.f1': 'Study concepts & protocols',
+    'products.01.f2': 'Sample size planning & power analyses',
+    'products.01.f3': 'Statistical analysis plans (SAP)',
+    'products.01.f4': 'Randomization plans',
+    'products.01.f5': 'Study design consulting',
     
     'products.02.tag': 'Phase I / FIH',
     'products.02.title': 'Dose Finding & Safety Monitoring',
