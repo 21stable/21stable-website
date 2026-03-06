@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useLang } from '@/lib/i18n'
 import { Menu, X } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const { lang } = useLang()
@@ -38,6 +39,12 @@ export default function Header() {
             <Link href="/kontakt" className="text-xs sm:text-sm text-muted hover:text-foreground transition-colors duration-200 whitespace-nowrap">
               {lang === 'de' ? 'Kontakt' : 'Contact'}
             </Link>
+            
+            {/* Theme Toggle */}
+            <div className="w-px h-4 bg-border" />
+            <ThemeToggle />
+            
+            {/* Language Switcher */}
             <button 
               onClick={() => {}} 
               className="text-xs uppercase tracking-wider text-muted hover:text-foreground transition-colors duration-200 border border-border px-2 py-1 rounded whitespace-nowrap"
@@ -104,6 +111,16 @@ export default function Header() {
                 >
                   {lang === 'de' ? 'Kontakt' : 'Contact'}
                 </Link>
+                
+                {/* Theme Toggle in Mobile Menu */}
+                <div className="py-3 border-b border-border">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted uppercase tracking-wider">
+                      {lang === 'de' ? 'Modus' : 'Mode'}
+                    </span>
+                    <ThemeToggle />
+                  </div>
+                </div>
                 
                 {/* Language Switcher */}
                 <div className="pt-6 mt-6 border-t border-border">

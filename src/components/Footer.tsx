@@ -53,6 +53,9 @@ export default function Footer() {
           <p className="text-xs text-subtle">
             {t('footer.tagline')}
           </p>
+          <div className="flex items-center gap-4">
+            <span className="text-xs text-subtle">© 2025 21Stable</span>
+          </div>
         </div>
       </div>
     </footer>
