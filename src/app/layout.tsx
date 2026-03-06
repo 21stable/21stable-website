@@ -18,15 +18,15 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: '21Stable — Biostatistik-Beratung für klinische Entwicklung',
-  description: 'KI-gestützte Biostatistik-Beratung für adaptive Bayesianische klinische Studien. Spezialisierte KI-Agenten für Onkologie-Datenanalyse.',
-  keywords: ['Biostatistik', 'klinische Studien', 'Bayesian', 'frühe Arzneimittelentwicklung', 'Onkologie', 'KI-Agenten'],
+  description: 'Biostatistik-Beratung für klinische Studien in der frühen Arzneimittelentwicklung. Spezialisierte KI-Agenten für Onkologie-Datenanalyse.',
+  keywords: ['Biostatistik', 'klinische Studien', 'frühe Arzneimittelentwicklung', 'Onkologie', 'KI-Agenten'],
   authors: [{ name: '21Stable' }],
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
     title: '21Stable — Biostatistik-Beratung',
-    description: 'KI-gestützte Biostatistik-Beratung für adaptive Bayesianische klinische Studien in der frühen Arzneimittelentwicklung.',
+    description: 'Biostatistik-Beratung für klinische Studien in der frühen Arzneimittelentwicklung.',
     type: 'website',
     locale: 'de_DE',
   },

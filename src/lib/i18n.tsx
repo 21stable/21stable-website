@@ -23,7 +23,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Biostatistik-Beratung für frühe Arzneimittelentwicklung',
     'hero.title': 'Präzision in der frühen klinischen Entwicklung',
-    'hero.desc': 'Adaptive bayesianische klinische Studien. Biostatistik-Beratung mit spezialisierten KI-Agenten. Von Phase I bis zur regulatorischen Einreichung.',
+    'hero.desc': 'Biostatistik-Beratung mit spezialisierten KI-Agenten für klinische Studien. Von Phase I bis zur regulatorischen Einreichung.',
     'hero.cta.services': 'Unsere Leistungen',
     'hero.cta.contact': 'Kontakt aufnehmen',
     
@@ -78,7 +78,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'products.03.tag': 'Phase II / PoC',
     'products.03.title': 'Proof-of-Concept & Wirksamkeitsanalyse',
     'products.03.desc': 'Planung und statistische Auswertung von Phase-II-Studien zum Wirksamkeitsnachweis – mit Fokus auf informative Studiendesigns und frühzeitigen Go/No-go-Entscheidungen.',
-    'products.03.f1': 'Bayesianische Go/No-go Entscheidungsrahmen',
+    'products.03.f1': 'Go/No-go Entscheidungsrahmen',
     'products.03.f2': 'Fallzahlplanung mit Prior-Informationen',
     'products.03.f3': 'Analyse multipler Endpunkte',
     'products.03.f4': 'Subgruppenanalysen & Biomarker-Strategien',
@@ -110,8 +110,8 @@ const translations: Record<Lang, Record<string, string>> = {
     // Methods
     'methods.section': '02 — Methodische Basis',
     'methods.title': 'Worauf unsere Analysen beruhen',
-    'methods.01.title': 'Bayesianische Inferenz',
-    'methods.01.desc': 'Einbeziehung von Vorinformationen (Prior) und schrittweise Aktualisierung der Evidenz – ideal für kleine Fallzahlen, seltene Erkrankungen und iterative Entwicklungsprogramme.',
+    'methods.01.title': 'Statistische Inferenz',
+    'methods.01.desc': 'Einbeziehung von Vorinformationen und schrittweise Aktualisierung der Evidenz – ideal für kleine Fallzahlen, seltene Erkrankungen und iterative Entwicklungsprogramme.',
     'methods.02.title': 'Adaptive Designs',
     'methods.02.desc': 'Prospektiv geplante Protokollanpassungen auf Basis kumulierter Studiendaten: Dosisanpassung, Stichprobenerweiterung, Armdropping, nahtlose Phase-II/III-Designs.',
     'methods.03.title': 'Simulation & Modellierung',
@@ -220,7 +220,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Hero
     'hero.tagline': 'Biostatistics Consulting for Early Drug Development',
     'hero.title': 'Precision in early clinical development',
-    'hero.desc': 'Adaptive Bayesian clinical trials. Biostatistics consulting powered by specialized AI agents. From Phase I to regulatory submission.',
+    'hero.desc': 'Biostatistics consulting powered by specialized AI agents for clinical trials. From Phase I to regulatory submission.',
     'hero.cta.services': 'View our services',
     'hero.cta.contact': 'Get in touch',
     
@@ -275,7 +275,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'products.03.tag': 'Phase II / PoC',
     'products.03.title': 'Proof of Concept & Efficacy Analysis',
     'products.03.desc': 'Planning and statistical analysis of Phase II studies for efficacy demonstration – with focus on informative study designs and early Go/No-go decisions.',
-    'products.03.f1': 'Bayesian Go/No-go decision frameworks',
+    'products.03.f1': 'Go/No-go decision frameworks',
     'products.03.f2': 'Sample size planning with prior information',
     'products.03.f3': 'Analysis of multiple endpoints',
     'products.03.f4': 'Subgroup analyses & biomarker strategies',
@@ -307,7 +307,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Methods
     'methods.section': '02 — Methodological Foundation',
     'methods.title': 'The basis of our analyses',
-    'methods.01.title': 'Bayesian Inference',
+    'methods.01.title': 'Statistical Inference',
     'methods.01.desc': 'Incorporation of prior information and stepwise updating of evidence – ideal for small sample sizes, rare diseases, and iterative development programs.',
     'methods.02.title': 'Adaptive Designs',
     'methods.02.desc': 'Prospectively planned protocol amendments based on cumulative study data: dose adaptation, sample size extension, arm dropping, seamless Phase II/III designs.',
