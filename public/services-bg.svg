@@ -1,0 +1,61 @@
+<svg width="2560" height="800" viewBox="0 0 2560 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f8f8"/>
+  
+  <!-- Hexagonal pattern -->
+  <defs>
+    <pattern id="hex" width="60" height="52" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 60 17.5 L 60 52.5 L 30 70 L 0 52.5 L 0 17.5 Z" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#hex)"/>
+  
+  <!-- Flowing curves -->
+  <g fill="none" stroke="#000" stroke-width="1" opacity="0.08">
+    <path d="M 0 150 C 427 100 853 200 1280 150 C 1707 100 2133 200 2560 150"/>
+    <path d="M 0 250 C 427 200 853 300 1280 250 C 1707 200 2133 300 2560 250"/>
+    <path d="M 0 350 C 427 300 853 400 1280 350 C 1707 300 2133 400 2560 350"/>
+    <path d="M 0 450 C 427 400 853 500 1280 450 C 1707 400 2133 500 2560 450"/>
+  </g>
+  
+  <!-- Data points -->
+  <g fill="#000" opacity="0.1">
+    <circle cx="200" cy="200" r="4"/>
+    <circle cx="400" cy="280" r="4"/>
+    <circle cx="600" cy="240" r="4"/>
+    <circle cx="800" cy="320" r="4"/>
+    <circle cx="1000" cy="280" r="4"/>
+    <circle cx="1200" cy="360" r="4"/>
+    <circle cx="1400" cy="320" r="4"/>
+    <circle cx="1600" cy="400" r="4"/>
+    <circle cx="1800" cy="360" r="4"/>
+    <circle cx="2000" cy="440" r="4"/>
+    <circle cx="2200" cy="400" r="4"/>
+    <circle cx="2400" cy="480" r="4"/>
+  </g>
+  
+  <!-- Connection lines -->
+  <g stroke="#000" stroke-width="0.5" opacity="0.2">
+    <line x1="200" y1="200" x2="400" y2="280"/>
+    <line x1="400" y1="280" x2="600" y2="240"/>
+    <line x1="600" y1="240" x2="800" y2="320"/>
+    <line x1="800" y1="320" x2="1000" y2="280"/>
+    <line x1="1000" y1="280" x2="1200" y2="360"/>
+    <line x1="1200" y1="360" x2="1400" y2="320"/>
+    <line x1="1400" y1="320" x2="1600" y2="400"/>
+    <line x1="1600" y1="400" x2="1800" y2="360"/>
+    <line x1="1800" y1="360" x2="2000" y2="440"/>
+    <line x1="2000" y1="440" x2="2200" y2="400"/>
+    <line x1="2200" y1="400" x2="2400" y2="480"/>
+  </g>
+  
+  <!-- Vertical accent lines -->
+  <g stroke="#000" stroke-width="0.5" opacity="0.06">
+    <line x1="320" y1="0" x2="320" y2="800"/>
+    <line x1="640" y1="0" x2="640" y2="800"/>
+    <line x1="960" y1="0" x2="960" y2="800"/>
+    <line x1="1280" y1="0" x2="1280" y2="800"/>
+    <line x1="1600" y1="0" x2="1600" y2="800"/>
+    <line x1="1920" y1="0" x2="1920" y2="800"/>
+    <line x1="2240" y1="0" x2="2240" y2="800"/>
+  </g>
+</svg>

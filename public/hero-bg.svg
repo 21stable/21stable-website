@@ -1,0 +1,51 @@
+<svg width="2560" height="1440" viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#e5e5e5" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#fafafa"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  
+  <!-- Abstract wave patterns -->
+  <g fill="none" stroke="#000" stroke-width="1" opacity="0.08">
+    <path d="M 0 200 Q 320 150 640 200 T 1280 200 T 1920 200 T 2560 200"/>
+    <path d="M 0 280 Q 320 230 640 280 T 1280 280 T 1920 280 T 2560 280"/>
+    <path d="M 0 360 Q 320 310 640 360 T 1280 360 T 1920 360 T 2560 360"/>
+  </g>
+  
+  <!-- Geometric accents -->
+  <g fill="none" stroke="#000" stroke-width="0.75" opacity="0.12">
+    <circle cx="200" cy="600" r="120"/>
+    <circle cx="200" cy="600" r="180"/>
+    <circle cx="2400" cy="900" r="150"/>
+    <circle cx="2400" cy="900" r="220"/>
+  </g>
+  
+  <!-- Connected nodes pattern -->
+  <g fill="#000" opacity="0.06">
+    <circle cx="400" cy="400" r="3"/>
+    <circle cx="600" cy="350" r="3"/>
+    <circle cx="800" cy="420" r="3"/>
+    <circle cx="1000" cy="380" r="3"/>
+    <circle cx="1200" cy="440" r="3"/>
+    <circle cx="1400" cy="400" r="3"/>
+    <circle cx="1600" cy="360" r="3"/>
+    <circle cx="1800" cy="420" r="3"/>
+    <line x1="400" y1="400" x2="600" y2="350" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="600" y1="350" x2="800" y2="420" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="800" y1="420" x2="1000" y2="380" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="1000" y1="380" x2="1200" y2="440" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="1200" y1="440" x2="1400" y2="400" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="1400" y1="400" x2="1600" y2="360" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+    <line x1="1600" y1="360" x2="1800" y2="420" stroke="#000" stroke-width="0.5" opacity="0.3"/>
+  </g>
+  
+  <!-- Corner ornaments -->
+  <g fill="none" stroke="#000" stroke-width="0.5" opacity="0.1">
+    <rect x="60" y="60" width="100" height="100"/>
+    <rect x="2400" y="60" width="100" height="100"/>
+    <rect x="60" y="1280" width="100" height="100"/>
+    <rect x="2400" y="1280" width="100" height="100"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <!-- 21Stable Wordmark -->
+  
+  <g fill="#000">
+    <!-- "21" stylized -->
+    <text x="40" y="140" font-family="Georgia, serif" font-size="100" font-weight="400">
+      <tspan>21</tspan>
+    </text>
+    
+    <!-- "Stable" in sans-serif -->
+    <text x="130" y="140" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="300" letter-spacing="-0.02em">
+      <tspan>Stable</tspan>
+    </text>
+  </g>
+  
+  <!-- Subtle tagline -->
+  <text x="42" y="175" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#666" letter-spacing="0.1em">
+    STATISTICAL CONSULTING
+  </text>
+</svg>

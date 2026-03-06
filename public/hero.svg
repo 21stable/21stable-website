@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" fill="none">
+  <!-- 21Stable Hero - Abstract Data Visualization -->
+  
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e5e5" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="400" fill="url(#grid)"/>
+  
+  <!-- Statistical curves - Bayesian posterior distributions -->
+  <g stroke="#000" stroke-width="1.5" fill="none">
+    <!-- Curve 1 - Normal distribution -->
+    <path d="M 100 350 Q 300 350 400 200 Q 500 50 600 200 Q 700 350 900 350" opacity="0.8"/>
+    
+    <!-- Curve 2 - Shifted distribution -->
+    <path d="M 150 370 Q 350 340 450 220 Q 550 100 700 220 Q 850 340 1000 360" opacity="0.5"/>
+    
+    <!-- Curve 3 - Third analysis -->
+    <path d="M 200 380 Q 400 360 500 280 Q 600 200 750 260 Q 900 320 1050 370" opacity="0.3"/>
+  </g>
+  
+  <!-- Data points -->
+  <g fill="#000">
+    <circle cx="400" cy="200" r="4"/>
+    <circle cx="450" cy="180" r="3"/>
+    <circle cx="500" cy="150" r="4"/>
+    <circle cx="550" cy="140" r="3"/>
+    <circle cx="600" cy="200" r="4"/>
+    <circle cx="650" cy="220" r="3"/>
+    <circle cx="700" cy="260" r="4"/>
+    
+    <circle cx="450" cy="220" r="2" opacity="0.6"/>
+    <circle cx="520" cy="170" r="2" opacity="0.6"/>
+    <circle cx="580" cy="190" r="2" opacity="0.6"/>
+    <circle cx="630" cy="240" r="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Confidence intervals -->
+  <g stroke="#000" stroke-width="1" opacity="0.3">
+    <line x1="380" y1="200" x2="620" y2="200" stroke-dasharray="4 4"/>
+    <line x1="380" y1="195" x2="380" y2="205"/>
+    <line x1="620" y1="195" x2="620" y2="205"/>
+  </g>
+  
+  <!-- Axis markers -->
+  <g stroke="#000" stroke-width="0.5" opacity="0.3">
+    <line x1="100" y1="350" x2="1100" y2="350"/>
+    <line x1="100" y1="350" x2="100" y2="50"/>
+  </g>
+  
+  <!-- Title area (empty for overlay) -->
+  <rect x="0" y="0" width="400" height="400" fill="white" opacity="0"/>
+</svg>

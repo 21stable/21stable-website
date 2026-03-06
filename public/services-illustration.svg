@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- 21Stable Services Illustration -->
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fafafa"/>
+  
+  <!-- Statistical chart - Phase diagram -->
+  <g transform="translate(100, 100)">
+    <!-- Axes -->
+    <line x1="0" y1="400" x2="600" y2="400" stroke="#000" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="400" stroke="#000" stroke-width="1"/>
+    
+    <!-- Curve - Efficacy over time -->
+    <path d="M 50 350 Q 150 340 200 280 Q 280 200 350 180 Q 450 160 500 150 Q 550 145 580 140" 
+          stroke="#000" stroke-width="2" fill="none"/>
+    
+    <!-- Confidence band -->
+    <path d="M 50 370 Q 150 360 200 300 Q 280 230 350 210 Q 450 190 500 180 Q 550 175 580 170
+             L 580 110 Q 550 115 500 120 Q 450 130 350 150 Q 280 170 200 260 Q 150 320 50 330 Z" 
+          fill="#000" opacity="0.05"/>
+    
+    <!-- Phase markers -->
+    <g fill="#000">
+      <circle cx="100" cy="330" r="6"/>
+      <circle cx="200" cy="260" r="6"/>
+      <circle cx="350" cy="165" r="6"/>
+      <circle cx="500" cy="145" r="6"/>
+    </g>
+    
+    <!-- Labels -->
+    <text x="100" y="380" font-size="12" fill="#666">Phase I</text>
+    <text x="250" y="380" font-size="12" fill="#666">Phase II</text>
+    <text x="450" y="380" font-size="12" fill="#666">Phase III</text>
+  </g>
+  
+  <!-- Bayesian belief update visualization -->
+  <g transform="translate(100, 50)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="14" fill="#000">Treatment Response Rate</text>
+  </g>
+</svg>

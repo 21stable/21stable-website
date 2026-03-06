@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- 21Stable Icon Only -->
+  <rect width="400" height="400" fill="#ffffff"/>
+  
+  <circle cx="200" cy="200" r="180" stroke="#000000" stroke-width="6" fill="none"/>
+  <text x="55" y="260" font-family="Georgia, Times, serif" font-size="180" fill="#000000">21</text>
+  <line x1="80" y1="300" x2="320" y2="300" stroke="#000000" stroke-width="6"/>
+  <circle cx="120" cy="300" r="12" fill="#000000"/>
+  <circle cx="200" cy="300" r="12" fill="#000000"/>
+  <circle cx="280" cy="300" r="12" fill="#000000"/>
+</svg>

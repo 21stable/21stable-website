@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- 21Stable Icon - Minimalist -->
+  
+  <!-- Outer ring -->
+  <circle cx="30" cy="30" r="28" stroke="#000" stroke-width="1.5" fill="none"/>
+  
+  <!-- "21" compact -->
+  <g fill="#000" font-family="Georgia, serif">
+    <text x="10" y="38" font-size="22" font-weight="500">21</text>
+  </g>
+  
+  <!-- Stability line -->
+  <line x1="15" y1="46" x2="45" y2="46" stroke="#000" stroke-width="1"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <!-- 21Stable Full Logo - Print Quality (300 DPI equivalent) -->
+  
+  <!-- White background -->
+  <rect width="1200" height="300" fill="#ffffff"/>
+  
+  <!-- Icon Circle -->
+  <g transform="translate(60, 30)">
+    <!-- Outer ring - thick stroke for print -->
+    <circle cx="120" cy="120" r="112" stroke="#000000" stroke-width="4" fill="none"/>
+    
+    <!-- "21" in Georgia serif - large -->
+    <text x="20" y="155" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="500" fill="#000000">21</text>
+    
+    <!-- Stability line - thick -->
+    <line x1="40" y1="190" x2="200" y2="190" stroke="#000000" stroke-width="4"/>
+    
+    <!-- Stability markers -->
+    <circle cx="70" cy="190" r="8" fill="#000000"/>
+    <circle cx="120" cy="190" r="8" fill="#000000"/>
+    <circle cx="170" cy="190" r="8" fill="#000000"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <g transform="translate(320, 70)">
+    <!-- "Stable" in light sans-serif -->
+    <text x="0" y="130" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="110" font-weight="300" letter-spacing="-0.02em" fill="#000000">Stable</text>
+    
+    <!-- Tagline -->
+    <text x="4" y="190" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" letter-spacing="0.2em" fill="#666666">STATISTICAL CONSULTING</text>
+  </g>
+</svg>
