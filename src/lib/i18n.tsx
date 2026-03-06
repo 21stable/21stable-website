@@ -124,7 +124,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'methods.04.desc': 'Alle Methoden werden im Einklang mit den Leitlinien von ICH, EMA und FDA entwickelt. Erfahrung aus direkten Behördengesprächen (Scientific Advice, Type-C-Meeting).',
     
     // Phases
-    'phases.section': '03 — Abgedeckte Entwicklungsphasen',
+    'phases.section': '03 — Development Phases Covered',
+    'phases.title': 'Von Phase I bis zur Zulassung',
     'phases.01': 'Phase I — First-in-Human',
     'phases.01.desc': 'Dosisfindung, Sicherheit, PK/PD-Modellierung',
     'phases.02': 'Phase I/II — Dosisoptimierung',
@@ -324,6 +325,7 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Phases
     'phases.section': '03 — Development Phases Covered',
+    'phases.title': 'From Phase I to Approval',
     'phases.01': 'Phase I — First-in-Human',
     'phases.01.desc': 'Dose finding, safety, PK/PD modeling',
     'phases.02': 'Phase I/II — Dose Optimization',

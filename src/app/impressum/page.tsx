@@ -52,7 +52,7 @@ export default function ImpressumPage() {
                   {lang === 'de' ? 'Kontakt' : 'Contact'}
                 </h2>
                 <p className="leading-relaxed">
-                  E-Mail: contact@21stable.dev
+                  E-Mail: 21stable@proton.me
                 </p>
               </div>
 
