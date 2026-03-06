@@ -35,6 +35,9 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // AI Advantage
     'ai.title': 'Der KI-Vorteil',
+    'ai.tagline': 'Warum KI-Agenten',
+    'ai.advantage.tagline': 'Warum KI-Agenten',
+    'ai.advantage.title': 'Der KI-Vorteil',
     'ai.availability.title': 'Rund um die Uhr verfügbar',
     'ai.availability.desc': 'Keine Terminplanung, kein Warten. Ihr Team ist einsatzbereit, wann immer Sie es brauchen – über alle Zeitzonen hinweg.',
     'ai.scalability.title': 'Unendlich skalierbar',
@@ -45,6 +48,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Services
     'services.title': 'Unsere Leistungen',
     'services.cta': 'Alle Leistungen',
+    'services.viewAll': 'Alle ansehen',
     
     // CTA
     'cta.title': 'Bereit, Ihr Entwicklungsprogramm zu beschleunigen?',
@@ -197,7 +201,7 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Contact
     'contact.title': 'Kontakt',
-    'contact.desc': 'Vereinbaren Sie ein Beratungsgespräch oder stellen Sie Ihre Fragen.',
+    'contact.desc': 'Vereinbaren Sie eine Beratung oder stellen Sie Ihre Fragen.',
     'contact.name': 'Name',
     'contact.email': 'E-Mail',
     'contact.subject': 'Betreff',
@@ -219,45 +223,47 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Hero
     'hero.tagline': 'Biostatistics Consulting for Early Drug Development',
-    'hero.title': 'Precision in early clinical development',
-    'hero.desc': 'Biostatistics consulting powered by specialized AI agents for clinical trials. From Phase I to regulatory submission.',
-    'hero.cta.services': 'View our services',
-    'hero.cta.contact': 'Get in touch',
+    'hero.title': 'Precision in Early Clinical Development',
+    'hero.desc': 'Biostatistics consulting with specialized AI agents for clinical trials. From Phase I to regulatory submission.',
+    'hero.cta.services': 'Our Services',
+    'hero.cta.contact': 'Get in Touch',
     
     // Stats
-    'stats.years': 'Years in Phase I–II',
-    'stats.designs': 'Adaptive Designs',
-    'stats.indications': 'Indication Areas',
+    'stats.years': 'Years of Phase I–II Experience',
+    'stats.designs': 'Complex Study Designs',
+    'stats.indications': 'Therapeutic Areas',
     'stats.powered': 'AI-Powered',
     
     // AI Advantage
-    'ai.title': 'The AI advantage',
-    'ai.availability.title': 'Always available',
-    'ai.availability.desc': 'No scheduling, no waiting. Your team is ready when you need them, across all time zones.',
-    'ai.scalability.title': 'Infinitely scalable',
-    'ai.scalability.desc': 'Run parallel analyses, scale compute resources, or work on multiple projects simultaneously.',
-    'ai.expertise.title': 'Current expertise',
-    'ai.expertise.desc': 'Each agent is trained on latest scientific literature, regulatory updates, and best practices.',
+    'ai.title': 'The AI Advantage',
+    'ai.tagline': 'Why AI Agents',
+    'ai.availability.title': 'Available 24/7',
+    'ai.availability.desc': 'No scheduling, no waiting. Your team is ready whenever you need them — across all time zones.',
+    'ai.scalability.title': 'Infinitely Scalable',
+    'ai.scalability.desc': 'Parallel analyses performed, computational resources on demand, multiple projects handled simultaneously.',
+    'ai.expertise.title': 'Current Expertise',
+    'ai.expertise.desc': 'Every agent is trained on the latest scientific literature and regulatory updates.',
     
     // Services
-    'services.title': 'What we deliver',
-    'services.cta': 'View all services',
+    'services.title': 'Our Services',
+    'services.cta': 'View All',
+    'services.viewAll': 'View All Services',
     
     // CTA
-    'cta.title': 'Ready to accelerate your development program?',
-    'cta.desc': 'Our AI agents are ready to start. Schedule a consultation to discuss your needs.',
-    'cta.button.primary': 'Start a conversation',
-    'cta.button.secondary': 'Explore services',
+    'cta.title': 'Ready to Accelerate Your Development Program?',
+    'cta.desc': 'Our AI agents are ready to deploy. Schedule a consultation.',
+    'cta.button.primary': 'Start a Conversation',
+    'cta.button.secondary': 'Explore Services',
     
     // Products Page
-    'products.tagline': 'Services 2025',
+    'products.tagline': 'Service Portfolio 2025',
     'products.section': '01 — Core Services',
     'products.title': 'Service Portfolio',
     
     // Products
     'products.01.tag': 'Core Competency',
     'products.01.title': 'Biostatistical Study Planning',
-    'products.01.desc': 'Comprehensive statistical consulting and planning for clinical trials – from Phase I to regulatory submission.',
+    'products.01.desc': 'Comprehensive statistical consulting and planning for clinical trials — from Phase I to regulatory submission.',
     'products.01.f1': 'Study concepts & protocols',
     'products.01.f2': 'Sample size planning & power analyses',
     'products.01.f3': 'Statistical analysis plans (SAP)',
@@ -267,14 +273,14 @@ const translations: Record<Lang, Record<string, string>> = {
     'products.02.tag': 'Phase I / FIH',
     'products.02.title': 'Dose Finding & Safety Monitoring',
     'products.02.desc': 'Statistical planning and analysis of First-in-Human studies, including model-based dose escalation designs and ongoing safety monitoring.',
-    'products.02.f1': '3+3, mTPI and BOIN dose escalation designs',
-    'products.02.f2': 'Maximum tolerable dose (MTD) estimation',
-    'products.02.f3': 'Dose-exposure-effect modeling (PK/PD)',
+    'products.02.f1': '3+3, mTPI, and BOIN dose escalation designs',
+    'products.02.f2': 'Maximum tolerated dose (MTD) estimation',
+    'products.02.f3': 'Dose-exposure-response modeling (PK/PD)',
     'products.02.f4': 'Interim analyses & DSMB support',
     
     'products.03.tag': 'Phase II / PoC',
     'products.03.title': 'Proof of Concept & Efficacy Analysis',
-    'products.03.desc': 'Planning and statistical analysis of Phase II studies for efficacy demonstration – with focus on informative study designs and early Go/No-go decisions.',
+    'products.03.desc': 'Planning and statistical evaluation of Phase II studies for efficacy demonstration — with focus on informative study designs and early Go/No-go decisions.',
     'products.03.f1': 'Go/No-go decision frameworks',
     'products.03.f2': 'Sample size planning with prior information',
     'products.03.f3': 'Analysis of multiple endpoints',
@@ -406,7 +412,7 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Datenschutz
     'datenschutz.title': 'Privacy Policy',
-  }
+  },
 }
 
 export function LangProvider({ children }: { children: ReactNode }) {
