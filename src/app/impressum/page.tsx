@@ -87,7 +87,9 @@ export default function ImpressumPage() {
                     : 'The European Commission provides a platform for online dispute resolution (OS):'}
                   <a 
                     href="https://ec.europa.eu/consumers/odr/" 
-                    className="text-foreground hover:text-muted ml-1 transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground underline hover:no-underline ml-1 transition-colors duration-200"
                   >
                     ec.europa.eu/consumers/odr/
                   </a>
