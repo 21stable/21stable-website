@@ -85,7 +85,6 @@ export default function TeamPage() {
                   key={agent.id} 
                   className="p-6 sm:p-8 bg-background hover:bg-surface-hover transition-colors"
                 >
-                  <span className="text-3xl font-serif text-muted block mb-4">{agent.id}</span>
                   <h3 className="font-serif text-lg text-foreground mb-2">{agent.name}</h3>
                   <p className="text-sm text-muted mb-3">{agent.role}</p>
                   <p className="text-xs text-subtle">{agent.focus}</p>

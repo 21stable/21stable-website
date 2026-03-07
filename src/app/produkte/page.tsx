@@ -9,12 +9,12 @@ export default function ProduktePage() {
   const { t, lang } = useLang()
   
   const products = [
-    { num: '01', tag: t('products.01.tag'), title: t('products.01.title'), body: t('products.01.desc'), features: [t('products.01.f1'), t('products.01.f2'), t('products.01.f3'), t('products.01.f4'), t('products.01.f5')], featured: true },
-    { num: '02', tag: t('products.02.tag'), title: t('products.02.title'), body: t('products.02.desc'), features: [t('products.02.f1'), t('products.02.f2'), t('products.02.f3'), t('products.02.f4')], featured: false },
-    { num: '03', tag: t('products.03.tag'), title: t('products.03.title'), body: t('products.03.desc'), features: [t('products.03.f1'), t('products.03.f2'), t('products.03.f3'), t('products.03.f4')], featured: false },
-    { num: '04', tag: t('products.04.tag'), title: t('products.04.title'), body: t('products.04.desc'), features: [t('products.04.f1'), t('products.04.f2'), t('products.04.f3'), t('products.04.f4')], featured: false },
-    { num: '05', tag: t('products.05.tag'), title: t('products.05.title'), body: t('products.05.desc'), features: [t('products.05.f1'), t('products.05.f2'), t('products.05.f3'), t('products.05.f4')], featured: false },
-    { num: '06', tag: t('products.06.tag'), title: t('products.06.title'), body: t('products.06.desc'), features: [t('products.06.f1'), t('products.06.f2'), t('products.06.f3'), t('products.06.f4')], featured: false },
+    { id: '01', tag: t('products.01.tag'), title: t('products.01.title'), body: t('products.01.desc'), features: [t('products.01.f1'), t('products.01.f2'), t('products.01.f3'), t('products.01.f4'), t('products.01.f5')], featured: true },
+    { id: '02', tag: t('products.02.tag'), title: t('products.02.title'), body: t('products.02.desc'), features: [t('products.02.f1'), t('products.02.f2'), t('products.02.f3'), t('products.02.f4')], featured: false },
+    { id: '03', tag: t('products.03.tag'), title: t('products.03.title'), body: t('products.03.desc'), features: [t('products.03.f1'), t('products.03.f2'), t('products.03.f3'), t('products.03.f4')], featured: false },
+    { id: '04', tag: t('products.04.tag'), title: t('products.04.title'), body: t('products.04.desc'), features: [t('products.04.f1'), t('products.04.f2'), t('products.04.f3'), t('products.04.f4')], featured: false },
+    { id: '05', tag: t('products.05.tag'), title: t('products.05.title'), body: t('products.05.desc'), features: [t('products.05.f1'), t('products.05.f2'), t('products.05.f3'), t('products.05.f4')], featured: false },
+    { id: '06', tag: t('products.06.tag'), title: t('products.06.title'), body: t('products.06.desc'), features: [t('products.06.f1'), t('products.06.f2'), t('products.06.f3'), t('products.06.f4')], featured: false },
   ]
   
   const methods = [
@@ -80,18 +80,13 @@ export default function ProduktePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
               {products.map((product) => (
                 <div
-                  key={product.num}
+                  key={product.id}
                   className={`p-6 sm:p-8 relative group ${
                     product.featured
                       ? 'bg-foreground text-background'
                       : 'bg-background hover:bg-surface-hover'
                   }`}
                 >
-                  <span className={`absolute top-4 right-4 sm:top-6 sm:right-6 font-serif text-4xl sm:text-5xl font-bold leading-none pointer-events-none ${
-                    product.featured ? 'text-background/20' : 'text-border group-hover:text-muted/30'
-                  }`}>
-                    {product.num}
-                  </span>
                   <p className="text-xs uppercase tracking-wider text-muted mb-4">{product.tag}</p>
                   <h3 className={`font-serif text-lg sm:text-xl mb-4 ${product.featured ? 'text-background' : 'text-foreground'}`}>
                     {product.title}
