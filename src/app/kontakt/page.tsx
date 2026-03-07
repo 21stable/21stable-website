@@ -6,14 +6,14 @@ import { Mail, MapPin, User } from 'lucide-react'
 import { useLang } from '@/lib/i18n'
 
 export default function KontaktPage() {
-  const { lang, t } = useLang()
+  const { lang } = useLang()
 
   const CONTACT_EMAIL = '21stable@proton.me'
 
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background text-foreground">
         {/* Hero with SVG Background */}
         <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
           <div 
@@ -23,9 +23,9 @@ export default function KontaktPage() {
               backgroundImage: 'url(/kontakt-bg.svg)'
             }}
           />
-          <div className="absolute inset-0 bg-white/88" />
+          <div className="absolute inset-0 bg-overlay" />
           
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
             <p className="text-xs uppercase tracking-wider text-muted mb-4">
               {lang === 'de' ? 'Kontakt' : 'Contact'}
             </p>
@@ -113,7 +113,7 @@ export default function KontaktPage() {
               </div>
 
               {/* What to expect */}
-              <div className="border border-border p-6 sm:p-8 mt-12 rounded">
+              <div className="border border-border p-6 sm:p-8 mt-12 rounded bg-surface">
                 <h3 className="font-serif text-lg sm:text-xl text-foreground mb-4">
                   {lang === 'de' ? 'Was Sie erwarten können' : 'What to expect'}
                 </h3>
@@ -140,7 +140,7 @@ export default function KontaktPage() {
               {/* Privacy Note */}
               <div className="mt-8 p-4 bg-surface border border-border rounded">
                 <p className="text-xs text-muted">
-                  <strong>🔒 {lang === 'de' ? 'Datenschutz' : 'Privacy'}:</strong>{' '}
+                  <strong className="text-foreground">🔒 {lang === 'de' ? 'Datenschutz' : 'Privacy'}:</strong>{' '}
                   {lang === 'de' 
                     ? 'Ihre Daten werden ausschließlich zur Beantwortung Ihrer Anfrage verwendet. Weitere Informationen finden Sie in unserer '
                     : 'Your data is used exclusively to answer your inquiry. More information in our '}

@@ -26,13 +26,20 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setThemeState(getInitialTheme())
+    const initial = getInitialTheme()
+    setThemeState(initial)
     setMounted(true)
   }, [])
 
   useEffect(() => {
     if (mounted) {
-      document.documentElement.setAttribute('data-theme', theme)
+      // Tailwind dark mode uses 'dark' class on <html>
+      const root = document.documentElement
+      if (theme === 'dark') {
+        root.classList.add('dark')
+      } else {
+        root.classList.remove('dark')
+      }
       localStorage.setItem('theme', theme)
     }
   }, [theme, mounted])
@@ -45,6 +52,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setThemeState(prev => prev === 'light' ? 'dark' : 'light')
   }
 
+  // Prevent hydration mismatch
   if (!mounted) {
     return null
   }

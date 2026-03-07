@@ -23,7 +23,7 @@ export default function Home() {
               backgroundImage: 'url(/hero-bg.svg)'
             }}
           />
-          <div className="absolute inset-0 bg-white/88" />
+          <div className="absolute inset-0 bg-overlay" />
           
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
             <div className="max-w-3xl">
@@ -39,7 +39,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link 
                   href="/produkte" 
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background text-sm font-medium hover:bg-muted transition-colors duration-200"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity duration-200"
                 >
                   {t('hero.cta.services')}
                   <ArrowRight className="w-4 h-4" />
@@ -65,19 +65,19 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
-              <div className="border border-border p-4 sm:p-6 bg-white hover:bg-surfaceHover transition-colors">
+              <div className="border border-border p-4 sm:p-6 bg-background hover:bg-surface-hover transition-colors">
                 <p className="font-serif text-base sm:text-lg text-foreground mb-2">{t('ai.availability.title')}</p>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
                   {t('ai.availability.desc')}
                 </p>
               </div>
-              <div className="border border-border p-4 sm:p-6 bg-white hover:bg-surfaceHover transition-colors">
+              <div className="border border-border p-4 sm:p-6 bg-background hover:bg-surface-hover transition-colors">
                 <p className="font-serif text-base sm:text-lg text-foreground mb-2">{t('ai.scalability.title')}</p>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
                   {t('ai.scalability.desc')}
                 </p>
               </div>
-              <div className="border border-border p-4 sm:p-6 bg-white hover:bg-surfaceHover transition-colors">
+              <div className="border border-border p-4 sm:p-6 bg-background hover:bg-surface-hover transition-colors">
                 <p className="font-serif text-base sm:text-lg text-foreground mb-2">{t('ai.expertise.title')}</p>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
                   {t('ai.expertise.desc')}
@@ -96,7 +96,7 @@ export default function Home() {
               backgroundImage: 'url(/services-bg.svg)'
             }}
           />
-          <div className="absolute inset-0 bg-white/88" />
+          <div className="absolute inset-0 bg-overlay" />
           
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8 sm:mb-12">

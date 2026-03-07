@@ -1,20 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLang } from '@/lib/i18n'
-import { Menu, X } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
+import { useTheme } from '@/lib/theme-provider'
+import { Menu, X, Moon, Sun } from 'lucide-react'
 
 export default function Header() {
-  const { lang } = useLang()
+  const { lang, setLang } = useLang()
+  const { theme, toggleTheme } = useTheme()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
+  if (!mounted) return null
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 bg-white/98 backdrop-blur-md border-b border-border z-50">
+      <header className="fixed top-0 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-50">
         <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group min-w-0">
@@ -42,11 +50,17 @@ export default function Header() {
             
             {/* Theme Toggle */}
             <div className="w-px h-4 bg-border" />
-            <ThemeToggle />
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-muted hover:text-foreground hover:bg-surface rounded-lg transition-all duration-200"
+              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            >
+              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </button>
             
             {/* Language Switcher */}
             <button 
-              onClick={() => {}} 
+              onClick={() => setLang(lang === 'de' ? 'en' : 'de')} 
               className="text-xs uppercase tracking-wider text-muted hover:text-foreground transition-colors duration-200 border border-border px-2 py-1 rounded whitespace-nowrap"
             >
               {lang === 'de' ? 'EN' : 'DE'}
@@ -69,12 +83,12 @@ export default function Header() {
         <>
           {/* Backdrop */}
           <div 
-            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            className="md:hidden fixed inset-0 bg-background/50 backdrop-blur-sm z-40"
             onClick={() => setMobileMenuOpen(false)}
           />
           
-          {/* Menu Panel - Slides from right */}
-          <div className="md:hidden fixed inset-y-0 right-0 w-full max-w-xs bg-white z-50 shadow-2xl">
+          {/* Menu Panel */}
+          <div className="md:hidden fixed inset-y-0 right-0 w-full max-w-xs bg-background z-50 shadow-2xl border-l border-border">
             <div className="flex flex-col h-full">
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-border">
@@ -118,7 +132,13 @@ export default function Header() {
                     <span className="text-sm text-muted uppercase tracking-wider">
                       {lang === 'de' ? 'Modus' : 'Mode'}
                     </span>
-                    <ThemeToggle />
+                    <button
+                      onClick={toggleTheme}
+                      className="p-2 text-muted hover:text-foreground hover:bg-surface rounded-lg transition-all duration-200"
+                      aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                    >
+                      {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                    </button>
                   </div>
                 </div>
                 
@@ -128,7 +148,7 @@ export default function Header() {
                     {lang === 'de' ? 'Sprache' : 'Language'}
                   </p>
                   <button 
-                    onClick={() => {}} 
+                    onClick={() => setLang(lang === 'de' ? 'en' : 'de')} 
                     className="w-full text-left px-4 py-3 text-sm text-foreground hover:bg-surface rounded-lg transition-colors border border-border"
                   >
                     {lang === 'de' ? 'English (EN)' : 'Deutsch (DE)'}

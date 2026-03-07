@@ -1,5 +1,7 @@
 'use client'
 
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { useLang } from '@/lib/i18n'
 
@@ -42,203 +44,166 @@ export default function ProduktePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-border z-50">
-        <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <svg viewBox="0 0 60 60" className="w-14 h-14">
-              <circle cx="30" cy="30" r="28" stroke="currentColor" strokeWidth="2" fill="none" className="text-foreground"/>
-              <text x="8" y="40" fontSize="26" fill="currentColor" className="text-foreground" style={{fontFamily: 'Georgia, serif'}}>21</text>
-              <line x1="12" y1="48" x2="48" y2="48" stroke="currentColor" strokeWidth="2" className="text-foreground"/>
-            </svg>
-            <span className="font-serif text-3xl tracking-tight text-foreground group-hover:text-muted transition-colors">
-              21Stable
-            </span>
-          </Link>
-          <div className="flex items-center gap-8">
-            <Link href="/produkte" className="text-sm text-foreground transition-colors duration-200">
-              {t('nav.produkte')}
-            </Link>
-            <Link href="/team" className="text-sm text-muted hover:text-foreground transition-colors duration-200">
-              {t('nav.team')}
-            </Link>
-            <Link href="/kontakt" className="text-sm text-muted hover:text-foreground transition-colors duration-200">
-              {t('nav.kontakt')}
-            </Link>
-            <button 
-              onClick={() => {}} 
-              className="text-xs uppercase tracking-wider text-muted hover:text-foreground transition-colors duration-200 border border-border px-2 py-1"
-            >
-              {lang === 'de' ? 'EN' : 'DE'}
-            </button>
+    <>
+      <Header />
+      <main className="min-h-screen bg-background text-foreground">
+        {/* Hero with SVG Background */}
+        <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+            style={{ 
+              backgroundPosition: '50% 0',
+              backgroundImage: 'url(/produkte-bg.svg)'
+            }}
+          />
+          <div className="absolute inset-0 bg-overlay" />
+          
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-6">
+              {t('products.tagline')}
+            </p>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight max-w-2xl">
+              {t('hero.title')}
+            </h1>
+            <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl">
+              {t('hero.desc')}
+            </p>
           </div>
-        </nav>
-      </header>
+        </section>
 
-      {/* Hero with SVG Background */}
-      <section className="relative pt-32 pb-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-          style={{ 
-            backgroundPosition: '50% 0',
-            backgroundImage: 'url(/produkte-bg.svg)'
-          }}
-        />
-        <div className="absolute inset-0 bg-white/88" />
-        
-        <div className="relative max-w-6xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-muted mb-6">
-            {t('products.tagline')}
-          </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-foreground leading-[1.1] mb-8 tracking-tight max-w-2xl">
-            {t('hero.title')}
-          </h1>
-          <p className="text-lg text-muted leading-relaxed max-w-xl">
-            {t('hero.desc')}
-          </p>
-        </div>
-      </section>
+        {/* Products Grid */}
+        <section className="py-16 sm:py-24 bg-surface">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('products.section')}</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground mb-8 sm:mb-12">{t('products.title')}</h2>
 
-      {/* Products Grid */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('products.section')}</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">{t('products.title')}</h2>
-
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
-            {products.map((product) => (
-              <div
-                key={product.num}
-                className={`p-8 relative group ${
-                  product.featured
-                    ? 'bg-foreground text-background'
-                    : 'bg-white hover:bg-surfaceHover'
-                }`}
-              >
-                <span className={`absolute top-6 right-6 font-serif text-5xl font-bold leading-none pointer-events-none ${
-                  product.featured ? 'text-white/20' : 'text-border group-hover:text-muted/30'
-                }`}>
-                  {product.num}
-                </span>
-                <p className="text-xs uppercase tracking-wider text-muted mb-4">{product.tag}</p>
-                <h3 className={`font-serif text-xl mb-4 ${product.featured ? 'text-background' : 'text-foreground'}`}>
-                  {product.title}
-                </h3>
-                <p className={`text-sm leading-relaxed mb-6 ${product.featured ? 'text-white/60' : 'text-muted'}`}>
-                  {product.body}
-                </p>
-                <ul className="flex flex-col gap-2">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className={`text-sm flex items-start gap-2 ${product.featured ? 'text-background' : 'text-foreground'}`}>
-                      <span className="text-muted mt-0.5">–</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology */}
-      <section className="py-24 border-t border-border">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-muted mb-8">{t('methods.section')}</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">
-            {t('methods.title')}
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {methods.map((method) => (
-              <div key={method.title}>
-                <h3 className="text-sm font-medium uppercase tracking-wider mb-2 flex items-center gap-3">
-                  <span className="w-4 h-px bg-foreground"></span>
-                  {method.title}
-                </h3>
-                <p className="text-sm text-muted leading-relaxed">{method.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Phases */}
-      <section className="py-24 bg-foreground text-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-white/40 mb-4">
-            {t('phases.section')}
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-background mb-12">
-            {t('phases.title')}
-          </h2>
-          <div className="grid md:grid-cols-5 border border-white/20">
-            {phases.map((phase) => (
-              <div
-                key={phase.label}
-                className={`p-8 border-r last:border-r-0 border-white/20 ${
-                  phase.active ? 'bg-background text-foreground' : ''
-                }`}
-              >
-                <p className={`text-xs uppercase tracking-wider mb-2 ${phase.active ? 'text-muted' : 'text-white/40'}`}>
-                  {phase.label}
-                </p>
-                <p className={`font-serif text-lg font-medium mb-2 ${phase.active ? 'text-foreground' : 'text-background'}`}>
-                  {phase.name}
-                </p>
-                <p className={`text-sm leading-relaxed ${phase.active ? 'text-muted' : 'text-white/50'}`}>
-                  {phase.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Consulting */}
-      <section id="beratung" className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('consulting.section')}</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">{t('consulting.title')}</h2>
-
-          <div className="grid md:grid-cols-[3fr_2fr] gap-16">
-            <div className="flex flex-col gap-px bg-border border border-border">
-              {consultingModels.map((model) => (
-                <div key={model.type} className="bg-white p-8 grid md:grid-cols-[1fr_2fr] gap-8 hover:bg-surfaceHover transition-colors">
-                  <p className="text-xs uppercase tracking-wider text-muted">{model.type}</p>
-                  <div>
-                    <h4 className="font-serif text-lg text-foreground mb-2">{model.title}</h4>
-                    <p className="text-sm text-muted leading-relaxed">{model.body}</p>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+              {products.map((product) => (
+                <div
+                  key={product.num}
+                  className={`p-6 sm:p-8 relative group ${
+                    product.featured
+                      ? 'bg-foreground text-background'
+                      : 'bg-background hover:bg-surface-hover'
+                  }`}
+                >
+                  <span className={`absolute top-4 right-4 sm:top-6 sm:right-6 font-serif text-4xl sm:text-5xl font-bold leading-none pointer-events-none ${
+                    product.featured ? 'text-background/20' : 'text-border group-hover:text-muted/30'
+                  }`}>
+                    {product.num}
+                  </span>
+                  <p className="text-xs uppercase tracking-wider text-muted mb-4">{product.tag}</p>
+                  <h3 className={`font-serif text-lg sm:text-xl mb-4 ${product.featured ? 'text-background' : 'text-foreground'}`}>
+                    {product.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed mb-6 ${product.featured ? 'text-background/60' : 'text-muted'}`}>
+                    {product.body}
+                  </p>
+                  <ul className="flex flex-col gap-2">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className={`text-sm flex items-start gap-2 ${product.featured ? 'text-background' : 'text-foreground'}`}>
+                        <span className="text-muted mt-0.5">–</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
-
-            <aside className="p-8 bg-foreground text-background">
-              <h3 className="font-serif text-xl mb-6">{t('expertise.title')}</h3>
-              <ul className="flex flex-col gap-3 mb-8">
-                {expertise.map((item) => (
-                  <li key={item} className="text-sm text-white/60 flex gap-3">
-                    <span className="text-white/40">→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/kontakt" className="inline-block px-6 py-3 bg-background text-foreground text-sm font-medium hover:bg-surface transition-colors">
-                {t('cta.button.primary')}
-              </Link>
-            </aside>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <Link href="/" className="font-serif text-lg text-foreground">21Stable</Link>
-          <p className="text-xs text-muted">{t('footer.tagline')}</p>
-        </div>
-      </footer>
-    </div>
+        {/* Methodology */}
+        <section className="py-16 sm:py-24 border-t border-border">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-8">{t('methods.section')}</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground mb-8 sm:mb-12">
+              {t('methods.title')}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {methods.map((method) => (
+                <div key={method.title}>
+                  <h3 className="text-sm font-medium uppercase tracking-wider mb-2 flex items-center gap-3">
+                    <span className="w-4 h-px bg-foreground"></span>
+                    {method.title}
+                  </h3>
+                  <p className="text-sm text-muted leading-relaxed">{method.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Phases */}
+        <section className="py-16 sm:py-24 bg-foreground text-background">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-background/40 mb-4">
+              {t('phases.section')}
+            </p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-background mb-8 sm:mb-12">
+              {t('phases.title')}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border border-background/20">
+              {phases.map((phase) => (
+                <div
+                  key={phase.label}
+                  className={`p-6 sm:p-8 border-r last:border-r-0 border-background/20 sm:border-b lg:border-b-0 ${
+                    phase.active ? 'bg-background text-foreground' : ''
+                  }`}
+                >
+                  <p className={`text-xs uppercase tracking-wider mb-2 ${phase.active ? 'text-muted' : 'text-background/40'}`}>
+                    {phase.label}
+                  </p>
+                  <p className={`font-serif text-lg font-medium mb-2 ${phase.active ? 'text-foreground' : 'text-background'}`}>
+                    {phase.name}
+                  </p>
+                  <p className={`text-sm leading-relaxed ${phase.active ? 'text-muted' : 'text-background/50'}`}>
+                    {phase.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Consulting */}
+        <section id="beratung" className="py-16 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('consulting.section')}</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground mb-8 sm:mb-12">{t('consulting.title')}</h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 lg:gap-16">
+              <div className="flex flex-col gap-px bg-border border border-border">
+                {consultingModels.map((model) => (
+                  <div key={model.type} className="bg-background p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-4 sm:gap-8 hover:bg-surface-hover transition-colors">
+                    <p className="text-xs uppercase tracking-wider text-muted">{model.type}</p>
+                    <div>
+                      <h4 className="font-serif text-lg text-foreground mb-2">{model.title}</h4>
+                      <p className="text-sm text-muted leading-relaxed">{model.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <aside className="p-6 sm:p-8 bg-foreground text-background">
+                <h3 className="font-serif text-xl mb-6">{t('expertise.title')}</h3>
+                <ul className="flex flex-col gap-3 mb-8">
+                  {expertise.map((item) => (
+                    <li key={item} className="text-sm text-background/60 flex gap-3">
+                      <span className="text-background/40">→</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/kontakt" className="inline-block px-6 py-3 bg-background text-foreground text-sm font-medium hover:bg-surface transition-colors">
+                  {t('cta.button.primary')}
+                </Link>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   )
 }

@@ -4,40 +4,27 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLang } from '@/lib/i18n'
 
-const teamEn = [
-  { number: '01', role: 'Chief Scientific Officer', focus: 'Scientific leadership, regulatory strategy, clinical partner communication' },
-  { number: '02', role: 'Bioinformatics & Genomics', focus: 'NGS analysis, variant interpretation, pipeline development' },
-  { number: '03', role: 'Data Engineering & EHR', focus: 'Clinical data integration, FHIR/OMOP, data quality' },
-  { number: '04', role: 'Biostatistics & ML', focus: 'Statistical modeling, predictive models, multi-omics integration' },
-  { number: '05', role: 'DevOps & Infrastructure', focus: 'Cloud infrastructure, CI/CD, containerization' },
-  { number: '06', role: 'Software Engineering', focus: 'Analysis tools, dashboards, APIs' },
-  { number: '07', role: 'Clinical Science', focus: 'Clinical validation, study design, biomarker development' },
-  { number: '08', role: 'Regulatory & Data Privacy', focus: 'GDPR compliance, ethics, IT security' },
-  { number: '09', role: 'Legal & Healthcare Law', focus: 'Contracts, MDR/IVDR, IP protection' },
-]
-
-const teamDe = [
-  { number: '01', role: 'Chief Scientific Officer', focus: 'Wissenschaftliche Leitung, Regulatorik, klinische Partnerkommunikation' },
-  { number: '02', role: 'Bioinformatik & Genomik', focus: 'NGS-Analyse, Varianteninterpretation, Pipeline-Entwicklung' },
-  { number: '03', role: 'Data Engineering & EHR', focus: 'Klinische Datenintegration, FHIR/OMOP, Datenqualität' },
-  { number: '04', role: 'Biostatistik & ML', focus: 'Statistische Modellierung, Prädiktionsmodelle, Multi-Omics-Integration' },
-  { number: '05', role: 'DevOps & Infrastruktur', focus: 'Cloud-Infrastruktur, CI/CD, Containerisierung' },
-  { number: '06', role: 'Software Engineering', focus: 'Analyse-Tools, Dashboards, APIs' },
-  { number: '07', role: 'Clinical Science', focus: 'Klinische Validierung, Studiendesign, Biomarker-Entwicklung' },
-  { number: '08', role: 'Regulatory & Datenschutz', focus: 'DSGVO-Compliance, Ethik, IT-Sicherheit' },
-  { number: '09', role: 'Recht & Gesundheitsrecht', focus: 'Verträge, MDR/IVDR, IP-Schutz' },
-]
-
 export default function TeamPage() {
-  const { t, lang } = useLang()
-  const team = lang === 'de' ? teamDe : teamEn
-  
+  const { t } = useLang()
+
+  const agents = [
+    { id: '01', name: 'Chief Scientific Officer', role: 'Strategische Planung', focus: 'Studienprotokolle, Endpunkte, Regulatory' },
+    { id: '02', name: 'Biostatistiker', role: 'Statistische Analyse', focus: 'SAS/R, Datenanalyse, Reporting' },
+    { id: '03', name: 'Data Engineer', role: 'Datenmanagement', focus: 'CRFs, Datenbanken, Qualität' },
+    { id: '04', name: 'Biostatistiker/ML', role: 'Modellierung', focus: 'Vorhersagemodelle, ML, Simulationen' },
+    { id: '05', name: 'Regulatory Manager', role: 'Zulassung', focus: 'Dossiers, Behörden, FDA/EMA' },
+    { id: '06', name: 'DevOps Engineer', role: 'Infrastruktur', focus: 'Cloud, Validierung, Sicherheit' },
+    { id: '07', name: 'Software Engineer', role: 'Entwicklung', focus: 'Dashboards, APIs, Integration' },
+    { id: '08', name: 'Legal Counsel', role: 'Rechtliche Beratung', focus: 'DSGVO, Verträge, Compliance' },
+    { id: '09', name: 'Clinical Scientist', role: 'Klinische Expertise', focus: 'Medizin, Studienprotokolle' },
+  ]
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-background text-foreground">
-        {/* Hero with SVG Background */}
-        <section className="relative pt-32 pb-32 overflow-hidden">
+        {/* Hero */}
+        <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
           <div 
             className="absolute inset-0 bg-cover bg-top bg-no-repeat"
             style={{ 
@@ -45,76 +32,83 @@ export default function TeamPage() {
               backgroundImage: 'url(/team-bg.svg)'
             }}
           />
-          <div className="absolute inset-0 bg-white/88" />
+          <div className="absolute inset-0 bg-overlay" />
           
-          <div className="relative max-w-6xl mx-auto px-6">
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
             <p className="text-xs uppercase tracking-wider text-muted mb-6">
-              {lang === 'de' ? 'Unternehmen & Führung' : 'Company & Leadership'}
+              {t('nav.team')}
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4 tracking-tight">
-              {lang === 'de' ? 'Team' : 'Team'}
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight">
+              {t('team.title')}
             </h1>
+            <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl">
+              {t('team.desc')}
+            </p>
           </div>
         </section>
 
-        {/* Leadership (Human) */}
-        <section className="py-24 bg-surface">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="border border-border p-8 bg-white">
-              <p className="text-xs uppercase tracking-wider text-muted mb-4">
-                {lang === 'de' ? 'Unternehmensführung' : 'Leadership'}
-              </p>
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="flex-1">
-                  <h2 className="font-serif text-2xl text-foreground mb-2">
-                    Dr. rer. nat. Sina Stäble
-                  </h2>
-                  <p className="text-sm uppercase tracking-wider text-muted mb-4">
-                    {lang === 'de' ? 'Chief Executive Officer' : 'Chief Executive Officer'}
-                  </p>
-                  <p className="text-muted leading-relaxed">
-                    {lang === 'de' 
-                      ? 'Unternehmensführung, Strategie, Kundenbeziehungen, Wissenschaftliche Vision. Verantwortlich für die strategische Ausrichtung und den wissenschaftlichen Anspruch von 21Stable.'
-                      : 'Executive leadership, corporate strategy, client relations, scientific vision. Responsible for strategic direction and scientific standards at 21Stable.'}
-                  </p>
-                </div>
+        {/* Leadership */}
+        <section className="py-16 sm:py-24 bg-surface">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-4">Leadership</p>
+            <h2 className="font-serif text-2xl sm:text-3xl text-foreground mb-8 sm:mb-12">
+              Geschäftsführung
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 sm:gap-8 p-6 sm:p-8 bg-background border border-border">
+              <div>
+                <h3 className="font-serif text-xl sm:text-2xl text-foreground mb-2">Dr. rer. nat. Sina Stäble</h3>
+                <p className="text-sm text-muted mb-4">Chief Executive Officer</p>
+                <p className="text-sm text-muted leading-relaxed">
+                  Biostatistik, klinische Studien, frühe Phase Entwicklung
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 text-sm text-muted">
+                <p>21Stable wurde von Dr. Sina Stäble gegründet, um biostatistische Expertise mit modernster KI-Unterstützung zu verbinden.</p>
+                <p>Unser Ansatz: KI-Agenten übernehmen routinemäßige Analysen und Qualitätskontrollen, während unsere Experten sich auf strategische Entscheidungen und komplexe Probleme konzentrieren.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* AI Agents */}
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="mb-8">
-              <p className="text-xs uppercase tracking-wider text-muted mb-2">
-                {lang === 'de' ? 'Spezialisierte KI-Agenten' : 'Specialized AI Agents'}
-              </p>
-              <p className="text-sm text-muted max-w-2xl">
-                {lang === 'de' 
-                  ? 'Jedes Teammitglied ist ein autonomer KI-Agent, spezialisiert auf seine Rolle in der Biostatistik und klinischen Entwicklung.'
-                  : 'Each team member is an autonomous AI agent, specialized for their role in biostatistics and clinical development.'}
-              </p>
-            </div>
-            <div className="space-y-0">
-              {team.map((member) => (
+        <section className="py-16 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <p className="text-xs uppercase tracking-wider text-muted mb-4">KI-Agenten</p>
+            <h2 className="font-serif text-2xl sm:text-3xl text-foreground mb-8 sm:mb-12">
+              Specialized AI Agents
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+              {agents.map((agent) => (
                 <div 
-                  key={member.number}
-                  className="group py-6 border-b border-border flex gap-8 items-start hover:bg-surfaceHover transition-colors duration-200 -mx-6 px-6"
+                  key={agent.id} 
+                  className="p-6 sm:p-8 bg-background hover:bg-surface-hover transition-colors"
                 >
-                  <span className="text-xs text-subtle font-mono w-8 flex-shrink-0 pt-1">
-                    {member.number}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-lg text-foreground group-hover:translate-x-1 transition-transform duration-200">
-                      {member.role}
-                    </h3>
-                    <p className="text-sm text-muted leading-relaxed mt-1">
-                      {member.focus}
-                    </p>
-                  </div>
+                  <span className="text-3xl font-serif text-muted block mb-4">{agent.id}</span>
+                  <h3 className="font-serif text-lg text-foreground mb-2">{agent.name}</h3>
+                  <p className="text-sm text-muted mb-3">{agent.role}</p>
+                  <p className="text-xs text-subtle">{agent.focus}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Philosophy */}
+        <section className="py-16 sm:py-24 bg-foreground text-background">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-2xl">
+              <p className="text-xs uppercase tracking-wider text-background/40 mb-4">Philosophie</p>
+              <h2 className="font-serif text-2xl sm:text-3xl mb-6">
+                Mensch + KI = Przision & Effizienz
+              </h2>
+              <p className="text-sm sm:text-base text-background/60 leading-relaxed mb-4">
+                Unsere KI-Agenten arbeiten rund um die Uhr, analysieren Daten in Echtzeit und stellen sicher, dass jede Studie nach höchsten Standards durchgeführt wird.
+              </p>
+              <p className="text-sm sm:text-base text-background/60 leading-relaxed">
+                Die finale Verantwortung und strategische Entscheidungen liegen immer bei unserer menschlichen Expertin.
+              </p>
             </div>
           </div>
         </section>
