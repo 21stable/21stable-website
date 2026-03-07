@@ -11,7 +11,7 @@ export default function ImpressumPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <section className="relative pt-32 pb-32 overflow-hidden">
+        <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
           <div 
             className="absolute inset-0 bg-cover bg-top bg-no-repeat"
             style={{ 
@@ -19,19 +19,19 @@ export default function ImpressumPage() {
               backgroundImage: 'url(/produkte-bg.svg)'
             }}
           />
-          <div className="absolute inset-0 bg-white/88" />
+          <div className="absolute inset-0 bg-overlay" />
           
-          <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
             <p className="text-xs uppercase tracking-wider text-muted mb-4">
               {lang === 'de' ? 'Rechtliches' : 'Legal'}
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4 tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-4 tracking-tight">
               {lang === 'de' ? 'Impressum' : 'Legal Notice'}
             </h1>
           </div>
         </section>
 
-        <section className="py-16 sm:py-24">
+        <section className="py-16 sm:py-24 bg-surface">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="max-w-xl space-y-6 sm:space-y-8 text-muted text-sm sm:text-base">
               <div>
