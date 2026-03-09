@@ -1,7 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Services from '@/components/Services'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -11,9 +9,7 @@ export default function Home() {
   const { t } = useLang()
   
   return (
-    <>
-      <Header />
-      <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground">
         {/* Hero with SVG Background */}
         <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
           <div 
@@ -117,10 +113,6 @@ export default function Home() {
             <Services />
           </div>
         </section>
-
-        {/* Footer */}
-        <Footer />
       </main>
-    </>
   )
 }
