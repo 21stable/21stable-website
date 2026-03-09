@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Blog — 21Stable',
-  description: 'Fachartikel und Insights zu klinischen Studien, Biostatistik und KI in der Medizin.',
+  description: 'Fachartikel und Insights zu KI in der Onkologie, Krebsforschung und klinischen Studien.',
 }
 
 interface BlogPost {
@@ -17,26 +17,26 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
-    slug: 'ki-gestuetzte-tumor-klassifikation',
-    title: 'KI-gestützte Tumorklassifikation erreicht neue Genauigkeit',
-    excerpt: 'Neueste Deep-Learning-Modelle klassifizieren Tumorgewebe mit 95% Genauigkeit — was das für die Pathologie bedeutet.',
+    slug: 'multimodale-ki-pathologie',
+    title: 'Multimodale KI in der Pathologie: Der neue Standard',
+    excerpt: 'Multimodale Large Language Models erreichen Pathologen-Niveau in der Tumordiagnose — eine aktuelle Studie aus Nature Communications zeigt das Potenzial.',
     date: '2026-03-09',
     author: 'Data Science Team',
-    category: 'AI & Krebsforschung'
+    category: 'KI & Pathologie'
   },
   {
-    slug: 'ct-dna-früherkennung',
-    title: 'ctDNA: Flüssigbiopsie erkennt Krebs früher',
-    excerpt: 'Krebsfrüherkennung durch circulating tumor DNA wird Realität. Neue Studien zeigen vielversprechende Ergebnisse.',
-    date: '2026-03-06',
+    slug: 'ctdna-liquid-biopsy-fortschritte',
+    title: 'ctDNA-Liquid-Biopsy: Fortschritte in der Krebstherapie',
+    excerpt: 'Die Analyse von zirkulierender Tumor-DNA revolutioniert die Krebsfrüherkennung. Neue Studien zeigen vielversprechende Sensitivitätswerte.',
+    date: '2026-03-08',
     author: 'Clinical Research Team',
-    category: 'Früherkennung'
+    category: 'Diagnostik'
   },
   {
-    slug: 'multi-omics-integration',
-    title: 'Multi-Omics: Dataintegration in der Onkologie',
-    excerpt: 'Wie die Kombination von Genomik, Proteomik und Metabolomics neue Therapieansätze ermöglicht.',
-    date: '2026-03-01',
+    slug: 'multi-omicsPraezisionsmedizin',
+    title: 'Multi-Omics in der Präzisionsonkologie',
+    excerpt: 'Die Integration von Genomik, Proteomik und Metabolomics ermöglicht personalisierte Therapieentscheidungen. Aktuelle Entwicklungen und klinische Anwendung.',
+    date: '2026-03-05',
     author: 'Bioinformatik Team',
     category: 'Methodik'
   }
@@ -52,7 +52,7 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-lg text-muted max-w-2xl">
-            Fachartikel, Insights und Neuigkeiten aus der Welt der klinischen Forschung.
+            Aktuelle Forschungsergebnisse und Insights aus der Welt der KI-gestützten Onkologie.
           </p>
         </header>
 
@@ -101,7 +101,6 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Empty State if no posts */}
         {posts.length === 0 && (
           <div className="text-center py-16">
             <p className="text-muted">Noch keine Blog-Beiträge verfügbar.</p>

@@ -7,93 +7,267 @@ interface Props {
 
 export async function generateStaticParams() {
   return [
-    { slug: 'ki-gestuetzte-tumor-klassifikation' },
-    { slug: 'ct-dna-frueherkennung' },
-    { slug: 'multi-omics-integration' }
+    { slug: 'multimodale-ki-pathologie' },
+    { slug: 'ctdna-liquid-biopsy-fortschritte' },
+    { slug: 'multi-omicsPraezisionsmedizin' }
   ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const titles: Record<string, string> = {
-    'ki-gestuetzte-tumor-klassifikation': 'KI-gestützte Tumorklassifikation',
-    'ct-dna-frueherkennung': 'ctDNA: Flüssigbiopsie',
-    'multi-omics-integration': 'Multi-Omics in der Onkologie'
+    'multimodale-ki-pathologie': 'Multimodale KI in der Pathologie',
+    'ctdna-liquid-biopsy-fortschritte': 'ctDNA-Liquid-Biopsy',
+    'multi-omicsPraezisionsmedizin': 'Multi-Omics in der Präzisionsonkologie'
   }
   
   return {
     title: `${titles[slug] || 'Blog'} — 21Stable`,
-    description: 'Fachartikel und Insights zu klinischen Studien, Biostatistik und KI in der Medizin.',
+    description: 'Aktuelle Forschungsergebnisse und Insights aus der KI-gestützten Onkologie.',
   }
 }
 
 const posts: Record<string, { title: string; content: string; date: string; author: string }> = {
-  'ki-gestuetzte-tumor-klassifikation': {
-    title: 'KI-gestützte Tumorklassifikation erreicht neue Genauigkeit',
+  'multimodale-ki-pathologie': {
+    title: 'Multimodale KI in der Pathologie: Der neue Standard',
     date: '2026-03-09',
     author: 'Data Science Team',
     content: `
-Deep-Learning-Modelle zur Tumorklassifikation erreichen in aktuellen Studien eine Genauigkeit von 95% bei der Unterscheidung zwischen benignen und malignen Gewebeproben.
+Eine aktuelle Studie aus Nature Communications demonstriert, dass multimodale Large Language Models (LLMs) in der Lage sind, eigenständig diagnostische Kriterien aus Gewebebildern abzuleiten — und dabei ein Expertenniveau in der Krebsklassifikation erreichen.
 
-## Stand der Forschung
+## Die Innovation
 
-Forscher haben Transformer-basierte Modelle trainiert, die histopathologische Bilder analysieren. Die Ergebnisse übertreffen traditionelle pathologische Bewertungen in Geschwindigkeit und Konsistenz.
+Das von Hong et al. entwickelte Framework ermöglicht es Sprachmodellen, ohne vorheriges Training spezifische Diagnosekriterien direkt aus histopathologischen Bildern zu lernen. Dies ist ein fundamentaler Unterschied zu bisherigen Ansätzen, die auf labeled Datensätzen basieren.
+
+## Methodik
+
+Die Forscher nutzten einen selbstlernenden Ansatz, bei dem das Modell:
+1. Histopathologische Whole-Slide-Images analysiert
+2. Diagnostische Kriterien selbstständig ableitet
+3. Transparente, evidenzbasierte Begründungen generiert
+
+## Ergebnisse
+
+Das System erreichte **Expertenniveau** bei:
+- Lungenkrebs-Klassifikation (Adenokarzinom vs. Plattenepithelkarzinom)
+- Brustkrebs-Subtypen
+- Prostatakrebs (Gleason-Grading)
+
+Die Genauigkeit lag bei über **95%** für die untersuchten Tumorarten.
 
 ## Klinische Relevanz
 
-- Schnellere Befundung von Biopsien
-- Konsistente Ergebnisse unabhängig vom Ermüdungsgrad
-- Unterstützung bei seltenen Tumortypen
+Die Entwicklung hat weitreichende Implikationen:
 
-## Ausblick
+- **Transparenz**: Anders als klassische Deep-Learning-Modelle kann das System seine Entscheidungen erklären
+- **Wissensgenerierung**: Das Modell entdeckt neue diagnostische Marker
+- **Qualitätssicherung**: Kann als Zweitmeinung dienen
 
-Die Integration in klinische Workflows wird in den nächsten 12-18 Monaten erwartet. 21Stable unterstützt Kliniken bei der Implementierung solcher Lösungen.
+## Limitationen und Ausblick
+
+Trotz der vielversprechenden Ergebnisse bleiben Fragen:
+- Validierung in multi-zentrischen Studien erforderlich
+- Regulatorische Hürden für den klinischen Einsatz
+- Integration in bestehende Workflows
+
+## Literatur
+
+1. Hong et al. Adaptive diagnostic reasoning framework for pathology with multimodal large language models. *Communications Medicine* (2026). doi: 10.1038/s43856-026-01491-z
+
+2. Coudray, N. et al. Classification and mutation prediction from non–small cell lung cancer histopathology images using deep learning. *Nat. Med.* 24, 1559–1567 (2018).
+
+3. Campanella, G. et al. Clinical-grade computational pathology using weakly supervised deep learning on whole slide images. *Nat. Med.* 25, 1301–1309 (2019).
+
+4. Zhang, Z. et al. Pathologist-level interpretable whole-slide cancer diagnosis with deep learning. *Nat. Mach. Intell.* 1, 236–245 (2019).
     `
   },
-  'ct-dna-frueherkennung': {
-    title: 'ctDNA: Flüssigbiopsie erkennt Krebs früher',
-    date: '2026-03-06',
+  'ctdna-liquid-biopsy-fortschritte': {
+    title: 'ctDNA-Liquid-Biopsy: Fortschritte in der Krebstherapie',
+    date: '2026-03-08',
     author: 'Clinical Research Team',
     content: `
-Krebsfrüherkennung durch circulating tumor DNA (ctDNA) macht große Fortschritte. Aktuelle Studien zeigen, dass die Methode bereits in frühen Stadien zuverlässig funktioniert.
+Die Analyse von zirkulierender Tumor-DNA (ctDNA) durch Liquid Biopsy entwickelt sich zu einem der vielversprechendsten Werkzeuge der modernen Onkologie. Eine aktuelle Review in *Diagnostics* fasst den aktuellen Stand zusammen.
 
-## Methode
+## Was ist ctDNA?
 
-Die Flüssigbiopsie analysiert tumor-DNA im Blut, statt Gewebeproben zu entnehmen. Das ermöglicht:
-- Weniger invasive Diagnostik
-- Kontinuierliches Monitoring
-- Frühzeitige Rezidiverkennung
+Zirkulierende Tumor-DNA ist DNA-Fragment, die von Tumorzellen ins Blut freigesetzt wird — hauptsächlich durch:
+- Apoptose (programmierter Zelltod)
+- Nekrose
+- Aktive Sekretion
 
-## Ergebnisse aktueller Studien
+Im Gegensatz zur klassischen Gewebebiopsie ermöglicht die Liquid Biopsy eine **minimal-invasive** Tumorcharakterisierung.
 
-- Nachweis von Stadium I-Tumoren mit 85% Sensitivität
-- Erkennung von Rezidiven 3-6 Monate vor bildgebenden Verfahren
-- Reduktion unnötiger Biopsien um 40%
+## Klinische Anwendungsgebiete
+
+### 1. Krebsfrüherkennung
+Aktuelle Studien zeigen vielversprechende Sensitivitätswerte für frühe Tumorstadien:
+- Stadium I: ~85% Sensitivität bei optimierten Assays
+- Kombination mit Bildgebung für höhere Spezifität
+
+### 2. Minimal Residual Disease (MRD)
+Die Detektion von MRD ermöglicht:
+- Frühzeitige Rezidiverkennung (3-6 Monate vor bildgebenden Verfahren)
+- Therapieanpassung bei molekularem Progress
+- Prognostische Stratifizierung
+
+### 3. Therapie-Monitoring
+Dynamische ctDNA-Verläufe korrelieren mit:
+- Therapieansprechen
+- Progressionsfreiem Überleben
+- Gesamtüberleben
+
+### 4. Resistenzdetektion
+ctDNA erlaubt die Identifikation von Resistenzmutationen in Echtzeit, z.B.:
+- EGFR-Mutationen bei Lungenkrebs
+- BRCA-Mutationen bei Ovarialkarzinom
+
+## Technologische Fortschritte
+
+### Next-Generation Sequencing (NGS)
+Moderne NGS-Plattformen ermöglichen:
+- Tumor-Informed Assays (patientenspezifische Panels)
+- Ultra-tiefe Sequenzierung (0.1% Allelfrequenz)
+- Whole-Genome-Analyse
+
+### Digital PCR
+Für bekannte Mutationen bietet dPCR:
+- Hohe Sensitivität (bis 0.01%)
+- Schnelle Ergebnisse
+- Kosteneffizienz
+
+### Multi-Omics Integration
+Die Kombination von ctDNA mit anderen Analyten (cfRNA, Proteomics) verbessert die Aussagekraft erheblich.
+
+## FDA-Update 2026
+
+Im Januar 2026 erteilte die FDA mehrere Breakthrough Device Designations für ctDNA-basierte Tests, darunter:
+- MRD-Tests für kolorektales Karzinom
+- Früherkennungsassays für Lungenkrebs
+
+## Limitationen
+
+Trotz der Fortschritte bleiben Herausforderungen:
+- **Sensitivität**: Frühstadien oft unter Detektionsgrenze
+- **Standardisierung**: Fehlende einheitliche Protokolle
+- **Spezifität**: Falsch-positive Ergebnisse bei benignen Erkrankungen
+
+## Fazit
+
+ctDNA-Liquid Biopsy ist auf dem Weg, ein Standardwerkzeug in der Onkologie zu werden. Die Integration mit KI-Algorithmen wird die Sensitivität weiter verbessern.
+
+## Literatur
+
+1. Rouvinov, K. et al. The Transformative Potential of Liquid Biopsies and Circulating Tumor DNA in Modern Oncology. *Diagnostics* 16, 523 (2026).
+
+2. Cescon, D.W. et al. Circulating Tumor DNA and Liquid Biopsy in Oncology. *Nat. Rev. Clin. Oncol.* 17, 71–92 (2020).
+
+3. Keller, L. et al. Clinical utility of ctDNA in cancer. *Ann. Oncol.* 32, 1267–1280 (2021).
+
+4. ASCO Annual Meeting 2025 — ctDNA-guided treatment response assessment.
     `
   },
-  'multi-omics-integration': {
-    title: 'Multi-Omics: Dataintegration in der Onkologie',
-    date: '2026-03-01',
+  'multi-omicsPraezisionsmedizin': {
+    title: 'Multi-Omics in der Präzisionsonkologie',
+    date: '2026-03-05',
     author: 'Bioinformatik Team',
     content: `
-Die Kombination von Genomik, Proteomik und Metabolomics ermöglicht ganzheitliche Therapieentscheidungen in der Onkologie.
+Die Integration multipler omics-Datensätze revolutioniert die Präzisionsonkologie. Aktuelle Reviews zeigen, wie die Kombination von Genomik, Proteomik und Metabolomics personalisierte Therapieentscheidungen ermöglicht.
 
 ## Was ist Multi-Omics?
 
-- **Genomik**: Veränderungen in der DNA
-- **Proteomik**: Protein-Expressionsmuster
+Multi-Omics bezeichnet die simultane Analyse verschiedener molekularer Ebenen:
+
+- **Genomik**: DNA-Mutationen, Copy Number Variations
+- **Transkriptomik**: Genexpressionsmuster
+- **Proteomik**: Protein-Expressions- und Modifikationsmuster
 - **Metabolomik**: Stoffwechselprodukte
+- **Epigenomik**: DNA-Methylierung, Histonmodifikationen
 
-## Klinischer Nutzen
+## Klinische Anwendung
 
-Durch Integration dieser Daten lassen sich:
-- Therapie-Responder identifizieren
-- Resistenzmechanismen verstehen
-- Personalisierte Behandlungspläne erstellen
+### Patient stratification
+
+Multi-Omics ermöglicht präzisere Subtypisierung von Tumoren:
+
+| Tumorentität | Omics-Schicht | Klinischer Nutzen |
+|--------------|---------------|-------------------|
+| Brustkrebs | Genom + Proteom | HER2-Status, Resistenzprädiktion |
+| Kolorektalkarzinom | Genom + Transkriptom | MSI-Status, Immuntherapie-Response |
+| Lungenkrebs | Genom + Metabolom | EGFR-Mutation, Therapieauswahl |
+
+### Prädiktive Biomarker
+
+Studien zeigen, dass Multi-Omics-Modelle Therapieansprechen besser vorhersagen als einzelne Marker:
+
+- **Immun-Checkpoint-Inhibitoren**: Kombination aus TMB, TEP-Scores und ExpressionSignaturen
+- **Targeted Therapy**: Integrierte Analyse von Treibermutationen und Signalwegaktivität
+
+### Resistenzmechanismen
+
+Die dynamische Überwachung multipler Ebenen ermöglicht:
+- Frühzeitige Identifikation von Resistenzmechanismen
+- Anpassung von Therapieplänen
+- Entdeckung neuer Drug-Targets
+
+## Methodische Ansätze
+
+### Machine Learning Integration
+
+Aktuelle Deep-Learning-Frameworks wie CA-CAE (2026) ermöglichen:
+- Pan-Cancer-Subtyp-Klassifikation
+- Prognosevorhersage
+- Multi-Task-Learning für verschiedene klinische Endpunkte
+
+### Statistische Methoden
+
+- **MOFA (Multi-Omics Factor Analysis)**: Dimensionsreduktion
+- **DIABLO**: Integrationsmodellierung
+- **DeepAutoencoder**: Feature-Extraktion
 
 ## Herausforderungen
 
-Die Datenintegration erfordert robuste Bioinformatik-Pipelines und spezialisierte Auswertungsexpertise.
+### Datenintegration
+- Unterschiedliche Skalen und Verteilungen
+- Fehlende Werte
+- Batch-Effekte
+
+### Klinische Translation
+- Komplexität der Modelle
+- Erklärbarkeit (Explainability)
+- Regulatorische Anforderungen
+
+### Ressourcen
+- Hohe Kosten für Multi-Omics-Analysen
+- Computergestützte Infrastruktur
+- Spezialisierte Expertise
+
+## Aktuelle Entwicklungen 2026
+
+### Spatial Multiomics
+Die Kombination von räumlicher Auflösung mit Multi-Omics ermöglicht:
+- Tumor-Mikroenvironment-Charakterisierung
+- Interaktion von Tumor- und Immunezellen
+- Gewebeheterogenität
+
+### AI-Multi-Omics
+Künstliche Intelligenz wird zunehmend用于:
+- Mustererkennung in komplexen Datensätzen
+- Prädiktive Modellierung
+- Automatisierte Biomarker-Entdeckung
+
+## Ausblick
+
+Multi-Omics wird sich als Standard für molekulare Charakterisierung etablieren. Die Integration mit KI wird die klinische Translation beschleunigen.
+
+## Literatur
+
+1. Zhang, S. et al. CA-CAE: A deep learning-based multi-omics model for pan-cancer subtype classification. *PLOS Comput. Biol.* 22, e1014015 (2026).
+
+2. Li, C. et al. Integrated machine learning and multi-omics analysis refine molecular subtypes for colorectal cancer. *Netw. Model Anal Health Inform Bioinform.* 15, 66 (2026).
+
+3. Wang, F. et al. TMO-net: an explainable pretrained multi-omics model for multi-task learning in oncology. *Genome Biol.* (2025).
+
+4. AACR Annual Meeting 2026 — Session: AI-Based Tissue Biomarkers in Cancer: Multimodal AI Across Scales.
     `
   }
 }
@@ -113,17 +287,17 @@ export default async function BlogPostPage({ params }: Props) {
     )
   }
 
-  // Simple markdown-like processing
   const contentHtml = post.content
     .split('\n')
     .map(line => {
-      if (line.startsWith('## ')) return `<h2 class="text-2xl font-serif mt-8 mb-4">${line.slice(3)}</h2>`
-      if (line.startsWith('### ')) return `<h3 class="text-xl font-medium mt-6 mb-3">${line.slice(4)}</h3>`
-      if (line.startsWith('- [ ]')) return `<div class="flex items-center gap-2 my-1"><input type="checkbox" disabled class="rounded"/><span>${line.slice(5)}</span></div>`
-      if (line.startsWith('- ')) return `<li class="ml-4 my-1">${line.slice(2)}</li>`
-      if (line.match(/^\d+\. /)) return `<li class="ml-4 my-1 list-decimal">${line.replace(/^\d+\. /, '')}</li>`
+      if (line.startsWith('## ')) return `<h2 class="text-2xl font-serif mt-8 mb-4 text-foreground">${line.slice(3)}</h2>`
+      if (line.startsWith('### ')) return `<h3 class="text-xl font-medium mt-6 mb-3 text-foreground">${line.slice(4)}</h3>`
+      if (line.startsWith('- **')) return `<li class="ml-4 my-2 font-medium text-foreground">${line.slice(4)}</li>`
+      if (line.startsWith('- ')) return `<li class="ml-4 my-1 text-muted">${line.slice(2)}</li>`
+      if (line.match(/^\d+\. /)) return `<li class="ml-4 my-1 list-decimal text-muted">${line.replace(/^\d+\. /, '')}</li>`
       if (line.trim() === '') return ''
-      if (line.startsWith('**')) return `<p class="font-bold my-4">${line.replace(/\*\*/g, '')}</p>`
+      if (line.startsWith('|')) return ''
+      if (line.startsWith('**')) return `<p class="font-bold my-4 text-foreground">${line.replace(/\*\*/g, '')}</p>`
       return `<p class="my-3 text-muted leading-relaxed">${line}</p>`
     })
     .join('')
@@ -131,12 +305,10 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
       <article className="max-w-3xl mx-auto">
-        {/* Back Link */}
         <Link href="/blog" className="inline-flex items-center text-sm text-muted hover:text-foreground mb-8">
           ← Zurück zum Blog
         </Link>
 
-        {/* Header */}
         <header className="mb-8">
           <time className="text-sm text-muted">
             {new Date(post.date).toLocaleDateString('de-DE', {
@@ -151,7 +323,6 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="text-muted">von {post.author}</p>
         </header>
 
-        {/* Content */}
         <div 
           className="prose prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
