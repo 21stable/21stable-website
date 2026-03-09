@@ -41,6 +41,9 @@ export default function Header() {
             <Link href="/produkte" className="text-xs sm:text-sm text-muted hover:text-foreground transition-colors duration-200 whitespace-nowrap">
               {lang === 'de' ? 'Produkte' : 'Services'}
             </Link>
+            <Link href="/blog" className="text-xs sm:text-sm text-muted hover:text-foreground transition-colors duration-200 whitespace-nowrap">
+              Blog
+            </Link>
             <Link href="/team" className="text-xs sm:text-sm text-muted hover:text-foreground transition-colors duration-200 whitespace-nowrap">
               {lang === 'de' ? 'Team' : 'Team'}
             </Link>
@@ -110,6 +113,13 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {lang === 'de' ? 'Produkte' : 'Services'}
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className="text-base font-medium text-foreground hover:text-muted transition-colors py-3 border-b border-border"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
                 </Link>
                 <Link 
                   href="/team" 
