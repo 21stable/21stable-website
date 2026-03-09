@@ -214,6 +214,13 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Datenschutz
     'datenschutz.title': 'Datenschutz',
+    
+    // Blog
+    'blog.title': 'Blog',
+    'blog.desc': 'Fachartikel und Insights zu KI in der Onkologie, Krebsforschung und klinischen Studien.',
+    'blog.back': 'Zurück zum Blog',
+    'blog.readMore': 'Weiterlesen →',
+    'blog.notFound': 'Artikel nicht gefunden',
   },
   en: {
     // Navigation
@@ -414,6 +421,13 @@ const translations: Record<Lang, Record<string, string>> = {
     
     // Datenschutz
     'datenschutz.title': 'Privacy Policy',
+    
+    // Blog
+    'blog.title': 'Blog',
+    'blog.desc': 'Expert articles and insights on AI in oncology, cancer research and clinical trials.',
+    'blog.back': '← Back to Blog',
+    'blog.readMore': 'Read more →',
+    'blog.notFound': 'Article not found',
   },
 }
 

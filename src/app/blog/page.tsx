@@ -1,10 +1,7 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Blog — 21Stable',
-  description: 'Fachartikel und Insights zu KI in der Onkologie, Krebsforschung und klinischen Studien.',
-}
+import { useLang } from '@/lib/i18n'
+import Link from 'next/link'
 
 interface BlogPost {
   slug: string
@@ -42,23 +39,53 @@ const posts: BlogPost[] = [
   }
 ]
 
+const postsEn: BlogPost[] = [
+  {
+    slug: 'multimodale-ki-pathologie',
+    title: 'Multimodal AI in Pathology: The New Standard',
+    excerpt: 'Multimodal Large Language Models achieve pathologist-level accuracy in tumor diagnosis — a recent study from Nature Communications demonstrates the potential.',
+    date: '2026-03-09',
+    author: 'Data Science Team',
+    category: 'AI & Pathology'
+  },
+  {
+    slug: 'ctdna-liquid-biopsy-fortschritte',
+    title: 'ctDNA Liquid Biopsy: Advances in Cancer Therapy',
+    excerpt: 'The analysis of circulating tumor DNA is revolutionizing cancer early detection. New studies show promising sensitivity rates.',
+    date: '2026-03-08',
+    author: 'Clinical Research Team',
+    category: 'Diagnostics'
+  },
+  {
+    slug: 'multi-omicsPraezisionsmedizin',
+    title: 'Multi-Omics in Precision Oncology',
+    excerpt: 'The integration of genomics, proteomics and metabolomics enables personalized therapy decisions. Current developments and clinical application.',
+    date: '2026-03-05',
+    author: 'Bioinformatics Team',
+    category: 'Methodology'
+  }
+]
+
 export default function BlogPage() {
+  const { lang, t } = useLang()
+  const currentPosts = lang === 'de' ? posts : postsEn
+
   return (
     <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="mb-12">
           <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
-            Blog
+            {t('blog.title')}
           </h1>
           <p className="text-lg text-muted max-w-2xl">
-            Aktuelle Forschungsergebnisse und Insights aus der Welt der KI-gestützten Onkologie.
+            {t('blog.desc')}
           </p>
         </header>
 
         {/* Blog Posts Grid */}
         <div className="grid gap-8 md:grid-cols-2">
-          {posts.map((post) => (
+          {currentPosts.map((post) => (
             <article 
               key={post.slug}
               className="bg-surface rounded-xl p-6 border border-border hover:border-foreground/20 transition-colors group"
@@ -68,7 +95,7 @@ export default function BlogPage() {
                   {post.category}
                 </span>
                 <time className="text-sm text-muted">
-                  {new Date(post.date).toLocaleDateString('de-DE', {
+                  {new Date(post.date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
                     day: '2-digit',
                     month: 'long',
                     year: 'numeric'
@@ -94,16 +121,16 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   className="text-sm text-foreground hover:underline"
                 >
-                  Weiterlesen →
+                  {t('blog.readMore')}
                 </Link>
               </div>
             </article>
           ))}
         </div>
 
-        {posts.length === 0 && (
+        {currentPosts.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-muted">Noch keine Blog-Beiträge verfügbar.</p>
+            <p className="text-muted">{lang === 'de' ? 'Noch keine Blog-Beiträge verfügbar.' : 'No blog posts available yet.'}</p>
           </div>
         )}
       </div>
