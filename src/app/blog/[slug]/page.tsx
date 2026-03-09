@@ -5,6 +5,14 @@ interface Props {
   params: Promise<{ slug: string }>
 }
 
+export async function generateStaticParams() {
+  return [
+    { slug: 'ki-in-klinischen-studien' },
+    { slug: 'mdr-compliance-checkliste' },
+    { slug: 'survival-analysis-methoden' }
+  ]
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const titles: Record<string, string> = {
