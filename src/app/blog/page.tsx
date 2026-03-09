@@ -17,27 +17,27 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
-    slug: 'ki-in-klinischen-studien',
-    title: 'Künstliche Intelligenz in klinischen Studien',
-    excerpt: 'Wie KI-Agenten die Effizienz von klinischen Studien revolutionieren undwas das für Sponsoren bedeutet.',
+    slug: 'ki-gestuetzte-tumor-klassifikation',
+    title: 'KI-gestützte Tumorklassifikation erreicht neue Genauigkeit',
+    excerpt: 'Neueste Deep-Learning-Modelle klassifizieren Tumorgewebe mit 95% Genauigkeit — was das für die Pathologie bedeutet.',
     date: '2026-03-09',
-    author: '21Stable Team',
-    category: 'KI & Innovation'
+    author: 'Data Science Team',
+    category: 'AI & Krebsforschung'
   },
   {
-    slug: 'mdr-compliance-checkliste',
-    title: 'MDR-Compliance: Eine praktische Checkliste',
-    excerpt: 'Die wichtigsten Anforderungen der MDR und wie Sie diese in Ihren Studienprozess integrieren.',
-    date: '2026-02-15',
-    author: 'Regulatory Team',
-    category: 'Regulatorik'
+    slug: 'ct-dna-früherkennung',
+    title: 'ctDNA: Flüssigbiopsie erkennt Krebs früher',
+    excerpt: 'Krebsfrüherkennung durch circulating tumor DNA wird Realität. Neue Studien zeigen vielversprechende Ergebnisse.',
+    date: '2026-03-06',
+    author: 'Clinical Research Team',
+    category: 'Früherkennung'
   },
   {
-    slug: 'survival-analysis-methoden',
-    title: 'Überlebenszeitanalyse: Methoden im Vergleich',
-    excerpt: 'Von Kaplan-Meier bis Cox-Regression: Welche Methode wann eingesetzt wird.',
-    date: '2026-01-28',
-    author: 'Biostatistik Team',
+    slug: 'multi-omics-integration',
+    title: 'Multi-Omics: Dataintegration in der Onkologie',
+    excerpt: 'Wie die Kombination von Genomik, Proteomik und Metabolomics neue Therapieansätze ermöglicht.',
+    date: '2026-03-01',
+    author: 'Bioinformatik Team',
     category: 'Methodik'
   }
 ]

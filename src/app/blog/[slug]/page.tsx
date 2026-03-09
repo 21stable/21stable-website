@@ -7,18 +7,18 @@ interface Props {
 
 export async function generateStaticParams() {
   return [
-    { slug: 'ki-in-klinischen-studien' },
-    { slug: 'mdr-compliance-checkliste' },
-    { slug: 'survival-analysis-methoden' }
+    { slug: 'ki-gestuetzte-tumor-klassifikation' },
+    { slug: 'ct-dna-frueherkennung' },
+    { slug: 'multi-omics-integration' }
   ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const titles: Record<string, string> = {
-    'ki-in-klinischen-studien': 'Künstliche Intelligenz in klinischen Studien',
-    'mdr-compliance-checkliste': 'MDR-Compliance: Eine praktische Checkliste',
-    'survival-analysis-methoden': 'Überlebenszeitanalyse: Methoden im Vergleich'
+    'ki-gestuetzte-tumor-klassifikation': 'KI-gestützte Tumorklassifikation',
+    'ct-dna-frueherkennung': 'ctDNA: Flüssigbiopsie',
+    'multi-omics-integration': 'Multi-Omics in der Onkologie'
   }
   
   return {
@@ -28,98 +28,72 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const posts: Record<string, { title: string; content: string; date: string; author: string }> = {
-  'ki-in-klinischen-studien': {
-    title: 'Künstliche Intelligenz in klinischen Studien',
+  'ki-gestuetzte-tumor-klassifikation': {
+    title: 'KI-gestützte Tumorklassifikation erreicht neue Genauigkeit',
     date: '2026-03-09',
-    author: '21Stable Team',
+    author: 'Data Science Team',
     content: `
-Künstliche Intelligenz revolutioniert die Art und Weise, wie klinische Studien durchgeführt werden. Von der Patient rekrutierung bis zur Datenanalyse bieten KI-gestützte Systeme erhebliche Effizienzgewinne.
+Deep-Learning-Modelle zur Tumorklassifikation erreichen in aktuellen Studien eine Genauigkeit von 95% bei der Unterscheidung zwischen benignen und malignen Gewebeproben.
 
-## Der aktuelle Stand
+## Stand der Forschung
 
-Traditionell sind klinische Studien zeit- und kostenintensiv. Die durchschnittliche Phase-III-Studie kostet über 100 Millionen Euro und dauert 3-5 Jahre.KI kann diesen Prozess signifikant beschleunigen.
+Forscher haben Transformer-basierte Modelle trainiert, die histopathologische Bilder analysieren. Die Ergebnisse übertreffen traditionelle pathologische Bewertungen in Geschwindigkeit und Konsistenz.
 
-## Praktische Anwendungen
+## Klinische Relevanz
 
-### Patient rekrutierung
-KI-Algorithmen durchsuchen elektronische Patientenakten, um geeignete Kandidaten zu identifizieren. Das verkürzt die Rekrutierungsphase um bis zu 40%.
+- Schnellere Befundung von Biopsien
+- Konsistente Ergebnisse unabhängig vom Ermüdungsgrad
+- Unterstützung bei seltenen Tumortypen
 
-### Datenanalyse
-Machine-Learning-Modelle können grote Datenmengen schneller analysieren als traditionelle statistische Methoden. Besonders bei komplexen Endpunkten wie Überlebenszeitanalysen bieten sie Vorteile.
+## Ausblick
 
-### Prozessoptimierung
-Intelligente Systeme identifizieren Engpässe in Studienprotokollen und schlagen Optimierungen vor.
-
-## Fazit
-
-Die Integration von KI in klinische Studien ist kein Zukunftstraum mehr — sie ist bereits Realität. Unternehmen, die diese Technologie nutzen, werden einen Wettbewerbsvorteil haben.
+Die Integration in klinische Workflows wird in den nächsten 12-18 Monaten erwartet. 21Stable unterstützt Kliniken bei der Implementierung solcher Lösungen.
     `
   },
-  'mdr-compliance-checkliste': {
-    title: 'MDR-Compliance: Eine praktische Checkliste',
-    date: '2026-02-15',
-    author: 'Regulatory Team',
+  'ct-dna-frueherkennung': {
+    title: 'ctDNA: Flüssigbiopsie erkennt Krebs früher',
+    date: '2026-03-06',
+    author: 'Clinical Research Team',
     content: `
-Die Medical Device Regulation (MDR) stellt Hersteller von Medizinprodukten vor erhebliche Herausforderungen. Diese Checkliste hilft Ihnen, die wichtigsten Anforderungen zu erfüllen.
+Krebsfrüherkennung durch circulating tumor DNA (ctDNA) macht große Fortschritte. Aktuelle Studien zeigen, dass die Methode bereits in frühen Stadien zuverlässig funktioniert.
 
-## Grundlegende Anforderungen
+## Methode
 
-- [ ] Technische Dokumentation vollständig
-- [ ] Klinische Bewertung durchgeführt
-- [ ] Post-Market-Surveillance-Plan erstellt
-- [ ] EUDAMED-Registrierung abgeschlossen
+Die Flüssigbiopsie analysiert tumor-DNA im Blut, statt Gewebeproben zu entnehmen. Das ermöglicht:
+- Weniger invasive Diagnostik
+- Kontinuierliches Monitoring
+- Frühzeitige Rezidiverkennung
 
-## Klinische Bewertung
+## Ergebnisse aktueller Studien
 
-Die klinische Bewertung muss gemäß MEDDEV 2.7/1 Rev. 4 durchgeführt werden. Folgende Elemente sind obligatorisch:
-
-1. Literaturrecherche zu äquivalenten Produkten
-2. Klinische Prüfungen (falls erforderlich)
-3. Post-Market-Clinical-Follow-up
-
-## Qualitätsmanagementsystem
-
-Ihr QMS muss nach EN ISO 13485 zertifiziert sein. Achten Sie besonders auf:
-- Risikomanagement nach EN ISO 14971
-- Prozessvalidierung
-- Lieferantenbewertung
+- Nachweis von Stadium I-Tumoren mit 85% Sensitivität
+- Erkennung von Rezidiven 3-6 Monate vor bildgebenden Verfahren
+- Reduktion unnötiger Biopsien um 40%
     `
   },
-  'survival-analysis-methoden': {
-    title: 'Überlebenszeitanalyse: Methoden im Vergleich',
-    date: '2026-01-28',
-    author: 'Biostatistik Team',
+  'multi-omics-integration': {
+    title: 'Multi-Omics: Dataintegration in der Onkologie',
+    date: '2026-03-01',
+    author: 'Bioinformatik Team',
     content: `
-Die Überlebenszeitanalyse (Survival Analysis) ist ein zentrales Werkzeug in der Onkologie. Dieser Artikel vergleicht die gängigsten Methoden.
+Die Kombination von Genomik, Proteomik und Metabolomics ermöglicht ganzheitliche Therapieentscheidungen in der Onkologie.
 
-## Kaplan-Meier-Schätzer
+## Was ist Multi-Omics?
 
-Die nicht-parametrische Methode eignet sich für:
-- Deskriptive Darstellung von Überlebenskurven
-- Vergleich von zwei oder mehr Gruppen (Log-Rank-Test)
-- Keine Annahmen über die Verteilungsform
+- **Genomik**: Veränderungen in der DNA
+- **Proteomik**: Protein-Expressionsmuster
+- **Metabolomik**: Stoffwechselprodukte
 
-## Cox-Regression
+## Klinischer Nutzen
 
-Das proportionale Hazards-Modell ermöglicht:
-- Adjustierung für Confounding-Variablen
-- Schätzung von Hazard Ratios
-- multivariate Analysen
+Durch Integration dieser Daten lassen sich:
+- Therapie-Responder identifizieren
+- Resistenzmechanismen verstehen
+- Personalisierte Behandlungspläne erstellen
 
-**Voraussetzung:** proportional hazards assumption
+## Herausforderungen
 
-## Alternativen bei Nicht-Proportionalität
-
-- Time-varying coefficients
-- Accelerated failure time models
-- Frailty models
-
-## Praktische Empfehlung
-
-Für die meisten klinischen Studien empfehlen wir:
-1. Kaplan-Meier für univariate Darstellungen
-2. Cox-Regression für multivariate Analysen
-3. Sensitivitätsanalysen mit alternativen Modellen
+Die Datenintegration erfordert robuste Bioinformatik-Pipelines und spezialisierte Auswertungsexpertise.
     `
   }
 }
