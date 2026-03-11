@@ -14,6 +14,14 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: 'adaptives-studiendesign-onkologie-2026-03-11',
+    title: 'Adaptive Studiendesigns in der Onkologie: Effizienz durch Bayes\'sche Methoden',
+    excerpt: 'Wie Bayes\'sche adaptive Studiendesigns die Effizienz klinischer Studien in der Onkologie verbessern.',
+    date: '2026-03-11',
+    author: '21Stable Team',
+    category: 'Klinische Studiendesigns'
+  },
+  {
     slug: 'multimodale-ki-pathologie',
     title: 'Multimodale KI in der Pathologie: Der neue Standard',
     excerpt: 'Multimodale Large Language Models erreichen Pathologen-Niveau in der Tumordiagnose — eine aktuelle Studie aus Nature Communications zeigt das Potenzial.',
@@ -40,6 +48,14 @@ const posts: BlogPost[] = [
 ]
 
 const postsEn: BlogPost[] = [
+  {
+    slug: 'adaptives-studiendesign-onkologie-2026-03-11',
+    title: 'Adaptive Trial Designs in Oncology: Efficiency Through Bayesian Methods',
+    excerpt: 'How Bayesian adaptive trial designs improve efficiency in oncology clinical trials.',
+    date: '2026-03-11',
+    author: '21Stable Team',
+    category: 'Clinical Trial Designs'
+  },
   {
     slug: 'multimodale-ki-pathologie',
     title: 'Multimodal AI in Pathology: The New Standard',
