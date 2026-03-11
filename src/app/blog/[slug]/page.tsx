@@ -1,26 +1,34 @@
 import { Metadata } from 'next'
+import { readdir, readFile } from 'fs/promises'
+import { join } from 'path'
+import matter from 'gray-matter'
 import BlogPostClient from '../BlogPostClient'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'multimodale-ki-pathologie' },
-    { slug: 'ctdna-liquid-biopsy-fortschritte' },
-    { slug: 'multi-omicsPraezisionsmedizin' },
-    { slug: 'bayesian-methods-fda-guidance-2026' }
-  ]
+  const blogDir = join(process.cwd(), 'src/app/blog')
+  const entries = await readdir(blogDir, { withFileTypes: true })
+  const slugs = entries
+    .filter(entry => entry.isDirectory())
+    .map(entry => ({ slug: entry.name }))
+  return slugs
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const titles: Record<string, string> = {
-    'multimodale-ki-pathologie': 'Multimodale KI in der Pathologie',
-    'ctdna-liquid-biopsy-fortschritte': 'ctDNA-Liquid-Biopsy',
-    'multi-omicsPraezisionsmedizin': 'Multi-Omics in der Präzisionsonkologie'
-  }
+  const mdxPath = join(process.cwd(), 'src/app/blog', slug, 'page.mdx')
   
-  return {
-    title: `${titles[slug] || 'Blog'} — 21Stable`,
-    description: 'Aktuelle Forschungsergebnisse und Insights aus der KI-gestützten Onkologie.',
+  try {
+    const content = await readFile(mdxPath, 'utf-8')
+    const { data } = matter(content)
+    return {
+      title: `${data.title || 'Blog'} — 21Stable`,
+      description: data.description || 'Aktuelle Forschungsergebnisse und Insights aus der KI-gestützten Onkologie.',
+    }
+  } catch {
+    return {
+      title: 'Blog — 21Stable',
+      description: 'Aktuelle Forschungsergebnisse und Insights aus der KI-gestützten Onkologie.',
+    }
   }
 }
 
