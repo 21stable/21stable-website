@@ -5,7 +5,8 @@ export async function generateStaticParams() {
   return [
     { slug: 'multimodale-ki-pathologie' },
     { slug: 'ctdna-liquid-biopsy-fortschritte' },
-    { slug: 'multi-omicsPraezisionsmedizin' }
+    { slug: 'multi-omicsPraezisionsmedizin' },
+    { slug: 'bayesian-methods-fda-guidance-2026' }
   ]
 }
 

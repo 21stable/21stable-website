@@ -246,6 +246,81 @@ Multi-Omics wird sich als Standard für molekulare Charakterisierung etablieren.
 
 4. AACR Annual Meeting 2026 — Session: AI-Based Tissue Biomarkers in Cancer: Multimodal AI Across Scales.
     `
+  },
+  'bayesian-methods-fda-guidance-2026': {
+    title: 'FDA-Leitfaden zu Bayes-Methoden: Revolution in der klinischen Forschung',
+    date: '2026-03-10',
+    author: 'Biostatistik Team',
+    content: `
+Die FDA hat im Januar 2026 einen wegweisenden Leitfaden zur Verwendung Bayes'scher Methoden in klinischen Studien veröffentlicht. Dieser Draft Guidance markiert einen potenziellen Wendepunkt in der klinischen Arzneimittelentwicklung.
+
+## Was sind Bayes-Methoden?
+
+Im Gegensatz zu klassischen frequentistischen Ansätzen erlauben Bayes'sche Methoden die:
+- **Formale Integration von Vorwissen** in die statistische Analyse
+- **Wahrscheinlichkeitsaussagen** über Parameter anstelle von P-Werten
+- **Adaptives Design** mit interimsweisen Anpassungen basierend auf akkumulierten Daten
+
+Die FDA betont, dass Bayes-Methoden besonders wertvoll sind für:
+- Early-Phase-Studien mit kleinen Stichproben
+- Subgruppenanalysen
+- Adaptives Screening
+- Real-World-Evidence-Integration
+
+## Wesentliche Inhalte des Leitfadens
+
+Der Leitfaden (FDA-2025-D-3217) adressiert:
+
+1. **Prior-Verteilungen**: Wie Vorwissen mathematisch modelliert werden soll
+2. **Externe Informationsnutzung**: Wann und wie Vorinformationen aus früheren Studien einbezogen werden dürfen
+3. **Erfolgskriterien**: Definition von Erfolg basierend auf posterioren Wahrscheinlichkeiten
+4. **Trial-Operating-Characteristics**: Simulationen zur Bewertung von Power und Fehlerraten
+
+## Klinische Relevanz für die Onkologie
+
+In der Onkologie bieten Bayes-Methoden entscheidende Vorteile:
+
+### 1. Effizientere Phase-I/II-Studien
+- Schnellere Dosis-Findung durch Bayesian Optimal Phase II Designs
+- Reduzierung von Patientenzahlen bei gleichbleibender statistischer Aussagekraft
+
+### 2. Biomarker-stratifizierte Studien
+- Adaptives Enrichment basierend auf Subgruppenwirksamkeit
+- Prior-Wissen aus historischen Daten kanibalisiert effizienter
+
+### 3. Master Protocols
+- Plattformstudien profitieren von kontinuierlichem Informationsgewinn
+- Seamless Transitions zwischen Studienphasen
+
+## Aktuelle Entwicklungen
+
+### Win Ratio Statistik
+Eine aktuelle Entwicklung ist die **Bayesian Model-Assisted (BMW) Design** für den Win-Ratio-Endpoint, der prioritäre composite Endpoints effizienter auswertet.
+
+### FDA-Breitschaft
+FDA-Kommissar Marty Makary bezeichnete die neue Guidance als "Paradigmenwechsel" und betonte, dass die Behörde nun "offener für Bayessche Statistik" sei.
+
+## Limitationen
+
+Trotz des Fortschritts bleiben Herausforderungen:
+- **Komplexität**: Erfordert spezialisierte statistische Expertise
+- **Konservatismus**: Regulatoren fordern detaillierte Simulationen
+- **Kulturwandel**: Wide Adoption erfordert Schulung
+
+## Ausblick
+
+Der FDA-Leitfaden wird die klinische Forschung transformieren. Bayes'sche Methoden ermöglichen effizientere, patientenzentrierte Studien und könnten insbesondere in der Onkologie die Arzneimittelentwicklung beschleunigen.
+
+## Literatur
+
+1. FDA (2026). Use of Bayesian Methodology in Clinical Trials of Drug and Biological Products; Draft Guidance for Industry. Federal Register. Docket FDA-2025-D-3217. https://www.federalregister.gov/documents/2026/01/12/2026-00325
+
+2. Xu et al. (2025). BMW: Bayesian Model-Assisted Adaptive Phase II Clinical Trial Design for Win Ratio Statistic. arXiv:2602.17592.
+
+3. BMJ (2026). FDA is now "open to bayesian statistics": transformational change or new Pandora's box? doi: https://www.bmj.com/content/392/bmj.s180
+
+4. Applied Clinical Trials (2026). FDA Issues Draft Guidance to Advance Bayesian Methods in Clinical Trials.
+    `
   }
 }
 
@@ -490,6 +565,81 @@ Multi-Omics will establish itself as the standard for molecular characterization
 3. Wang, F. et al. TMO-net: an explainable pretrained multi-omics model for multi-task learning in oncology. *Genome Biol.* (2025).
 
 4. AACR Annual Meeting 2026 — Session: AI-Based Tissue Biomarkers in Cancer: Multimodal AI Across Scales.
+    `
+  },
+  'bayesian-methods-fda-guidance-2026': {
+    title: 'FDA Guidance on Bayesian Methods: Revolution in Clinical Research',
+    date: '2026-03-10',
+    author: 'Biostatistics Team',
+    content: `
+The FDA published a landmark guidance in January 2026 on the use of Bayesian methods in clinical trials. This draft guidance marks a potential turning point in clinical drug development.
+
+## What are Bayesian Methods?
+
+Unlike classical frequentist approaches, Bayesian methods enable:
+- **Formal integration of prior knowledge** into statistical analysis
+- **Probability statements** about parameters instead of P-values
+- **Adaptive design** with interim adjustments based on accumulated data
+
+The FDA emphasizes that Bayesian methods are particularly valuable for:
+- Early-phase studies with small sample sizes
+- Subgroup analyses
+- Adaptive screening
+- Real-world evidence integration
+
+## Key Contents of the Guidance
+
+The guidance (FDA-2025-D-3217) addresses:
+
+1. **Prior distributions**: How prior knowledge should be mathematically modeled
+2. **External information borrowing**: When and how prior information from historical studies can be incorporated
+3. **Success criteria**: Definition of success based on posterior probabilities
+4. **Trial operating characteristics**: Simulations to evaluate power and error rates
+
+## Clinical Relevance for Oncology
+
+In oncology, Bayesian methods offer decisive advantages:
+
+### 1. More Efficient Phase I/II Studies
+- Faster dose-finding through Bayesian Optimal Phase II designs
+- Reduced patient numbers while maintaining statistical power
+
+### 2. Biomarker-stratified Studies
+- Adaptive enrichment based on subgroup efficacy
+- Prior knowledge from historical data is more efficiently cannibalized
+
+### 3. Master Protocols
+- Platform studies benefit from continuous information gain
+- Seamless transitions between study phases
+
+## Current Developments
+
+### Win Ratio Statistic
+A recent development is the **Bayesian Model-Assisted (BMW) Design** for win ratio endpoints, which more efficiently evaluates prioritized composite endpoints.
+
+### FDA Openness
+FDA Commissioner Marty Makary described the new guidance as a "paradigm shift" and emphasized that the agency is now "more open to Bayesian statistics."
+
+## Limitations
+
+Despite the progress, challenges remain:
+- **Complexity**: Requires specialized statistical expertise
+- **Conservatism**: Regulators demand detailed simulations
+- **Cultural change**: Wide adoption requires training
+
+## Outlook
+
+The FDA guidance will transform clinical research. Bayesian methods enable more efficient, patient-centered studies and could accelerate drug development particularly in oncology.
+
+## References
+
+1. FDA (2026). Use of Bayesian Methodology in Clinical Trials of Drug and Biological Products; Draft Guidance for Industry. Federal Register. Docket FDA-2025-D-3217. https://www.federalregister.gov/documents/2026/01/12/2026-00325
+
+2. Xu et al. (2025). BMW: Bayesian Model-Assisted Adaptive Phase II Clinical Trial Design for Win Ratio Statistic. arXiv:2602.17592.
+
+3. BMJ (2026). FDA is now "open to bayesian statistics": transformational change or new Pandora's box? doi: https://www.bmj.com/content/392/bmj.s180
+
+4. Applied Clinical Trials (2026). FDA Issues Draft Guidance to Advance Bayesian Methods in Clinical Trials.
     `
   }
 }
