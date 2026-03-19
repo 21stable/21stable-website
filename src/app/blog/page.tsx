@@ -2,7 +2,6 @@
 
 import { useLang } from '@/lib/i18n'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 interface BlogPost {
   slug: string
@@ -13,63 +12,63 @@ interface BlogPost {
   category: string
 }
 
-// All blog posts - add new posts here
+// German posts
 const allPosts: BlogPost[] = [
   {
     slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19',
-    title: 'NGS & Companion Diagnostics: Präzise Therapieauswahl in der Onkologie',
-    excerpt: 'Next-Generation Sequencing ermöglicht die identifikation von Biomarkern für zielgerichtete Therapien.',
+    title: 'NGS-Companion-Diagnostik: Das Rückgrat der Präzisionsonkologie im Jahr 2026',
+    excerpt: 'Neue FDA-Zulassungen revolutionieren die biomarkergesteuerte Krebstherapie: Wie Next-Generation-Sequencing Companion-Diagnostik die Behandlung von Lungenkrebs transformiert.',
     date: '2026-03-19',
     author: '21Stable Team',
-    category: 'Diagnostik'
+    category: 'Biomarker & Precision Oncology'
   },
   {
     slug: 'statistische-methoden-onkologie-bayes-2026-03-17',
-    title: 'Statistische Methoden in der Onkologie: Bayes-Ansätze für bessere Entscheidungen',
-    excerpt: 'Wie Bayes\'sche Statistik die klinische Entscheidungsfindung in der Onkologie verbessert.',
+    title: 'Bayesianische Methoden: Die Lösung für die Paradoxien klassischer statistischer Tests?',
+    excerpt: 'Wie Bayesianische Statistik die Grenzen von p-Werten und Nullhypothesentests in der biomedizinischen Forschung überwindet.',
     date: '2026-03-17',
-    author: 'Biostatistik Team',
+    author: '21Stable Team',
     category: 'Biostatistik'
   },
   {
     slug: 'ki-ethik-klinische-studien-2026-03-16',
-    title: 'KI-Ethik in klinischen Studien: Transparenz und Vertrauen',
-    excerpt: 'Ethische Aspekte beim Einsatz von KI in der klinischen Forschung.',
+    title: 'Ethik der EHR-Daten für KI-Entwicklung: Neue Wege für verantwortungsvolle klinische Forschung',
+    excerpt: 'Mixed-Methods-Studie identifiziert vier zentrale ethische Herausforderungen bei der Nutzung von EHR-Daten für KI-Entwicklung in der klinischen Forschung.',
     date: '2026-03-16',
     author: '21Stable Team',
-    category: 'KI & Ethik'
+    category: 'KI-Ethik'
   },
   {
     slug: 'real-world-evidence-precision-oncology-2026-03-15',
-    title: 'Real-World Evidence in der Präzisionsonkologie',
-    excerpt: 'Wie Real-World Data die Evidenzbasis für personalisierte Therapien stärkt.',
+    title: 'Life-Cycle Real-World Evidence: Brückenbau in der Precision Oncology',
+    excerpt: 'Wie Real-World Evidence Evidenzlücken in der Präzisionsonkologie schließen kann.',
     date: '2026-03-15',
-    author: 'Clinical Research Team',
+    author: '21Stable Team',
     category: 'Real-World Evidence'
   },
   {
     slug: 'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
-    title: 'Maschinelles Lernen zur Vorhersage von Chemotherapie-Antworten',
-    excerpt: 'ML-Modelle sagen das Ansprechen auf Chemotherapie bei colorectal cancer voraus.',
+    title: 'Maschinelles Lernen sagt Chemotherapie-bedingte Knochenmarksuppression bei Darmkrebs voraus',
+    excerpt: 'Neues ML-Modell sagt Myelosuppression bei Darmkrebs-Patienten mit 89% Genauigkeit voraus.',
     date: '2026-03-14',
-    author: 'Data Science Team',
-    category: 'Machine Learning'
+    author: '21Stable Team',
+    category: 'Maschinelles Lernen in der Medizin'
   },
   {
     slug: 'pan-cancer-prognostic-models-survival-2026-03-13',
-    title: 'Pan-Cancer Prognosemodelle: Überlebensanalyse über Tumorarten hinweg',
-    excerpt: 'Neue prognostische Modelle für multiple Krebsarten mittels Machine Learning.',
+    title: 'Pan-Cancer Prognosemodelle: Machine Learning revolutiert die Überlebensanalyse',
+    excerpt: 'Groß angelegte Studie zeigt: Pan-Cancer-Modelle übertreffen Einzeltumor-Modelle bei der Überlebensprädiktion.',
     date: '2026-03-13',
-    author: 'Biostatistik Team',
-    category: 'Survival Analysis'
+    author: '21Stable Team',
+    category: 'Überlebensanalyse'
   },
   {
     slug: 'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
-    title: 'ctDNA & Risk-Adaptive Therapy bei Nasopharynxkarzinom',
-    excerpt: 'Flüssigbiopsie für dynamisches Therapiemonitoring und risikoadaptierte Behandlungsanpassung.',
+    title: 'Dynamisches ctDNA-Monitoring: Risiko-adaptierte Therapie beim Nasopharynxkarzinom',
+    excerpt: 'Phase-II-Studie zeigt: ctDNA-geleitete Therapie verbessert Überleben bei Nasopharynxkarzinom.',
     date: '2026-03-12',
-    author: 'Clinical Scientist',
-    category: 'Liquid Biopsy'
+    author: '21Stable Team',
+    category: 'Biomarker'
   },
   {
     slug: 'adaptives-studiendesign-onkologie-2026-03-11',
@@ -78,89 +77,66 @@ const allPosts: BlogPost[] = [
     date: '2026-03-11',
     author: '21Stable Team',
     category: 'Klinische Studiendesigns'
-  },
-  {
-    slug: 'multimodale-ki-pathologie',
-    title: 'Multimodale KI in der Pathologie: Der neue Standard',
-    excerpt: 'Multimodale Large Language Models erreichen Pathologen-Niveau in der Tumordiagnose — eine aktuelle Studie aus Nature Communications zeigt das Potenzial.',
-    date: '2026-03-09',
-    author: 'Data Science Team',
-    category: 'KI & Pathologie'
-  },
-  {
-    slug: 'ctdna-liquid-biopsy-fortschritte',
-    title: 'ctDNA-Liquid-Biopsy: Fortschritte in der Krebstherapie',
-    excerpt: 'Die Analyse von zirkulierender Tumor-DNA revolutioniert die Krebsfrüherkennung. Neue Studien zeigen vielversprechende Sensitivitätswerte.',
-    date: '2026-03-08',
-    author: 'Clinical Research Team',
-    category: 'Diagnostik'
-  },
-  {
-    slug: 'multi-omicsPraezisionsmedizin',
-    title: 'Multi-Omics in der Präzisionsonkologie',
-    excerpt: 'Die Integration von Genomik, Proteomik und Metabolomics ermöglicht personalisierte Therapieentscheidungen. Aktuelle Entwicklungen und klinische Anwendung.',
-    date: '2026-03-05',
-    author: 'Bioinformatik Team',
-    category: 'Methodik'
   }
 ]
 
+// English posts - matching MDX title_en
 const allPostsEn: BlogPost[] = [
   {
     slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19',
-    title: 'NGS & Companion Diagnostics: Precision Therapy Selection in Oncology',
-    excerpt: 'Next-Generation Sequencing enables biomarker identification for targeted therapies.',
+    title: 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
+    excerpt: 'New FDA approvals are revolutionizing biomarker-driven cancer therapy: How Next-Generation Sequencing companion diagnostics is transforming lung cancer treatment.',
     date: '2026-03-19',
     author: '21Stable Team',
-    category: 'Diagnostics'
+    category: 'Biomarker & Precision Oncology'
   },
   {
     slug: 'statistische-methoden-onkologie-bayes-2026-03-17',
-    title: 'Statistical Methods in Oncology: Bayesian Approaches for Better Decisions',
-    excerpt: 'How Bayesian statistics improves clinical decision-making in oncology.',
+    title: 'Bayesian Methods: Solving the Paradoxes of Classical Statistical Tests?',
+    excerpt: 'How Bayesian statistics overcomes the limitations of p-values and null hypothesis testing in biomedical research.',
     date: '2026-03-17',
-    author: 'Biostatistics Team',
+    author: '21Stable Team',
     category: 'Biostatistics'
   },
   {
     slug: 'ki-ethik-klinische-studien-2026-03-16',
-    title: 'AI Ethics in Clinical Trials: Transparency and Trust',
-    excerpt: 'Ethical aspects of using AI in clinical research.',
+    title: 'Ethics of EHR Data for AI Development: New Pathways for Responsible Clinical Research',
+    excerpt: 'Mixed-methods study identifies four key ethical challenges in using EHR data for AI development in clinical research.',
     date: '2026-03-16',
     author: '21Stable Team',
-    category: 'AI & Ethics'
+    category: 'AI Ethics'
   },
   {
     slug: 'real-world-evidence-precision-oncology-2026-03-15',
-    title: 'Real-World Evidence in Precision Oncology',
-    excerpt: 'How Real-World Data strengthens the evidence base for personalized therapies.',
+    title: 'Life-Cycle Real-World Evidence: Bridging Evidentiary Gaps in Precision Oncology',
+    excerpt: 'How real-world evidence can bridge evidentiary gaps in precision oncology.',
     date: '2026-03-15',
-    author: 'Clinical Research Team',
+    author: '21Stable Team',
     category: 'Real-World Evidence'
   },
   {
     slug: 'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
-    title: 'Machine Learning for Chemotherapy Response Prediction',
-    excerpt: 'ML models predict chemotherapy response in colorectal cancer.',
+    title: 'Machine Learning Predicts Chemotherapy-Induced Myelosuppression in Colorectal Cancer',
+    excerpt: 'New ML model predicts myelosuppression in colorectal cancer patients with 89% accuracy.',
     date: '2026-03-14',
-    author: 'Data Science Team',
+    author: '21Stable Team',
     category: 'Machine Learning'
   },
   {
     slug: 'pan-cancer-prognostic-models-survival-2026-03-13',
-    title: 'Pan-Cancer Prognostic Models: Survival Analysis Across Tumor Types',
-    excerpt: 'New prognostic models for multiple cancer types using machine learning.',
+    title: 'Pan-Cancer Prognostic Models: Machine Learning Revolutionizes Survival Analysis',
+    excerpt: 'Large-scale study shows pan-cancer models outperform single-cancer models in survival prediction.',
     date: '2026-03-13',
-    author: 'Biostatistics Team',
+    author: '21Stable Team',
     category: 'Survival Analysis'
   },
   {
     slug: 'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
-    title: 'ctDNA & Risk-Adaptive Therapy in Nasopharyngeal Carcinoma',
-    excerpt: 'Liquid biopsy for dynamic therapy monitoring and risk-adaptive treatment adjustment.',
+    title: 'Dynamic ctDNA Monitoring: Risk-Adaptive Therapy in Nasopharyngeal Carcinoma',
+    excerpt: 'Phase II trial shows ctDNA-guided therapy improves survival in nasopharyngeal carcinoma.',
     date: '2026-03-12',
-    author: 'Clinical Scientist',
-    category: 'Liquid Biopsy'
+    author: '21Stable Team',
+    category: 'Biomarker'
   },
   {
     slug: 'adaptives-studiendesign-onkologie-2026-03-11',
@@ -169,30 +145,6 @@ const allPostsEn: BlogPost[] = [
     date: '2026-03-11',
     author: '21Stable Team',
     category: 'Clinical Trial Designs'
-  },
-  {
-    slug: 'multimodale-ki-pathologie',
-    title: 'Multimodal AI in Pathology: The New Standard',
-    excerpt: 'Multimodal Large Language Models achieve pathologist-level accuracy in tumor diagnosis — a recent study from Nature Communications demonstrates the potential.',
-    date: '2026-03-09',
-    author: 'Data Science Team',
-    category: 'AI & Pathology'
-  },
-  {
-    slug: 'ctdna-liquid-biopsy-fortschritte',
-    title: 'ctDNA Liquid Biopsy: Advances in Cancer Therapy',
-    excerpt: 'The analysis of circulating tumor DNA is revolutionizing cancer early detection. New studies show promising sensitivity rates.',
-    date: '2026-03-08',
-    author: 'Clinical Research Team',
-    category: 'Diagnostics'
-  },
-  {
-    slug: 'multi-omicsPraezisionsmedizin',
-    title: 'Multi-Omics in Precision Oncology',
-    excerpt: 'The integration of genomics, proteomics and metabolomics enables personalized therapy decisions. Current developments and clinical application.',
-    date: '2026-03-05',
-    author: 'Bioinformatics Team',
-    category: 'Methodology'
   }
 ]
 

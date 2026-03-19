@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }: Props) {
   const contentHtml = mdxToHtml(body)
   
   const post = {
-    title: data.title || data.title_en || slug,
+    title: lang === 'en' && data.title_en ? data.title_en : (data.title || slug),
     date: data.date || new Date().toISOString().split('T')[0],
     author: data.author || '21Stable Team'
   }
