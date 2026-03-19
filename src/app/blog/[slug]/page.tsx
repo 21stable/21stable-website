@@ -1,45 +1,39 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { readFileSync, readdirSync, existsSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
-// Get all blog post slugs from directories
-function getAllSlugs(): string[] {
-  const blogDir = join(process.cwd(), 'src/app/blog')
-  try {
-    return readdirSync(blogDir)
-      .filter(item => {
-        const itemPath = join(blogDir, item, 'page.mdx')
-        return item !== 'page.tsx' && item !== 'page.jsx' && existsSync(itemPath)
-      })
-  } catch {
-    return []
-  }
-}
+// All blog post slugs - hardcoded for static export
+const BLOG_SLUGS = [
+  'ngs-companion-diagnostics-precision-oncology-2026-03-19',
+  'statistische-methoden-onkologie-bayes-2026-03-17',
+  'ki-ethik-klinische-studien-2026-03-16',
+  'real-world-evidence-precision-oncology-2026-03-15',
+  'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
+  'pan-cancer-prognostic-models-survival-2026-03-13',
+  'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
+  'adaptives-studiendesign-onkologie-2026-03-11'
+]
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs()
-  return slugs.map(slug => ({ slug }))
+  return BLOG_SLUGS.map(slug => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const titles: Record<string, string> = {
-    'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS Companion Diagnostics',
-    'statistische-methoden-onkologie-bayes-2026-03-17': 'Statistische Methoden in der Onkologie',
+    'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS Companion Diagnostics: Das Rückgrat der Präzisionsonkologie',
+    'statistische-methoden-onkologie-bayes-2026-03-17': 'Statistische Methoden in der Onkologie: Bayes-Ansätze',
     'ki-ethik-klinische-studien-2026-03-16': 'KI-Ethik in klinischen Studien',
-    'real-world-evidence-precision-oncology-2026-03-15': 'Real-World Evidence',
-    'maschinelles-lernen-chemotherapie-colorectal-2026-03-14': 'Maschinelles Lernen Chemotherapie',
+    'real-world-evidence-precision-oncology-2026-03-15': 'Real-World Evidence in der Präzisionsonkologie',
+    'maschinelles-lernen-chemotherapie-colorectal-2026-03-14': 'Maschinelles Lernen zur Chemotherapie-Vorhersage',
     'pan-cancer-prognostic-models-survival-2026-03-13': 'Pan-Cancer Prognosemodelle',
-    'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12': 'ctDNA Risk-Adaptive Therapy',
-    'adaptives-studiendesign-onkologie-2026-03-11': 'Adaptive Studiendesigns',
-    'multimodale-ki-pathologie': 'Multimodale KI in der Pathologie',
-    'ctdna-liquid-biopsy-fortschritte': 'ctDNA-Liquid-Biopsy',
-    'multi-omicsPraezisionsmedizin': 'Multi-Omics in der Präzisionsonkologie'
+    'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12': 'ctDNA & Risk-Adaptive Therapy',
+    'adaptives-studiendesign-onkologie-2026-03-11': 'Adaptive Studiendesigns in der Onkologie'
   }
   
   return {
@@ -67,7 +61,6 @@ function parseFrontmatter(content: string): { data: Record<string, string>; body
     if (colonIndex > 0) {
       const key = line.slice(0, colonIndex).trim()
       let value = line.slice(colonIndex + 1).trim()
-      // Remove quotes
       if (value.startsWith('"') && value.endsWith('"')) {
         value = value.slice(1, -1)
       }
