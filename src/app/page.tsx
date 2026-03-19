@@ -55,9 +55,9 @@ export default function Home() {
         <section className="py-16 sm:py-24 bg-surface">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="mb-8 sm:mb-12">
-              <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('ai.advantage.tagline')}</p>
+              <p className="text-xs uppercase tracking-wider text-muted mb-4">{t('ai.tagline')}</p>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground">
-                {t('ai.advantage.title')}
+                {t('ai.title')}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
