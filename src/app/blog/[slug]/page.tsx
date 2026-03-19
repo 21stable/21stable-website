@@ -7,10 +7,17 @@ interface Props {
 
 export async function generateStaticParams() {
   return [
+    { slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19' },
+    { slug: 'statistische-methoden-onkologie-bayes-2026-03-17' },
+    { slug: 'ki-ethik-klinische-studien-2026-03-16' },
+    { slug: 'real-world-evidence-precision-oncology-2026-03-15' },
+    { slug: 'maschinelles-lernen-chemotherapie-colorectal-2026-03-14' },
+    { slug: 'pan-cancer-prognostic-models-survival-2026-03-13' },
+    { slug: 'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12' },
+    { slug: 'adaptives-studiendesign-onkologie-2026-03-11' },
     { slug: 'multimodale-ki-pathologie' },
     { slug: 'ctdna-liquid-biopsy-fortschritte' },
-    { slug: 'multi-omicsPraezisionsmedizin' },
-    { slug: 'adaptives-studiendesign-onkologie-2026-03-11' }
+    { slug: 'multi-omicsPraezisionsmedizin' }
   ]
 }
 
