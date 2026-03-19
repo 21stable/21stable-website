@@ -1,0 +1,64 @@
+---
+title: "Maschinelles Lernen sagt Chemotherapie-bedingte Knochenmark­suppression bei Darmkrebs voraus"
+title_en: "Machine Learning Predicts Chemotherapy-Induced Myelosuppression in Colorectal Cancer"
+date: "2026-03-14"
+category: "Maschinelles Lernen in der Medizin"
+description: "Neues ML-Modell sagt Myelosuppression bei Darmkrebs-Patienten mit 89% Genauigkeit voraus."
+description_en: "New ML model predicts myelosuppression in colorectal cancer patients with 89% accuracy."
+author: "21Stable Team"
+draft: true
+---
+
+# Maschinelles Lernen sagt Chemotherapie-bedingte Knochenmark­suppression bei Darmkrebs voraus
+
+## Einleitung
+
+Chemotherapie-induzierte Myelosuppression (CIM) ist eine der häufigsten und gefährlichsten Nebenwirkungen bei der Behandlung von Darmkrebs (CRC). Sie führt zu einem erhöhten Risiko für Infektionen, Anämie und Blutungen, was häufig zu Therapieunterbrechungen oder Dosisreduktionen führt. Die Früherkennung von Patienten mit hohem Myelosuppressionsrisiko ist daher entscheidend für eine personalisierte Therapieplanung.
+
+## Kernerkenntnis
+
+Eine aktuelle Studie hat ein Machine Learning-basiertes Vorhersagemodell entwickelt, das das Risiko einer Chemotherapie-induzierten Myelosuppression bei Darmkrebs-Patienten mit hoher Genauigkeit vorhersagen kann. Das Random Forest-Modell erreichte in der externen Validierung eine **AUC von 0,93** bei einer **Genauigkeit von 89%** [1].
+
+## Forschungsmethodik
+
+Die Forscher analysierten retrospektiv Daten von **450 Patienten** mit Darmkrebs, die sich einer Chemotherapie unterzogen. Zusätzlich wurden **150 Patienten** für die externe Validierung einbezogen. Mit Hilfe der **LASSO-Regression** (Least Absolute Shrinkage and Selection Operator) wurden 19 signifikante Prädiktoren identifiziert, darunter:
+
+- Hämatologische Parameter
+- Ernährungsrisiko-Score (NRS2002)
+- Vorbestehende Strahlentherapie
+
+Drei Machine Learning-Algorithmen wurden verglichen: Logistische Regression, Random Forest und XGBoost. Der Random Forest erzielte die besten Ergebnisse.
+
+### SHAP-Analyse
+
+Die **SHapley Additive exPlanations (SHAP)**-Methode wurde eingesetzt, um die Bedeutung der Prädiktoren zu interpretieren. Die wichtigsten Prädiktoren waren:
+
+1. Hämatologische Parameter
+2. Ernährungsrisiko-Score (NRS2002)
+3. Vorgeschichte mit Strahlentherapie
+
+## Klinische Relevanz
+
+Die Ergebnisse haben unmittelbare Implikationen für die klinische Praxis:
+
+- **Individualisierte Therapie**: Ärzte können das Risiko vor Therapiebeginn einschätzen und die Chemotherapie-Dosis entsprechend anpassen
+- **Präventive Maßnahmen**: Patienten mit hohem Risiko können prophylaktisch mit Wachstumsfaktoren behandelt werden
+- **Reduzierung von Komplikationen**: Frühzeitige Intervention kann lebensbedrohliche Infektionen verhindern
+
+Das Modell erreichte eine **Sensitivität von 86%** und eine **Spezifität von 92%** in der externen Validierung.
+
+## Fazit
+
+Machine Learning zeigt großes Potenzial für die personalisierte Onkologie. Das vorgestellte Random Forest-Modell ermöglicht eine präzise Vorhersage der Chemotherapie-induzierten Myelosuppression und könnte bald Teil der klinischen Entscheidungsfindung sein. Weitere prospektive Studien sind erforderlich, um die Integration in den klinischen Alltag zu validieren.
+
+---
+
+## Key Findings
+
+Chemotherapy-induced myelosuppression (CIM) is a major adverse event in colorectal cancer treatment. A recent study developed and validated a machine learning-based predictive model using data from 450 training and 150 validation patients. The Random Forest model achieved an **AUC of 0.93** with **89% accuracy**, **86% sensitivity**, and **92% specificity** in external validation. Key predictors included hematological parameters, nutritional risk score (NRS2002), and history of radiotherapy. This model could enable personalized chemotherapy dosing and proactive management of high-risk patients.
+
+---
+
+## References
+
+1. Song, Li, Chai, Wang, Zu. (2026). Development and validation of a Machine Learning-based predictive model for Chemotherapy-Induced Myelosuppression in Colorectal Cancer patients. *Frontiers in Medicine*. https://doi.org/10.3389/fmed.2026.1778951
