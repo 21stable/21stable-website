@@ -25,19 +25,20 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const titles: Record<string, string> = {
-    'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS Companion Diagnostics: Das Rückgrat der Präzisionsonkologie',
-    'statistische-methoden-onkologie-bayes-2026-03-17': 'Statistische Methoden in der Onkologie: Bayes-Ansätze',
-    'ki-ethik-klinische-studien-2026-03-16': 'KI-Ethik in klinischen Studien',
-    'real-world-evidence-precision-oncology-2026-03-15': 'Real-World Evidence in der Präzisionsonkologie',
-    'maschinelles-lernen-chemotherapie-colorectal-2026-03-14': 'Maschinelles Lernen zur Chemotherapie-Vorhersage',
-    'pan-cancer-prognostic-models-survival-2026-03-13': 'Pan-Cancer Prognosemodelle',
-    'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12': 'ctDNA & Risk-Adaptive Therapy',
-    'adaptives-studiendesign-onkologie-2026-03-11': 'Adaptive Studiendesigns in der Onkologie'
+  
+  const titlesDe: Record<string, string> = {
+    'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS-Companion-Diagnostik: Das Rückgrat der Präzisionsonkologie im Jahr 2026',
+    'statistische-methoden-onkologie-bayes-2026-03-17': 'Bayesianische Methoden: Die Lösung für die Paradoxien klassischer statistischer Tests?',
+    'ki-ethik-klinische-studien-2026-03-16': 'Ethik der EHR-Daten für KI-Entwicklung: Neue Wege für verantwortungsvolle klinische Forschung',
+    'real-world-evidence-precision-oncology-2026-03-15': 'Life-Cycle Real-World Evidence: Brückenbau in der Precision Oncology',
+    'maschinelles-lernen-chemotherapie-colorectal-2026-03-14': 'Maschinelles Lernen sagt Chemotherapie-bedingte Knochenmarksuppression bei Darmkrebs voraus',
+    'pan-cancer-prognostic-models-survival-2026-03-13': 'Pan-Cancer Prognosemodelle: Machine Learning revolutiert die Überlebensanalyse',
+    'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12': 'Dynamisches ctDNA-Monitoring: Risiko-adaptierte Therapie beim Nasopharynxkarzinom',
+    'adaptives-studiendesign-onkologie-2026-03-11': 'Adaptive Studiendesigns in der Onkologie: Effizienz durch Bayes\'sche Methoden'
   }
   
   return {
-    title: `${titles[slug] || 'Blog'} — 21Stable`,
+    title: `${titlesDe[slug] || 'Blog'} — 21Stable`,
     description: 'Aktuelle Forschungsergebnisse und Insights aus der KI-gestützten Onkologie.',
   }
 }
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
   const contentHtml = mdxToHtml(body)
   
   const post = {
-    title: lang === 'en' && data.title_en ? data.title_en : (data.title || slug),
+    title: data.title || slug,
     date: data.date || new Date().toISOString().split('T')[0],
     author: data.author || '21Stable Team'
   }
