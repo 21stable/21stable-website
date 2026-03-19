@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, type ReactNode } from 'react'
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
 
 type Lang = 'de' | 'en'
 
@@ -433,6 +433,19 @@ const translations: Record<Lang, Record<string, string>> = {
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('de')
+  
+  // Load saved language from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('lang') as Lang | null
+    if (saved === 'de' || saved === 'en') {
+      setLang(saved)
+    }
+  }, [])
+  
+  // Save language to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('lang', lang)
+  }, [lang])
   
   const t = (key: string): string => {
     return translations[lang][key] || key
