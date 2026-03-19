@@ -6,154 +6,112 @@ import Link from 'next/link'
 interface BlogPost {
   slug: string
   title: string
+  titleEn: string
   excerpt: string
+  excerptEn: string
   date: string
   author: string
   category: string
+  categoryEn: string
 }
 
-// German posts
+// All blog posts - English content, titles switch DE/EN
 const allPosts: BlogPost[] = [
   {
     slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19',
-    title: 'NGS-Companion-Diagnostik: Das Rückgrat der Präzisionsonkologie im Jahr 2026',
-    excerpt: 'Neue FDA-Zulassungen revolutionieren die biomarkergesteuerte Krebstherapie: Wie Next-Generation-Sequencing Companion-Diagnostik die Behandlung von Lungenkrebs transformiert.',
+    title: 'NGS Companion Diagnostics: Das Rückgrat der Präzisionsonkologie 2026',
+    titleEn: 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
+    excerpt: 'Neue FDA-Zulassungen revolutionieren die biomarkergesteuerte Krebstherapie.',
+    excerptEn: 'New FDA approvals are revolutionizing biomarker-driven cancer therapy.',
     date: '2026-03-19',
     author: '21Stable Team',
-    category: 'Biomarker & Precision Oncology'
+    category: 'Biomarker & Precision Oncology',
+    categoryEn: 'Biomarker & Precision Oncology'
   },
   {
     slug: 'statistische-methoden-onkologie-bayes-2026-03-17',
-    title: 'Bayesianische Methoden: Die Lösung für die Paradoxien klassischer statistischer Tests?',
-    excerpt: 'Wie Bayesianische Statistik die Grenzen von p-Werten und Nullhypothesentests in der biomedizinischen Forschung überwindet.',
+    title: 'Bayesianische Methoden: Die Lösung für Paradoxien klassischer Tests?',
+    titleEn: 'Bayesian Methods: Solving the Paradoxes of Classical Statistical Tests?',
+    excerpt: 'Wie Bayesianische Statistik die Grenzen von p-Werten überwindet.',
+    excerptEn: 'How Bayesian statistics overcomes the limitations of p-values.',
     date: '2026-03-17',
     author: '21Stable Team',
-    category: 'Biostatistik'
+    category: 'Biostatistik',
+    categoryEn: 'Biostatistics'
   },
   {
     slug: 'ki-ethik-klinische-studien-2026-03-16',
-    title: 'Ethik der EHR-Daten für KI-Entwicklung: Neue Wege für verantwortungsvolle klinische Forschung',
-    excerpt: 'Mixed-Methods-Studie identifiziert vier zentrale ethische Herausforderungen bei der Nutzung von EHR-Daten für KI-Entwicklung in der klinischen Forschung.',
+    title: 'Ethik der EHR-Daten für KI-Entwicklung',
+    titleEn: 'Ethics of EHR Data for AI Development',
+    excerpt: 'Vier zentrale ethische Herausforderungen bei der Nutzung von EHR-Daten.',
+    excerptEn: 'Four key ethical challenges in using EHR data for AI development.',
     date: '2026-03-16',
     author: '21Stable Team',
-    category: 'KI-Ethik'
+    category: 'KI-Ethik',
+    categoryEn: 'AI Ethics'
   },
   {
     slug: 'real-world-evidence-precision-oncology-2026-03-15',
     title: 'Life-Cycle Real-World Evidence: Brückenbau in der Precision Oncology',
-    excerpt: 'Wie Real-World Evidence Evidenzlücken in der Präzisionsonkologie schließen kann.',
+    titleEn: 'Life-Cycle Real-World Evidence: Bridging Evidentiary Gaps in Precision Oncology',
+    excerpt: 'Wie Real-World Evidence Evidenzlücken schließen kann.',
+    excerptEn: 'How real-world evidence can bridge evidentiary gaps.',
     date: '2026-03-15',
     author: '21Stable Team',
-    category: 'Real-World Evidence'
+    category: 'Real-World Evidence',
+    categoryEn: 'Real-World Evidence'
   },
   {
     slug: 'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
-    title: 'Maschinelles Lernen sagt Chemotherapie-bedingte Knochenmarksuppression bei Darmkrebs voraus',
-    excerpt: 'Neues ML-Modell sagt Myelosuppression bei Darmkrebs-Patienten mit 89% Genauigkeit voraus.',
+    title: 'ML sagt Chemotherapie-bedingte Knochenmarksuppression voraus',
+    titleEn: 'Machine Learning Predicts Chemotherapy-Induced Myelosuppression',
+    excerpt: 'Neues ML-Modell sagt Myelosuppression mit 89% Genauigkeit voraus.',
+    excerptEn: 'New ML model predicts myelosuppression with 89% accuracy.',
     date: '2026-03-14',
     author: '21Stable Team',
-    category: 'Maschinelles Lernen in der Medizin'
+    category: 'Maschinelles Lernen',
+    categoryEn: 'Machine Learning'
   },
   {
     slug: 'pan-cancer-prognostic-models-survival-2026-03-13',
-    title: 'Pan-Cancer Prognosemodelle: Machine Learning revolutiert die Überlebensanalyse',
-    excerpt: 'Groß angelegte Studie zeigt: Pan-Cancer-Modelle übertreffen Einzeltumor-Modelle bei der Überlebensprädiktion.',
+    title: 'Pan-Cancer Prognosemodelle: ML revolutioniert Überlebensanalyse',
+    titleEn: 'Pan-Cancer Prognostic Models: ML Revolutionizes Survival Analysis',
+    excerpt: 'Pan-Cancer-Modelle übertreffen Einzeltumor-Modelle.',
+    excerptEn: 'Pan-cancer models outperform single-cancer models.',
     date: '2026-03-13',
     author: '21Stable Team',
-    category: 'Überlebensanalyse'
+    category: 'Überlebensanalyse',
+    categoryEn: 'Survival Analysis'
   },
   {
     slug: 'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
-    title: 'Dynamisches ctDNA-Monitoring: Risiko-adaptierte Therapie beim Nasopharynxkarzinom',
-    excerpt: 'Phase-II-Studie zeigt: ctDNA-geleitete Therapie verbessert Überleben bei Nasopharynxkarzinom.',
+    title: 'Dynamisches ctDNA-Monitoring beim Nasopharynxkarzinom',
+    titleEn: 'Dynamic ctDNA Monitoring in Nasopharyngeal Carcinoma',
+    excerpt: 'ctDNA-geleitete Therapie verbessert Überleben.',
+    excerptEn: 'ctDNA-guided therapy improves survival.',
     date: '2026-03-12',
     author: '21Stable Team',
-    category: 'Biomarker'
+    category: 'Biomarker',
+    categoryEn: 'Biomarker'
   },
   {
     slug: 'adaptives-studiendesign-onkologie-2026-03-11',
-    title: 'Adaptive Studiendesigns in der Onkologie: Effizienz durch Bayes\'sche Methoden',
-    excerpt: 'Wie Bayes\'sche adaptive Studiendesigns die Effizienz klinischer Studien in der Onkologie verbessern.',
+    title: 'Adaptive Studiendesigns: Effizienz durch Bayes\'sche Methoden',
+    titleEn: 'Adaptive Trial Designs: Efficiency Through Bayesian Methods',
+    excerpt: 'Bayes\'sche adaptive Designs verbessern Effizienz klinischer Studien.',
+    excerptEn: 'Bayesian adaptive designs improve efficiency in oncology trials.',
     date: '2026-03-11',
     author: '21Stable Team',
-    category: 'Klinische Studiendesigns'
-  }
-]
-
-// English posts - matching MDX title_en
-const allPostsEn: BlogPost[] = [
-  {
-    slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19',
-    title: 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
-    excerpt: 'New FDA approvals are revolutionizing biomarker-driven cancer therapy: How Next-Generation Sequencing companion diagnostics is transforming lung cancer treatment.',
-    date: '2026-03-19',
-    author: '21Stable Team',
-    category: 'Biomarker & Precision Oncology'
-  },
-  {
-    slug: 'statistische-methoden-onkologie-bayes-2026-03-17',
-    title: 'Bayesian Methods: Solving the Paradoxes of Classical Statistical Tests?',
-    excerpt: 'How Bayesian statistics overcomes the limitations of p-values and null hypothesis testing in biomedical research.',
-    date: '2026-03-17',
-    author: '21Stable Team',
-    category: 'Biostatistics'
-  },
-  {
-    slug: 'ki-ethik-klinische-studien-2026-03-16',
-    title: 'Ethics of EHR Data for AI Development: New Pathways for Responsible Clinical Research',
-    excerpt: 'Mixed-methods study identifies four key ethical challenges in using EHR data for AI development in clinical research.',
-    date: '2026-03-16',
-    author: '21Stable Team',
-    category: 'AI Ethics'
-  },
-  {
-    slug: 'real-world-evidence-precision-oncology-2026-03-15',
-    title: 'Life-Cycle Real-World Evidence: Bridging Evidentiary Gaps in Precision Oncology',
-    excerpt: 'How real-world evidence can bridge evidentiary gaps in precision oncology.',
-    date: '2026-03-15',
-    author: '21Stable Team',
-    category: 'Real-World Evidence'
-  },
-  {
-    slug: 'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
-    title: 'Machine Learning Predicts Chemotherapy-Induced Myelosuppression in Colorectal Cancer',
-    excerpt: 'New ML model predicts myelosuppression in colorectal cancer patients with 89% accuracy.',
-    date: '2026-03-14',
-    author: '21Stable Team',
-    category: 'Machine Learning'
-  },
-  {
-    slug: 'pan-cancer-prognostic-models-survival-2026-03-13',
-    title: 'Pan-Cancer Prognostic Models: Machine Learning Revolutionizes Survival Analysis',
-    excerpt: 'Large-scale study shows pan-cancer models outperform single-cancer models in survival prediction.',
-    date: '2026-03-13',
-    author: '21Stable Team',
-    category: 'Survival Analysis'
-  },
-  {
-    slug: 'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
-    title: 'Dynamic ctDNA Monitoring: Risk-Adaptive Therapy in Nasopharyngeal Carcinoma',
-    excerpt: 'Phase II trial shows ctDNA-guided therapy improves survival in nasopharyngeal carcinoma.',
-    date: '2026-03-12',
-    author: '21Stable Team',
-    category: 'Biomarker'
-  },
-  {
-    slug: 'adaptives-studiendesign-onkologie-2026-03-11',
-    title: 'Adaptive Trial Designs in Oncology: Efficiency Through Bayesian Methods',
-    excerpt: 'How Bayesian adaptive trial designs improve efficiency in oncology clinical trials.',
-    date: '2026-03-11',
-    author: '21Stable Team',
-    category: 'Clinical Trial Designs'
+    category: 'Klinische Studiendesigns',
+    categoryEn: 'Clinical Trial Designs'
   }
 ]
 
 export default function BlogPage() {
   const { lang, t } = useLang()
-  const currentPosts = lang === 'de' ? allPosts : allPostsEn
   
   // Sort by date descending
-  const sortedPosts = [...currentPosts].sort((a, b) => 
+  const sortedPosts = [...allPosts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 
@@ -179,7 +137,7 @@ export default function BlogPage() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-xs uppercase tracking-wider text-muted bg-background px-2 py-1 rounded">
-                  {post.category}
+                  {lang === 'en' ? post.categoryEn : post.category}
                 </span>
                 <time className="text-sm text-muted">
                   {new Date(post.date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
@@ -192,12 +150,12 @@ export default function BlogPage() {
               
               <h2 className="font-serif text-xl text-foreground mb-3 group-hover:text-muted transition-colors">
                 <Link href={`/blog/${post.slug}`}>
-                  {post.title}
+                  {lang === 'en' ? post.titleEn : post.title}
                 </Link>
               </h2>
               
               <p className="text-muted mb-4 line-clamp-3">
-                {post.excerpt}
+                {lang === 'en' ? post.excerptEn : post.excerpt}
               </p>
               
               <div className="flex items-center justify-between">

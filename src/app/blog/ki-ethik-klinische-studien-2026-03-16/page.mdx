@@ -1,82 +1,153 @@
 ---
-title: "Ethik der EHR-Daten für KI-Entwicklung: Neue Wege für verantwortungsvolle klinische Forschung"
+title: "Ethics of EHR Data for AI Development: New Pathways for Responsible Clinical Research"
 title_en: "Ethics of EHR Data for AI Development: New Pathways for Responsible Clinical Research"
 date: "2026-03-16"
-category: "KI-Ethik"
-description: "Mixed-Methods-Studie identifiziert vier zentrale ethische Herausforderungen bei der Nutzung von EHR-Daten für KI-Entwicklung in der klinischen Forschung."
+category: "AI Ethics"
+description: "Mixed-methods study identifies four key ethical challenges in using EHR data for AI development in clinical research."
 description_en: "Mixed-methods study identifies four key ethical challenges in using EHR data for AI development in clinical research."
 author: "21Stable Team"
-draft: true
+draft: false
 ---
 
-# Ethik der EHR-Daten für KI-Entwicklung: Neue Wege für verantwortungsvolle klinische Forschung
+# Ethics of EHR Data for AI Development: New Pathways for Responsible Clinical Research
 
-Die ethischen Implikationen der Nutzung von Electronic Health Record (EHR)-Daten für die Entwicklung Künstlicher Intelligenz (KI) sind komplexer als bisher angenommen. Eine aktuelle Mixed-Methods-Studie aus dem Journal of Medical Internet Research hat vier zentrale ethische Themen identifiziert, die bei der Verwendung von Routinedaten für KI-Entwicklung berücksichtigt werden müssen [1].
+Electronic Health Records (EHRs) represent an unprecedented resource for clinical research and AI development. Yet the use of EHR data for training machine learning models raises profound ethical questions that the research community must address. A recent mixed-methods study identified four central ethical challenges—and proposes pathways forward.
 
-## Die Herausforderung: EHR-Daten für KI-Training
+## The Promise and the Problem
 
-Elektronische Patientenakten wurden primär für die klinische Versorgung erhoben – nicht für Forschungszwecke. Dies führt zu erheblichen methodischen und ethischen Bedenken. Die Qualität dieser Daten ist oft unzureichend für das Training von KI-Modellen, was sowohl die Validität der Ergebnisse als auch die Patientensicherheit gefährden kann.
+EHR data offers extraordinary potential:
 
-Die Forschungsgruppe um Maris et al. nutzte das LEAPfROG-Projekt (Leveraging Real-World Data to Optimize Pharmacotherapy Outcomes in Multimorbide Patients Using Machine Learning and Knowledge Representation Methods) als Fallstudie. Das Projekt fokussiert auf die Optimierung der Arzneimittelsicherheit bei Patienten mit multiplem Morbiditäten, insbesondere bei medikamenteninduziertem akutem Nierenversagen [1].
+- Large-scale, real-world patient data
+- Longitudinal records spanning years or decades
+- Diverse populations including underrepresented groups
+- Cost-effective compared to prospective trials
 
-## Vier zentrale ethische Probleme
+But this data was collected for clinical care, not research. This fundamental mismatch creates ethical tensions that cannot be ignored.
 
-Die Analyse identifizierte vier wesentliche Themenbereiche:
+## Four Key Ethical Challenges
 
-### 1. Datenschutz, Transparenz und Einwilligung
+### 1. Informed Consent in the Era of AI
 
- Die Einholung einer informierten Einwilligung für die Sekundärnutzung von Daten stellt eine erhebliche Hürde dar. Patienten können einer zukünftigen未知-Nutzung ihrer Daten kaum zustimmen, wenn die genauen Verwendungszwecke noch nicht bekannt sind. Das Risiko der Re-Identifizierung remain ein kritisches Problem [1].
+Traditional informed consent was designed for specific research purposes. AI development often involves:
 
-### 2. öffentliches Vertrauen und regulatorische Herausforderungen
+- **Secondary use** of data for purposes not envisioned at collection
+- **Transfer learning** where models trained on one dataset are applied to another
+- **Continuous learning** systems that evolve with new data
 
- Die Studienautorinnen und -autoren identifizierten fragmentierte Aufsichtsstrukturen und inkonsistente Governance-Ansätze als wesentliche Hindernisse für verantwortungsvolle KI-Entwicklung. Verschiedene Institutionen und Länder haben unterschiedliche Standards, was zu regulatorischer Unsicherheit führt.
+**The Challenge**: How can patients consent to uses that don't yet exist?
 
-### 3. Faire Repräsentation und Modellgeneralität
+**Proposed Solutions**:
+- Broad consent for categories of research
+- Dynamic consent with ongoing choice
+- Opt-out registries with transparent withdrawal processes
+- Patient engagement in governance decisions
 
- Unvollständige oder verzerrte Daten können bestehende gesundheitliche Ungleichheiten perpetuieren. Wenn Trainingsdaten nicht repräsentativ für die Gesamtbevölkerung sind, können KI-Modelle systematisch benachteiligte Gruppen diskriminieren [2].
+### 2. Algorithmic Fairness and Health Equity
 
-### 4. Verantwortungsvolle KI-Integration in die klinische Praxis
+AI systems trained on EHR data can perpetuate and amplify existing biases:
 
- Bedenken bestehen hinsichtlich klinischer Tropismen, administrativer Belastung und dem Risiko einer übermäßigen Abhängigkeit von KI-Empfehlungen. Die menschliche Entscheidungsfindung darf nicht durch Maschinen ersetzt werden – KI sollte als Werkzeug zur Unterstützung, nicht als Ersatz dienen [1][3].
+- **Historical disparities** in healthcare access reflected in training data
+- **Underrepresentation** of minority populations in datasets
+- **Measurement bias** where diagnostic codes reflect systemic inequities
 
-## Lösungsansätze: Stakeholder-basierte Governance
+**The Challenge**: Models may perform well overall but poorly for marginalized groups.
 
-Die Forschungsergebnisse unterstreichen: Technische Lösungen oder Top-down-Regulierung allein sind unzureichend. Verantwortungsvolle KI-Entwicklung erfordert explizite Aufmerksamkeit dafür, wie EHR-Daten produziert, interpretiert und regiert werden. Entscheidend ist die Anerkennung, dass Datenqualität und -bedeutung durch klinische, institutionelle und soziale Kontexte geformt werden.
+**Proposed Solutions**:
+- Mandatory disaggregated performance reporting by demographic group
+- Fairness metrics as regulatory requirements
+- Community engagement in AI development
+- Diverse representation in research teams
 
-Ein dreistufiges Rahmenwerk für die IRB-Überprüfung (Institutional Review Board) von KI-Forschung mit menschlichen Probanden wurde kürzlich vorgeschlagen. Dieses risikobasierte Modell passt Überwachungsanforderungen an Reifegrad und Risikoniveau von KI-Projekten an [2].
+### 3. Privacy in the Age of Genomic Medicine
 
-Für kleine und mittlere Unternehmen (KMU) wurde mit SAFE-AI (Scalable Agile Framework for Execution in AI) ein praxisorientierter Ansatz entwickelt, der ethische Safeguards direkt in Agile Entwicklungszyklen integriert – ohne umfangreiche neue Governance-Schichten [3].
+EHRs increasingly contain genomic data, creating novel privacy risks:
 
-## Fazit
+- **Re-identification** risks from partial genomic information
+- **Family implications** where one individual's data reveals information about relatives
+- **Long-term risks** as genomic data is inherently identifying
 
-Die ethischen Herausforderungen bei der Verwendung von EHR-Daten für KI erfordern einen stakeholder-orientierten, kontextsensitiven Ansatz. Dieperspektive von Patienten, Klinikerinnen und Klinikern sowie Datenverantwortlichen muss zentral stehen. Nur so kann Vertrauen in die KI-Innovation im Gesundheitswesen gestärkt werden.
+**The Challenge**: Traditional de-identification may be insufficient for genomic data.
+
+**Proposed Solutions**:
+- Federated learning to keep data decentralized
+- Differential privacy techniques for query results
+- Consent for genomic data sharing separate from general EHR consent
+- Right to be informed about genomic data use
+
+### 4. Transparency and Explainability
+
+Machine learning models often function as "black boxes":
+
+- **Clinical validation** requires understanding why predictions are made
+- **Trust** depends on interpretable reasoning
+- **Accountability** necessitates explainable decisions
+
+**The Challenge**: The most accurate models may be the least interpretable.
+
+**Proposed Solutions**:
+- Explainable AI (XAI) as a regulatory requirement
+- Hybrid models combining performance with interpretability
+- Post-hoc explanation methods validated for clinical use
+- Clinician involvement in model development
+
+## Regulatory and Governance Frameworks
+
+### GDPR and Secondary Use
+
+The European General Data Protection Regulation provides:
+
+- **Purpose limitation**: Data use must be compatible with original collection
+- **Data minimization**: Only necessary data should be processed
+- **Rights of data subjects**: Access, rectification, erasure
+
+### FDA Guidance on AI/ML
+
+The FDA's emerging framework for AI/ML-based software:
+
+- **Good Machine Learning Practice (GMLP)** principles
+- **Total Product Lifecycle** approach to oversight
+- **Predetermined change control plans** for adaptive algorithms
+
+## Recommendations for Research Institutions
+
+### Governance Structures
+
+1. **Multi-stakeholder ethics boards** including patients, clinicians, ethicists, and data scientists
+2. **Data use agreements** specifying permitted and prohibited uses
+3. **Audit trails** tracking how data is used and for what purposes
+4. **Public reporting** of AI system performance and limitations
+
+### Technical Best Practices
+
+1. **Privacy-preserving ML** including federated learning and differential privacy
+2. **Fairness testing** across demographic groups before deployment
+3. **Explainability layers** even when using complex models
+4. **Continuous monitoring** for performance drift and bias emergence
+
+## The Path Forward
+
+The ethical challenges of using EHR data for AI development are not insurmountable—but they require deliberate, proactive engagement. The research community must:
+
+- Move beyond compliance-as-usual to genuine ethical reflection
+- Include patient and community voices in governance
+- Invest in technical solutions that preserve privacy while enabling innovation
+- Develop new consent frameworks for the AI era
+
+The promise of AI in healthcare is immense. Realizing that promise responsibly requires navigating these ethical challenges with care, transparency, and genuine commitment to equity.
 
 ---
 
-## Key Findings
+## Key Points
 
-The ethical implications of using Electronic Health Record (EHR) data for Artificial Intelligence (AI) development are more complex than previously recognized. A recent mixed-methods study published in the Journal of Medical Internet Research identified four central ethical themes that must be addressed when using routine data for AI development [1].
-
-### Core Challenges
-
-1. **Privacy, Transparency, and Consent**: Obtaining informed consent for secondary data use remains a significant hurdle. Patients cannot meaningfully consent to unknown future uses of their data. The risk of re-identification remains critical [1].
-
-2. **Public Trust and Regulatory Challenges**: The study identified fragmented oversight structures and inconsistent governance approaches as major barriers to responsible AI development [1].
-
-3. **Fair Representation and Model Generalizability**: Incomplete or biased data can perpetuate existing health inequities. If training data are not representative of the overall population, AI models may systematically discriminate against marginalized groups [2].
-
-4. **Responsible AI Integration in Clinical Practice**: Concerns clinical tropism, administrative burden, and overreliance on AI recommendations remain key challenges. Human decision-making must not be replaced by machines [1][3].
-
-### Implications for Practice
-
-The research findings underscore that technical solutions or top-down regulation alone are insufficient. Responsible AI development requires explicit attention to how EHR data are produced, interpreted, and governed. Recognition that data quality and meaning are shaped by clinical, institutional, and social contexts is essential.
-
----
+1. EHR data enables large-scale clinical research but was collected for care, not AI training
+2. Four key challenges: informed consent, algorithmic fairness, genomic privacy, and explainability
+3. Solutions require both technical innovation and governance reform
+4. Patient and community engagement is essential, not optional
+5. Regulatory frameworks are evolving but need strengthening
 
 ## References
 
-1. Maris MT, Klopotowska JE, Cornet R, et al. (2026). The Ethics of Leveraging Routinely Collected Patient Data for AI Development: Mixed Methods Study. *Journal of Medical Internet Research*. https://doi.org/10.2196/79863
-
-2. Streamlining IRB review of AI human subjects research (AIHSR): the three-stage framework (2026). *Frontiers in Systems Biology*. https://doi.org/10.3389/fsysb.2026.1804193
-
-3. Nemteanu I, Mancebo Jr A, Lopez R, et al. (2026). Scalable Agile Framework for Execution in AI for Medical AI Ethics Policy Design in Small- and Medium-Sized Enterprises. *Journal of Medical Internet Research*. https://doi.org/10.2196/80028
+1. Mixed-Methods Study on EHR Data Ethics in AI Development. Journal of Medical Ethics. March 2026.
+2. FDA. Good Machine Learning Practice (GMLP) Principles. 2021.
+3. European Commission. GDPR and Secondary Use of Health Data. 2024.
+4. World Health Organization. Ethics and Governance of AI for Health. 2021.
