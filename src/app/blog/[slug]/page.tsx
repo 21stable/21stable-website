@@ -9,6 +9,9 @@ interface Props {
 
 // All blog post slugs - hardcoded for static export
 const BLOG_SLUGS = [
+  'trialmatchai-ki-patient-trial-matching-2026-03-25',
+  'win-statistics-onkologie-klinische-studien-2026-03-24',
+  'meaningful-explanations-ai-clinical-practice-2026-03-23',
   'ngs-companion-diagnostics-precision-oncology-2026-03-19',
   'statistische-methoden-onkologie-bayes-2026-03-17',
   'ki-ethik-klinische-studien-2026-03-16',
@@ -21,6 +24,9 @@ const BLOG_SLUGS = [
 
 // English titles for metadata
 const TITLES_EN: Record<string, string> = {
+  'trialmatchai-ki-patient-trial-matching-2026-03-25': 'TrialMatchAI: AI-powered Patient-Trial Matching Revolutionizes Clinical Trial Designs',
+  'win-statistics-onkologie-klinische-studien-2026-03-24': 'Win Statistics: An Alternative to Hazard Ratios in Clinical Trials', 
+  'meaningful-explanations-ai-clinical-practice-2026-03-23': 'Beyond Compliance: Making AI Explanations Meaningful for Patients in Clinical Practice',
   'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
   'statistische-methoden-onkologie-bayes-2026-03-17': 'Bayesian Methods: Solving the Paradoxes of Classical Statistical Tests?',
   'ki-ethik-klinische-studien-2026-03-16': 'Ethics of EHR Data for AI Development',
