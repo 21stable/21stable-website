@@ -18,6 +18,39 @@ interface BlogPost {
 // All blog posts - English content, titles switch DE/EN
 const allPosts: BlogPost[] = [
   {
+    slug: 'trialmatchai-ki-patient-trial-matching-2026-03-25',
+    title: 'TrialMatchAI: KI-gestütztes Patient-Trial Matching revolutioniert klinische Studiendesigns',
+    titleEn: 'TrialMatchAI: AI-powered Patient-Trial Matching Revolutionizes Clinical Trial Designs',
+    excerpt: 'Neue KI-Plattform erreicht 92% Trefferquote bei der Zuordnung von Krebspatienten zu klinischen Studien.',
+    excerptEn: 'New AI platform achieves 92% success rate in matching oncology patients to clinical trials.',
+    date: '2026-03-25',
+    author: '21Stable Team',
+    category: 'Klinische Studiendesigns',
+    categoryEn: 'Clinical Trial Designs'
+  },
+  {
+    slug: 'win-statistics-onkologie-klinische-studien-2026-03-24',
+    title: 'Win Statistics: Eine Alternative zu Hazard Ratios in klinischen Studien',
+    titleEn: 'Win Statistics: An Alternative to Hazard Ratios in Clinical Trials',
+    excerpt: 'Neue statistische Methode hierarchisiert composite Endpunkte und bietet intuitive Behandlungseffekte.',
+    excerptEn: 'New statistical method hierarchizes composite endpoints and offers intuitive treatment effects.',
+    date: '2026-03-24',
+    author: '21Stable Team',
+    category: 'Biostatistik',
+    categoryEn: 'Biostatistics'
+  },
+  {
+    slug: 'meaningful-explanations-ai-clinical-practice-2026-03-23',
+    title: 'Beyond Compliance: Making AI Explanations Meaningful for Patients in Clinical Practice',
+    titleEn: 'Beyond Compliance: Making AI Explanations Meaningful for Patients in Clinical Practice',
+    excerpt: 'Der EU AI Act gibt Patienten das Recht auf Erklärungen—aber was ist eine sinnvolle Erklärung in der klinischen Praxis?',
+    excerptEn: 'The EU AI Act gives patients the right to explanations—but what does a meaningful explanation actually look like?',
+    date: '2026-03-23',
+    author: '21Stable Team',
+    category: 'AI Ethics',
+    categoryEn: 'AI Ethics'
+  },
+  {
     slug: 'ngs-companion-diagnostics-precision-oncology-2026-03-19',
     title: 'NGS Companion Diagnostics: Das Rückgrat der Präzisionsonkologie 2026',
     titleEn: 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
