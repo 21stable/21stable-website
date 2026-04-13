@@ -18,6 +18,17 @@ interface BlogPost {
 // All blog posts - English content, titles switch DE/EN
 const allPosts: BlogPost[] = [
   {
+    slug: 'ki-ethik-irb-review-2026-04-13',
+    title: 'Neue Rahmen für die ethische Überwachung von KI-gestützten klinischen Studien',
+    titleEn: 'New Frameworks for Ethical Oversight of AI-Driven Clinical Trials',
+    excerpt: 'Drei neue peer-reviewte Studien zeigen, wie IRBs und Ethikkommissionen die Herausforderungen von KI-gestützter Forschung bewältigen können.',
+    excerptEn: 'Three new peer-reviewed studies show how IRBs and ethics committees can address AI-driven research challenges.',
+    date: '2026-04-13',
+    author: '21Stable Team',
+    category: 'KI-Ethik',
+    categoryEn: 'AI Ethics'
+  },
+  {
     slug: 'trialmatchai-ki-patient-trial-matching-2026-03-25',
     title: 'TrialMatchAI: KI-gestütztes Patient-Trial Matching revolutioniert klinische Studiendesigns',
     titleEn: 'TrialMatchAI: AI-powered Patient-Trial Matching Revolutionizes Clinical Trial Designs',
