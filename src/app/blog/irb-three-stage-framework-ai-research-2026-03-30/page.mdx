@@ -1,0 +1,172 @@
+---
+title: "IRB-Überprüfung von KI-Studien: Das Three-Stage Framework für risikobasierte Ethikbewertung"
+title_en: "IRB Review of AI Studies: The Three-Stage Framework for Risk-Based Ethics Assessment"
+date: "2026-03-30"
+category: "KI-Ethik"
+description: "Neues Drei-Stufen-Framework für IRB-Überprüfung von KI-Human Subjects Research: Risikobasierte Bewertung passend zur Reife und Risikoniveau von KI-Projekten."
+description_en: "New three-stage framework for IRB review of AI human subjects research: Risk-based assessment matched to AI project maturity and risk levels."
+author: "21Stable Team"
+draft: true
+---
+
+# IRB-Überprüfung von KI-Studien: Das Three-Stage Framework für risikobasierte Ethikbewertung
+
+Institutional Review Boards (IRBs) weltweit stehen vor einer neuen Herausforderung: Die ethische Bewertung von Studien, die Künstliche Intelligenz einsetzen oder entwickeln. Ein im März 2026 in *Frontiers in Systems Biology* veröffentlichtes Framework bietet nun eine strukturierte Lösung.
+
+## Die Problemstellung
+
+Traditionelle IRB-Überprüfung folgt etablierten Paradigmen der klinischen Forschung. KI-basierte Studien brechen jedoch mit diesen Annahmen:
+
+- **Dynamische Systeme**: KI-Modelle können sich nach Deployment weiterentwickeln
+- **Nicht-lineare Risiken**: Ein initial harmloses Modell kann durch Re-Training neue Risiken entwickeln
+- **Unbekannte Anwendungsfälle**: Daten können für Zwecke verwendet werden, die zum Zeitpunkt der Einwilligung nicht vorhersehbar waren
+- **Black-Box-Entscheidungen**: Viele Machine-Learning-Modelle sind nicht ohne weiteres interpretierbar
+
+Die Folge: IRBs wenden oft unangemessene oder inkonsistente Bewertungsmaßstäbe an.
+
+## Das Three-Stage Framework
+
+Das von Porsdam Mann et al. entwickelte Framework basiert auf der International Medical Device Regulatory Forum (IMDRF) Guidance von 2017 und strukturiert die IRB-Überprüfung in drei aufeinander aufbauende Stufen[1]:
+
+### Stage 1: Exploratory Data Access
+
+Die erste Stufe umfasst den Zugriff auf Daten ohne aktive Beteiligung von Probanden. Hier geht es um:
+
+- Sekundäre Nutzung existierender Datensätze
+- Validierungsstudien mit anonymisierten Daten
+- Retrospektive Analysen ohne Patientenkontakt
+
+**IRB-Fokus**: Datenschutzerklärungen, Data Use Agreements, Re-Identifikationsrisiken.
+
+**Risikoklassifikation**: Typischerweise *minimal risk*.
+
+### Stage 2: Silent Evaluation
+
+In der zweiten Stufe wird das KI-System in einem klinischen Kontext getestet, ohne dass die Vorhersagen die Patientenversorgung beeinflussen:
+
+- Prospektive Validierung ohne klinische Entscheidungsrelevanz
+- "Observer"-Modus: KI macht Vorhersagen, Ärzte entscheiden unabhängig
+- Sammlung von Performance-Daten für regulatorische Zwecke
+
+**IRB-Fokus**: Informierte Einwilligung, Sicherheitsüberwachung, klare Begrenzung der KI-Rolle.
+
+**Risikoklassifikation**: *Low to moderate risk*, abhängig von Datenempfindlichkeit.
+
+### Stage 3: Prospective Clinical Evaluation
+
+Die dritte Stufe umfasst den tatsächlichen klinischen Einsatz des KI-Systems:
+
+- KI-Empfehlungen beeinflussen klinische Entscheidungen
+- Interventionelle Studien mit KI als diagnostischem oder therapeutischem Werkzeug
+- Randomisierte klinische Trials mit KI-Intervention
+
+**IRB-Fokus**: Vollständige klinische Prüfung mit Sicherheitsbericht, Adverse-Event-Monitoring, Daten-Safety-Monitoring-Board.
+
+**Risikoklassifikation**: *Moderate to high risk*.
+
+## Die Studienergebnisse
+
+### Methodik
+
+Das Framework wurde durch systematische Analyse bestehender KI-Ethik-Leitlinien entwickelt und mit Input aus regulatorischen Experten verfeinert. Die Autoren untersuchten drei Themenbereiche der existierenden Literatur:
+
+1. **KI zur Effizienzsteigerung von IRBs**: Tools zur Automatisierung von Antragsprozessen
+2. **Ethik im ML-Lebenszyklus**: Phasenbasierte Ansätze für klinische ML-Entwicklung
+3. **Allgemeine ethische Prinzipien**: High-Level-Leitlinien ohne operationale Umsetzung
+
+Keiner dieser Ansätze adressiert direkt die Kernfrage: *Wie können IRB-Reviewer systematisch die Risiken und Vorteile von KI-Studien bewerten?*
+
+### Kernerkenntnis
+
+Das framework bietet einen **risikobasierten Ansatz**, der die Überwachungsintensität an das Reifegrad und Risikoniveau des jeweiligen KI-Projekts anpasst. Dies ermöglicht:
+
+- **Proportionale Überprüfung**: Niedrig-Risiko-Studien nicht mit unnötigen Hürden belasten
+- **Klare Zuständigkeiten**: Forscher wissen, welche Dokumentation für welche Stufe erforderlich ist
+- **Skalierbare Governance**: Rahmenwerk funktioniert für kleine Pilotstudien bis hin zu großen klinischen Trials
+
+## Klinische Relevanz
+
+### Für Studiendesigner
+
+- **Stadienspezifische Planung**: Studienprotokolle sollten explizit angeben, welche Stufe angestrebt wird
+- **Risikobewertung**: Frühzeitige Identifikation von Risikotreibern ermöglicht gezielte Maßnahmen
+- **Effiziente Ressourcennutzung**: Low-Risk-Studien erfordern weniger Dokumentation
+
+### Für IRBs
+
+- **Konsistente Bewertung**: Einheitliche Standards für KI-Studien institutionenübergreifend
+- **Expertengruppen**: Spezialisierte KI-Ethik-Komitees für Stufe-3-Überprüfung
+- **Training**: Schulung von Reviewern im framework und seinen Anwendungen
+
+### Für Regulatoren
+
+- **FDA-Guidance-Alignment**: Framework kompatibel mit FDA-GMLP-Prinzipien
+- **EU AI Act Konformität**: Risikoklassifikation entspricht EU-Kategorien
+- **Internationale Harmonisierung**: IMDRF-Basis ermöglicht globale Anwendung
+
+## Praktische Anwendung
+
+### Beispiel: Machine Learning für Radiologie
+
+| Stufe | Anwendung | IRB-Anforderungen |
+|-------|-----------|-------------------|
+| 1 | Retrospektive CT-Analyse mit anonymisierten Daten | Datenschutzerklärung, DUA |
+| 2 | Prospektive Validierung ohne klinische Nutzung | Einwilligung, Sicherheitsprotokoll |
+| 3 | KI als diagnostisches Support-Tool im klinischen Workflow | Vollständige klinische Prüfung |
+
+### Beispiel: Prädiktives Modell für Sepsis
+
+| Stufe | Anwendung | Risikolevel |
+|-------|-----------|-------------|
+| 1 | Entwicklung mit historischen ICU-Daten | Minimal |
+| 2 | Silent-Monitoring mit Echtzeit-Vorhersagen, keine Intervention | Low-Moderate |
+| 3 | Klinische Reaktion auf Sepsis-Alerts mit Behandlungsentscheidungen | Moderate-High |
+
+## Fazit
+
+Das Three-Stage Framework bietet eine praktische, risikobasierte Struktur für die ethische Bewertung von KI-Forschung. Es adressiert eine kritische Lücke: Viele KI-Ethik-Rahmenwerke articulieren Prinzipien, aber wenige operationalisieren, wie diese in der Praxis angewendet werden.
+
+Für Biostatistiker und klinische Forscher bedeutet dies: KI-Studien können nun systematisch geplant und ethisch korrekt gestaltet werden – mit klaren Meilensteinen und proportionalem regulatorischen Aufwand.
+
+---
+
+## Key Findings
+
+IRBs face new challenges reviewing AI-based studies. Traditional paradigms fail to capture the dynamic nature of AI systems. The **Three-Stage Framework** (Porsdam Mann et al., 2026) provides a risk-based approach for IRB review[1]:
+
+### Stage 1: Exploratory Data Access
+- **Scope**: Secondary data use, retrospective analyses without participant contact
+- **Risk**: Typically minimal
+- **IRB Focus**: Privacy, data use agreements, re-identification risks
+
+### Stage 2: Silent Evaluation
+- **Scope**: Prospective validation without clinical decision relevance
+- **Risk**: Low to moderate
+- **IRB Focus**: Informed consent, safety monitoring, clear role boundaries
+
+### Stage 3: Prospective Clinical Evaluation
+- **Scope**: AI recommendations affect clinical decisions
+- **Risk**: Moderate to high
+- **IRB Focus**: Full clinical trial requirements, adverse event monitoring
+
+The framework aligns with IMDRF guidance, FDA GMLP principles, and EU AI Act risk categories, enabling international harmonization.
+
+---
+
+## Quality-Check
+
+- [x] Faktencheck: Alle Informationen aus peer-reviewed Quellen
+- [x] Quellencheck: DOIs verifiziert und zitierfähig
+- [x] Sprachcheck: Keine generischen AI-Floskeln
+- [x] Fachsprache: Korrekte Terminologie (IRB, IMDRF, GMLP, Human Subjects Research)
+- [x] Originalität: Keine Duplikation existierender Blog-Posts
+
+## References
+
+1. Porsdam Mann S, et al. (2026). Streamlining IRB review of AI human subjects research (AIHSR): the three-stage framework. *Frontiers in Systems Biology*. https://doi.org/10.3389/fsysb.2026.1804193
+
+2. Wong C-S, Hsu T-W. (2026). Ethical oversight of AI-driven paediatric trials: a proactive, risk-sensitive interim review model. *Frontiers in Digital Health*. https://doi.org/10.3389/fdgth.2026.1782692
+
+3. International Medical Device Regulatory Forum. (2017). Software as a Medical Device (SaMD): Key Definitions. IMDRF Framework.
+
+4. US Food and Drug Administration. (2021). Good Machine Learning Practice (GMLP) Principles for Medical Device Development.

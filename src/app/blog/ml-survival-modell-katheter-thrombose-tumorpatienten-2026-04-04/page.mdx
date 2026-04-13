@@ -1,0 +1,133 @@
+---
+title: "SM-CRT: Machine-Learning-Survivalmodell zur personalisierten Vorhersage katheterassoziierter Thrombosen bei Tumorpatienten"
+title_en: "SM-CRT: Machine Learning Survival Model for Personalized Prediction of Catheter-Related Thrombosis in Cancer Patients"
+date: "2026-04-04"
+category: "Maschinelles Lernen"
+tags: ["machine-learning", "survival-analysis", "thrombosis", "oncology", "prediction-model", "zentralvenenkatheter"]
+description: "Multizentrisches ML-Survivalmodell (SM-CRT) sagt katheterassoziierte Thrombosen bei über 30.000 Tumorpatienten vorher – mit zeitabhängiger Risikostratifizierung und personalisierter Thromboseprophylaxe."
+description_en: "Multicentre ML survival model (SM-CRT) predicts catheter-related thrombosis in over 30,000 cancer patients with time-dependent risk stratification and personalized thrombosis prophylaxis."
+author: "21Stable Team"
+draft: true
+---
+
+# SM-CRT: Machine-Learning-Survivalmodell zur personalisierten Vorhersage katheterassoziierter Thrombosen bei Tumorpatienten
+
+Zentralvenenkatheter sind in der onkologischen Versorgung allgegenwärtig — für Chemotherapie, parenterale Ernährung und supportive Therapien. Doch sie bringen ein erhebliches Risiko mit sich: **katheterassoziierte Thrombosen** (Catheter-Related Thrombosis, CRT). Eine aktuelle Studie in *Communications Medicine* (Nature Portfolio) präsentiert nun **SM-CRT**, ein maschinelles Lernmodell zur zeitabhängigen Vorhersage dieses Risikos bei über **30.000 Tumorpatienten**.
+
+## Das Problem
+
+Katheterassozierte Thrombosen sind eine der häufigsten Komplikationen bei Krebspatienten mit zentralvenösen Zugangssystemen. Die Konsequenzen reichen von Katheterverlust über Therapieunterbrechungen bis hin zu lebensbedrohlichen Lungenembolien.
+
+Bestehende Risikoscores — Khorana-Score, Protecht-Score, Vienna-Modell — adressieren das **allgemeine** thromboembolische Risiko bei Krebs, nicht aber das katheterspezifische. Zudem sind sie statisch: Sie liefern einen einzelnen Risikowert, nicht aber die Information, **wann** das Risiko im Behandlungsverlauf am höchsten ist.
+
+Genau hier setzt SM-CRT an.
+
+## Kernerkenntnis
+
+Das SM-CRT-Modell (**S**urvival **M**odel for **C**atheter-**R**elated **T**hrombosis) wurde von Ge et al. entwickelt und multizentrisch an **30.947 Krebspatienten** validiert. Die zentralen Ergebnisse:
+
+- **Multizentrisches Design**: Daten aus mehreren chinesischen Universitätskliniken, interne und externe Validierungskohorten
+- **Survival-Modell-Ansatz**: Anders als klassische Klassifikationsmodelle berücksichtigt SM-CRT die **Zeit bis zum Ereignis** — und kann damit identifizieren, in welchen Behandlungsphasen das CRT-Risiko am höchsten ist
+- **Zeitabhängige Risikostratifizierung**: Das Modell unterscheidet Hochrisiko-Patienten **und** Hochrisiko-Zeitfenster — eine Information, die für die klinische Entscheidungsfindung essenziell ist
+
+Die Autoren stellen das trainierte Modell öffentlich auf [GitHub](https://github.com/Ge526874/SM-CRT) zur Verfügung.
+
+## Forschungsmethodik
+
+### Studiendesign
+
+| Parameter | Wert |
+|-----------|------|
+| Patienten | **30.947** onkologische Patienten mit zentralvenösen Kathetern |
+| Design | Retrospektive multizentrische Kohortenstudie |
+| Modelltyp | Machine-Learning-basiertes Survival-Modell (zeitabhängige Ereignisanalyse) |
+| Validierung | Interne und externe Validierungskohorten |
+| Publikation | *Communications Medicine* (Nature Portfolio), 2026 |
+| DOI | [10.1038/s43856-026-01561-2](https://doi.org/10.1038/s43856-026-01561-2) |
+
+### Methodische Stärken
+
+Der Survival-Modell-Ansatz ist ein entscheidender methodischer Vorteil gegenüber klassischen binären Prädiktionsmodellen. Anstatt nur vorherzusagen, **ob** ein Ereignis eintritt, modelliert SM-CRT, **wann** es wahrscheinlich eintritt. Das ermöglicht:
+
+1. **Personalisierte Thromboseprophylaxe**: Antikoagulation nur in den identifizierten Hochrisiko-Zeitfenstern — nicht pauschal über die gesamte Katheterliegedauer
+2. **Ressourcenoptimierung**: Gezielte Duplexsonographie bei Hochrisikopatienten zu den kritischen Zeitpunkten
+3. **Reduzierte Blutungskomplikationen**: Vermeidung unnötiger Prophylaxe in Niedrigrisiko-Phasen
+
+Die Modellentwicklung nutzte etablierte statistische Software, insbesondere R-Pakete für ereigniszeitbasierte Analysen (*survex*, *distr6*).
+
+## Klinische Relevanz
+
+Für die onkologische Praxis ist SM-CRT aus drei Gründen bedeutsam:
+
+**Erstens**: Die Größe der Kohorte (fast 31.000 Patienten) gibt dem Modell eine statistische Power, die in diesem Bereich selten ist. Die meisten bisherigen CRT-Prädiktionsmodelle basieren auf Kohorten von wenigen hundert Patienten.
+
+**Zweitens**: Die zeitabhängige Risikostratifizierung ist klinisch hochrelevant. Ein Modell, das nicht nur sagt "dieser Patient hat hohes Risiko", sondern auch "das Risiko ist in den ersten 14 Tagen nach Katheteranlage am höchsten", ermöglicht deutlich spezifischere Interventionen.
+
+**Drittens**: Die öffentliche Verfügbarkeit des trainierten Modells auf GitHub erleichtert die externe Validierung und den potenziellen Einsatz in anderen Versorgungskontexten.
+
+### Limitationen
+
+- Die Kohorte stammt ausschließlich von chinesischen Zentren — eine externe Validierung in europäischen und nordamerikanischen Populationen steht aus
+- Retrospektives Design: Prospektive Validierung in klinischen Studien wäre der nächste Schritt
+- Die custom Code-Pipelines konnten wegen Patientendatenschutzbeschränkungen nicht vollständig veröffentlicht werden
+
+## Fazit
+
+SM-CRT demonstriert eindrucksvoll, wie maschinelle Lernverfahren — kombiniert mit Survival-Modellierung — die Prädiktionsmedizin in der Onkologie voranbringen können. Der Schritt von der binären Klassifikation ("Risiko ja/nein") zur **zeitabhängigen Risikostratifizierung** ist nicht nur methodisch elegant, sondern hat direkte klinische Konsequenzen: gezieltere Prophylaxe, weniger Nebenwirkungen, bessere Patientenversorgung.
+
+Die nächste Etappe wird die prospektive Validierung in multizentrischen, internationalen Kohorten sein — und letztlich die Integration solcher Modelle in klinische Workflows.
+
+---
+
+## Key Findings
+
+Central venous catheters are ubiquitous in oncology care — for chemotherapy, parenteral nutrition, and supportive treatments. Yet they carry a significant risk: **catheter-related thrombosis** (CRT). A new study published in *Communications Medicine* (Nature Portfolio) presents **SM-CRT**, a machine learning survival model for time-dependent CRT risk prediction in over **30,000 cancer patients**.
+
+### The Problem
+
+Existing risk scores — Khorana, Protecht, Vienna — address **general** cancer-associated thromboembolism risk, not catheter-specific risk. Moreover, they are static: they produce a single risk value, but cannot tell clinicians **when** during the treatment course the risk is highest.
+
+SM-CRT fills this gap by combining machine learning with survival analysis methodology.
+
+### Core Findings
+
+The model was developed and validated across **30,947 oncology patients** with central venous catheters in a multicentre retrospective cohort study. Key results:
+
+- **Survival model approach**: Unlike binary classification models, SM-CRT models the **time to event** — identifying both high-risk patients **and** high-risk time windows
+- **Time-dependent risk stratification**: Enables personalized thromboprophylaxis during identified high-risk periods rather than continuous blanket anticoagulation
+- **Multicentre validation**: Both internal and external validation cohorts from multiple Chinese university hospitals
+- **Open model availability**: Trained model publicly accessible on [GitHub](https://github.com/Ge526874/SM-CRT)
+
+### Methodological Strengths
+
+The survival-analysis approach means the model can answer: *"When is this patient's CRT risk highest?"* — not just *"Is this patient at risk?"* This distinction has direct clinical implications:
+
+1. **Targeted thromboprophylaxis**: Anticoagulation only during identified high-risk time windows
+2. **Focused ultrasound screening**: Duplex sonography at critical time points for high-risk patients
+3. **Reduced bleeding complications**: Avoiding unnecessary prophylaxis during low-risk periods
+
+### Limitations
+
+- Cohort restricted to Chinese centres — external validation in European and North American populations is needed
+- Retrospective design — prospective clinical trial validation is the logical next step
+- Custom preprocessing pipelines could not be fully released due to patient data governance restrictions
+
+### What This Means
+
+SM-CRT demonstrates how machine learning combined with survival modelling can advance predictive medicine in oncology. Moving from binary classification ("risk yes/no") to **time-dependent risk stratification** is not just methodologically elegant — it has direct clinical consequences: more targeted prophylaxis, fewer adverse events, better patient outcomes.
+
+The next milestone will be prospective international validation and, ultimately, integration into clinical workflows.
+
+---
+
+## References
+
+1. Ge et al. (2026). Machine learning survival model for personalised prevention of catheter-related thrombosis in tumour patients. *Communications Medicine*. https://doi.org/10.1038/s43856-026-01561-2
+
+2. Khorana AA, Kuderer NM, Culakova E, Lyman GH, Francis CW. (2008). Development and validation of a predictive model for chemotherapy-associated thrombosis. *Blood*, 111: 4902–4907. https://doi.org/10.1182/blood-2007-10-116327
+
+3. Guntupalli SR, Spinosa D, Wethington S, Eskander R, Khorana AA. (2023). Prevention of venous thromboembolism in patients with cancer. *BMJ*, 381: e072715. https://doi.org/10.1136/bmj-2022-072715
+
+4. Sousa B et al. (2015). Central venous access in oncology: ESMO Clinical Practice Guidelines. *Annals of Oncology*, 26: v152–v168. https://doi.org/10.1093/annonc/mdv189
+
+5. Schiffer CA et al. (2013). Central venous catheter care for the patient with cancer: ASCO clinical practice guideline. *Journal of Clinical Oncology*, 31: 1357–1370. https://doi.org/10.1200/JCO.2012.48.0214
