@@ -18,8 +18,6 @@ export default function Header() {
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
-  if (!mounted) return null
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-50">
@@ -56,9 +54,9 @@ export default function Header() {
             <button
               onClick={toggleTheme}
               className="p-2 text-muted hover:text-foreground hover:bg-surface rounded-lg transition-all duration-200"
-              aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              aria-label="Toggle theme"
             >
-              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+              {!mounted ? <span className="w-4 h-4 block" /> : theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
             </button>
             
             {/* Language Switcher */}
@@ -145,9 +143,9 @@ export default function Header() {
                     <button
                       onClick={toggleTheme}
                       className="p-2 text-muted hover:text-foreground hover:bg-surface rounded-lg transition-all duration-200"
-                      aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                      aria-label="Switch theme"
                     >
-                      {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                      {!mounted ? <span className="w-5 h-5 block" /> : theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>

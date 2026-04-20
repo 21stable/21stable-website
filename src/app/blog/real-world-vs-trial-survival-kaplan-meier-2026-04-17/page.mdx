@@ -1,0 +1,89 @@
+---
+title: "Kaplan-Meier in der Realität: Real-World-Daten vs. klinische Studien"
+title_en: "Kaplan-Meier in Reality: Real-World Data vs. Clinical Trials"
+date: "2026-04-17"
+category: "Überlebensanalyse"
+description: "Neue Nature-Studie vergleicht Kaplan-Meier-Schätzungen aus MONARCH-2 Trial mit NHS Real-World-Daten – und zeigt dramatische Unterschiede."
+description_en: "New Nature study compares Kaplan-Meier estimates from MONARCH-2 trial with NHS real-world data – revealing dramatic differences."
+author: "21Stable Team"
+draft: true
+---
+
+# Kaplan-Meier in der Realität: Wenn klinische Studien die Realität nicht abbilden
+
+Kaplan-Meier-Kurven sind das Arbeitspferd der onkologischen Überlebensanalyse. Doch was passiert, wenn die kontrollierten Bedingungen einer Phase-III-Studie auf die reale klinische Praxis treffen? Eine neue Studie im *British Journal of Cancer* liefert seltene Einblicke[1].
+
+## Die Kernerkenntnis: 21 Monate Unterschied
+
+Die englische NHS Real-World-Kohorte (N=876) erreichte ein medianes Gesamtüberleben von **25,9 Monaten** [95% CI: 23,7–28,4]. Die MONARCH-2-Studie? **46,7 Monate**[1].
+
+Das sind **20,9 Monate Differenz** – fast zwei Jahre. Und das für denselben Wirkstoff (Abemaciclib + Fulvestrant), dieselbe Indikation (HR+/HER2− metastasiertes Mammakarzinom), denselben Behandlungsstandard.
+
+## Die Methode: Kaplan-Meier in zwei Welten
+
+Die Studie nutzte die britischen **SACT** (Systemic Anti-Cancer Therapy) und **Blueteq** Datenbanken – einzigartige populationbasierte Ressourcen mit Patient-Level-Daten[1].
+
+**Endpunkte:**
+- **OS (Overall Survival):** Von erstem Treatment bis Tod oder Zensur
+- **TFS (Treatment-Free Survival):** Proxy für PFS – Zeit bis zur nächsten Therapielinie
+- **CFS (Chemotherapy-Free Survival):** Zeit bis zur Chemotherapie
+
+Alle drei Endpunkte wurden mittels **Kaplan-Meier-Methode** berechnet, mit 95% Konfidenzintervallen nach Greenwood[1].
+
+**Follow-up:** Minimum 51,3 Monate – exzellent für Real-World-Daten.
+
+## Klinische Relevanz: Selection Bias ist real
+
+Warum so drastisch? Die Autoren nennen die Gründe:
+
+| Faktor | Clinical Trial | Real World |
+|--------|---------------|------------|
+| Patientenpopulation | Hochselektiert | Alle Patienten |
+| Comorbidities | Stark limitiert | Unlimitiert |
+| Performance Status | Meist ECOG 0-1 | Heterogen (PS 2+ vorhanden) |
+| Vorbehandlungen | Definiert | Variabel |
+| Follow-up | Protokoll-gesteuert | Real-World-Constraints |
+
+Die Real-World-Kohorte enthielt Patienten mit **ECOG PS 2+** und unbekanntem Performance Status – Populationen, die in MONARCH-2 ausgeschlossen waren[1].
+
+**Behandlungspfade:** 60% der Real-World-Patienten erhielten eine Folgetherapie (vs. 76% in MONARCH-2). Von diesen erhielten **64% Chemotherapie** als nächste Linie – vs. 45% im Trial[1].
+
+## Fazit für die Praxis
+
+Kaplan-Meier-Schätzungen aus klinischen Studien sind keine Prognose für den durchschnittlichen Patienten. Sie sind Obergrenzen unter idealen Bedingungen.
+
+**Takeaways:**
+1. Real-World-Daten ergänzen Trials – sie zeigen, was wirklich passiert
+2. Selection Bias ist nicht nur statistisch, sondern klinisch relevant
+3. NHS-Linkage-Systeme (SACT/Blueteq) ermöglichen populationbasierte Kaplan-Meier
+4. TFS als PFS-Proxy validiert sich gut für Vergleiche
+
+Für Statistiker: Die Kaplan-Meier-Methode ist robust – aber ihre Ergebnisse hängen von den Daten ab, die hineingehen. "Garbage in, garbage out" gilt auch für Survival-Kurven.
+
+---
+
+## Key Findings
+
+A new study published in the *British Journal of Cancer* compared Kaplan-Meier estimates from the MONARCH-2 Phase III trial with real-world NHS data from England[1].
+
+**The gap is dramatic:**
+- Median OS: **25.9 months** (real-world, N=876) vs. **46.7 months** (MONARCH-2)
+- Median TFS: **11.6 months** vs. **16.9 months** PFS
+- **20.9 months difference** in overall survival
+
+The study used the SACT (Systemic Anti-Cancer Therapy) dataset linked to Blueteq High Cost Drug System – unique population-based resources tracking all cancer drug treatments in NHS England[1].
+
+**Why the difference?** Real-world patients are less selected:
+- ECOG PS 2+ patients (excluded from trials)
+- Variable comorbidities and treatment histories
+- Less intensive follow-up protocols
+
+**Clinical implication:** Kaplan-Meier curves from trials represent upper bounds under ideal conditions, not typical patient outcomes. Real-world evidence is essential for understanding true clinical effectiveness.
+
+The study demonstrates that TFS (Treatment-Free Survival) serves as a valid real-world proxy for PFS when comparing trial and routine practice data.
+
+---
+
+## References
+
+1. Anderson, J., Lawton, S., Thackray, K. et al. (2026). Abemaciclib plus fulvestrant in treating hormone-receptor positive, HER2-negative advanced breast cancer—comparing real-world outcomes in England to the MONARCH-2 trial. *British Journal of Cancer*. https://doi.org/10.1038/s41416-026-03396-z

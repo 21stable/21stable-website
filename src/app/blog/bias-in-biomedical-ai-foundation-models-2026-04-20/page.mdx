@@ -1,0 +1,76 @@
+---
+title: "Versteckte Vorurteile: Wie KI-Foundation-Models Gesundheitsungleichheiten verstärken"
+title_en: "Hidden Biases: How Foundation Models Perpetuate Healthcare Disparities"
+date: "2026-04-20"
+category: "KI-Ethik"
+description: "Neue Studie zeigt: Nur 2,7% der Omics-Publikationen berichten Ethnizität – KI-Models lernen verzerrte Daten und perpetuieren Ungleichheiten."
+description_en: "New study reveals: Only 2.7% of omics publications report ethnicity – AI models learn biased data and perpetuate disparities."
+author: "21Stable Team"
+draft: false
+---
+
+# Versteckte Vorurteile: Wie KI-Foundation-Models Gesundheitsungleichheiten verstärken
+
+Künstliche Intelligenz revolutioniert die biomedizinische Forschung. Foundation Models – große, vortrainierte Modelle, die für zahlreiche nachgelagerte Aufgaben eingesetzt werden – versprechen beschleunigte Arzneimittelentwicklung und präzisere Diagnostik. Doch eine aktuelle Perspektive aus dem April 2026 zeigt eine beunruhigende Realität: **Die Trainingsdaten dieser Modelle sind systematisch verzerrt**, und diese Verzerrungen drohen, bestehende Gesundheitsungleichheiten zu verstärken statt zu mildern.[1]
+
+## Das Kernproblem: Demografische Daten werden ignoriert
+
+Ein Forschungsteam um Michal Rosen-Zvi (IBM Research) analysierte 4.719 PubMed-indexierte Omics-Publikationen aus den Jahren 2015 bis 2024. Das Ergebnis ist alarmierend: **Nur 2,7% berichten Informationen zu Abstammung oder Ethnizität**. Der zeitliche Trend zeigt kaum Verbesserung – von 2,0% (2015–2019) auf lediglich 3,7% (2023–2024).[1]
+
+Das Problem beginnt nicht erst bei der klinischen Anwendung, sondern **viel früher in der Forschungspipeline**. Wenn demografische Informationen gar nicht erst erhoben oder dokumentiert werden, können KI-Modelle keine repräsentativen Muster lernen.
+
+## Eurozentrische Daten dominieren
+
+Die Konsequenz ist sichtbar in großen Datensätzen wie CellxGene und GEO: **Daten europäischer Abstammung dominieren massiv**. In Genomweiten Assoziationsstudien (GWAS) machen Personen europäischer Abstammung über 78% der Teilnehmer aus, obwohl sie nur 16% der Weltbevölkerung repräsentieren.[1,2]
+
+Polygene Risikoscores (PRS), die auf diesen Daten basieren, sind für nicht-europäische Populationen **2- bis 4,5-fach weniger präzise**. Das bedeutet: KI-gestützte Risikoprädiktion funktioniert für Minderheiten schlechter – ein direkter Pfad zu verschlechterten Gesundheitsoutcomes.
+
+## Foundation Models als Verstärker
+
+Biomedizinische Foundation Models werden zentral für Entdeckungsprozesse – vom „Generalist Medical AI" bis zum „Virtual Cell"-Paradigma. Diese Modelle werden auf großen Datensätzen vortrainiert und dann für zahlreiche nachgelagerte Aufgaben wiederverwendet. **Verzerrungen im Training werden somit multipliziert** und breiten sich über die gesamte Anwendungsbreite aus.[1]
+
+Regulatorische Interventionen allein können dieses Problem nicht lösen. Wenn Bias bereits in der Datenerfassung eingeführt wurde, können nachgelagerte Korrekturen die Kaskade nicht vollständig umkehren.
+
+## Lösungsansatz: Drei Prinzipien
+
+Rosen-Zvi et al. schlagen drei Grundprinzipien vor:
+
+1. **Provenance** – Nachvollziehbare Herkunft aller Trainingsdaten
+2. **Openness** – Transparente Dokumentation der Datendemografie
+3. **Evaluation Transparency** – Offene Bewertung der Modellleistung nach Populationen
+
+Die FDA hat im Januar 2025 gemeinsam mit der EMA **10 Guiding Principles for Good AI Practice in Drug Development** veröffentlicht, darunter „Data governance and documentation" und „Risk-based performance assessment".[3]
+
+## Klinische Relevanz
+
+Für Biostatistiker und klinische Forscher bedeutet dies: **Prüfen Sie die Demografie Ihrer Trainingsdaten**. Wenn Ihre Studiendaten primär europäische Teilnehmer enthalten, werden Ihre KI-Modelle für andere Populationen schlechter funktionieren. Berücksichtigen Sie dies bei der Interpretation von Predictive-Biomarker-Studien und bei der Planung neuer klinischer Trials.
+
+## Fazit
+
+KI in der biomedizinischen Forschung ist ein mächtiges Werkzeug – aber nur so gut wie die Daten, auf denen sie trainiert wurde. Die aktuelle Datensituation in der Omics-Forschung ist inakzeptabel einseitig. Ohne systematische Verbesserung der Datenprovenienz und -diversität riskieren wir, dass Foundation Models bestehende Gesundheitsdisparitäten nicht mildern, sondern **aktiv verstärken**. Die Verantwortung liegt bei Forschern, Sponsoren und Regulierern – jetzt handeln, bevor die verzerrten Modelle den klinischen Alltag dominieren.
+
+---
+
+## Key Findings
+
+Artificial intelligence is revolutionizing biomedical research, but foundation models trained on systematically biased data risk perpetuating healthcare disparities. A perspective published in April 2026 by Rosen-Zvi et al. reveals critical gaps in demographic reporting that could undermine AI fairness.[1]
+
+**The core finding:** Only 2.7% of PubMed-indexed omics publications (2015–2024) report ancestry or ethnicity information. The trend shows minimal improvement – from 2.0% (2015–2019) to just 3.7% (2023–2024). This means AI models are learning from datasets where demographic provenance is essentially undocumented.
+
+**The consequence:** European-ancestry data accounts for over 78% of GWAS participants despite representing only 16% of the global population.[1,2] Polygenic risk scores trained on such data are 2- to 4.5-fold less accurate for non-European populations – directly translating to worse health outcomes for minorities.
+
+**The amplification effect:** Foundation models pretrained on these biased datasets propagate distortions across multiple downstream applications. Regulatory interventions cannot fully reverse cascading inequities once embedded in model weights.
+
+**Proposed framework:** Three foundational principles – Provenance, Openness, and Evaluation Transparency – aim to improve equity in biomedical AI. The FDA-EMA collaboration has established 10 Guiding Principles for Good AI Practice, emphasizing data governance and risk-based assessment.[3]
+
+For clinical researchers and biostatisticians: **Interrogate your training data demographics**. If your models train primarily on European-ancestry data, expect degraded performance for other populations. Consider this when interpreting predictive biomarker studies and designing clinical trials.
+
+---
+
+## References
+
+1. Rosen-Zvi M, Kan-Tor Y, Danziger M, et al. (2026). Perspective on Bias in Biomedical AI: Preventing Downstream Healthcare Disparities. arXiv:2604.14514. https://arxiv.org/abs/2604.14514
+
+2. Martin AR, Kanai M, Kamatani Y, et al. (2019). Clinical use of current polygenic risk scores may exacerbate health disparities. Nat Genet 51, 584–591. https://doi.org/10.1038/s41588-019-0379-x
+
+3. U.S. FDA & EMA (2025). Guiding Principles of Good AI Practice in Drug Development. https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development

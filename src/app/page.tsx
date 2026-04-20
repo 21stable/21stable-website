@@ -27,7 +27,7 @@ export default function Home() {
                 {t('hero.tagline')}
               </p>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] mb-6 sm:mb-8 tracking-tight">
-                {t('hero.title')}
+                Klinische Entwicklung durch KI-gestützte Biostatistik neu denken
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-muted leading-relaxed mb-8 sm:mb-12 max-w-xl">
                 {t('hero.desc')}
