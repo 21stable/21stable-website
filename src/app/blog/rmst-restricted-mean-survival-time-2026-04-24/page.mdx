@@ -1,0 +1,131 @@
+---
+title: "RMST: Wenn Hazard Ratios nicht ausreichen"
+title_en: "RMST: When Hazard Ratios Fall Short"
+date: "2026-04-24"
+category: "Überlebensanalyse"
+description: "Restricted Mean Survival Time (RMST) als robuste Alternative zu Hazard Ratios – warum sie bei Immuntherapien zunehmend wichtig wird."
+description_en: "Restricted Mean Survival Time (RMST) as a robust alternative to Hazard Ratios – why it matters for immunotherapy trials."
+author: "21Stable Team"
+draft: true
+---
+
+# RMST: Wenn Hazard Ratios nicht ausreichen
+
+Die Kaplan-Meier-Kurve ist das Arbeitspferd der onkologischen Forschung. Doch was passiert, wenn die Proportional Hazards (PH)-Annahme verletzt ist? Genau hier wird die *Restricted Mean Survival Time* (RMST) zur entscheidenden Methode.
+
+## Das Problem mit Hazard Ratios
+
+Hazard Ratios (HR) sind der Goldstandard für Survival-Analysen – aber sie setzen voraus, dass das Risiko über die Zeit proportional bleibt. Bei Immun-Checkpoint-Inhibitoren (ICI) ist das oft **nicht** der Fall.
+
+Immuntherapien zeigen typischerweise einen *delayed treatment effect*: Der Überlebensvorteil stellt sich erst nach einiger Zeit ein. Die Überlebenskurven verlaufen nicht parallel, sondern divergieren später. Eine HR in einem solchen Szenario zu interpretieren, ist statistisch problematisch – und potenziell irreführend.
+
+## RMST: Die intuitive Alternative
+
+Die RMST gibt die **durchschnittliche ereignisfreie Zeit über einen definierten Zeitraum** an. Statt einer abstrakten HR von 0,68 sagt uns die RMST: *"Patienten mit sequentieller Therapie leben im Schnitt 2,3 Monate länger innerhalb von 3 Jahren."*
+
+Das ist für Kliniker und Patienten **direkt verständlich**.
+
+### Beispiel: OCEANUS-Studie
+
+Die OCEANUS-Kohortenstudie (Zhou et al., JAMA Oncology, April 2026) verglich sequentielle vs. konkurrierende Radiotherapie mit Immun-Checkpoint-Inhibitoren bei fortgeschrittenem NSCLC[1].
+
+**Ergebnisse:**
+- Medianes Gesamtüberleben (neu diagnostiziert): 20,3 vs. 16,0 Monate (HR = 0,68)
+- Da die PH-Annahme verletzt war, führten die Autoren eine **RMST-Analyse** durch
+- RMST-Gewinn bei 36 Monaten: statistisch signifikant (P = 0,03)
+
+Diese methodische Transparenz ist vorbildlich: Statt eine fragwürdige HR zu präsentieren, wählten die Autoren RMST als robuste Ergänzung.
+
+## Methodische Grundlagen
+
+Die RMST wird berechnet als **Fläche unter der Kaplan-Meier-Kurve** bis zu einem definierten Zeitpunkt τ:
+
+```
+RMST(τ) = ∫₀^τ S(t) dt
+```
+
+Wobei S(t) die Survival-Funktion ist. Der Zeitraum τ muss klinisch sinnvoll gewählt werden (z.B. 2–5 Jahre in onkologischen Studien).
+
+**Vorteile:**
+- Keine PH-Annahme erforderlich
+- Klinisch interpretierbar (Zeitgewinn in Monaten)
+- Robust bei Zensierung
+- Gut kommunizierbar
+
+**Nachteile:**
+- Ergebnis hängt von der Wahl von τ ab
+- Weniger etabliert als HR
+- Erfordert ausreichend Follow-up
+
+## Klinische Relevanz
+
+Für die onkologische Praxis wird RMST zunehmend relevant:
+
+1. **Immuntherapie-Studien:** Delayed Effects sind die Regel, nicht die Ausnahme
+2. **Regulatorische Akzeptanz:** FDA und EMA akzeptieren RMST als primären Endpunkt
+3. **Patientenkommunikation:** *"Wie viel mehr Zeit gewinne ich?"* beantwortet RMST direkt
+
+Eine Meta-Analyse zu ICI bei kleinzelligem Lungenkarzinom (SCLC) zeigte einen RMST-Gewinn von **1,98 Monaten** bei extensive-stage disease[2] – eine Zahl, die Patienten verstehen können.
+
+## Fazit
+
+Die RMST ist kein Ersatz für Hazard Ratios, sondern eine **ergänzende Methode**. In einer Zeit, in der Immuntherapien die onkologische Landschaft prägen, sollten wir Methoden wählen, die die Daten adäquat repräsentieren.
+
+Wenn Kurven nicht parallel verlaufen, ist RMST die ehrlichere Antwort.
+
+---
+
+## Key Findings
+
+Kaplan-Meier curves are the workhorse of oncological research. But what happens when the proportional hazards (PH) assumption is violated? This is exactly where *Restricted Mean Survival Time* (RMST) becomes essential.
+
+### The Problem with Hazard Ratios
+
+Hazard ratios (HR) are the gold standard for survival analyses – but they assume the risk ratio remains proportional over time. With immune checkpoint inhibitors (ICI), this is often **not** the case.
+
+Immunotherapies typically show a *delayed treatment effect*: survival benefit emerges only after some time. The curves don't run parallel but diverge later. Interpreting an HR in such scenarios is statistically problematic – and potentially misleading.
+
+### RMST: The Intuitive Alternative
+
+RMST represents the **average event-free time over a defined period**. Instead of an abstract HR of 0.68, RMST tells us: *"Patients receiving sequential therapy live an average of 2.3 months longer within 3 years."*
+
+This is **directly interpretable** for clinicians and patients.
+
+#### Example: OCEANUS Study
+
+The OCEANUS cohort study (Zhou et al., JAMA Oncology, April 2026) compared sequential vs. concurrent radiotherapy with immune checkpoint inhibitors in advanced NSCLC[1].
+
+**Results:**
+- Median overall survival (newly diagnosed): 20.3 vs. 16.0 months (HR = 0.68)
+- Since PH assumption was violated, authors performed an **RMST analysis**
+- RMST gain at 36 months: statistically significant (P = 0.03)
+
+This methodological transparency is exemplary: rather than presenting a questionable HR, authors chose RMST as a robust supplement.
+
+### Clinical Relevance
+
+RMST is increasingly relevant for oncological practice:
+
+1. **Immunotherapy trials:** Delayed effects are the rule, not the exception
+2. **Regulatory acceptance:** FDA and EMA accept RMST as a primary endpoint
+3. **Patient communication:** *"How much more time do I gain?"* – RMST answers directly
+
+A meta-analysis of ICI in small cell lung cancer (SCLC) showed an RMST gain of **1.98 months** in extensive-stage disease[2] – a number patients can understand.
+
+### Conclusion
+
+RMST is not a replacement for hazard ratios, but a **complementary method**. In an era where immunotherapies shape oncological landscapes, we should choose methods that adequately represent the data.
+
+When curves don't run parallel, RMST is the more honest answer.
+
+---
+
+## References
+
+1. Zhou Y, Kong FM, et al. Combination of Radiotherapy and Immunotherapy in Advanced Non–Small Cell Lung Cancer. *JAMA Oncology*. 2026. DOI: 10.1001/jamaoncol.2026.XXXX (OCEANUS Study)
+
+2. Roles of Restricted Mean Survival Time and Restricted Mean Time Lost in Evaluating Immune Checkpoint Inhibitor Efficacy for Extensive-Stage Small Cell Lung Cancer. *Cancer Research Communications*. 2026;6(1):77-89. DOI: 10.1158/2767-9764.CRC-25-0392
+
+3. Uno H, et al. Moving Beyond the Hazard Ratio in Clinical Trials. *Circulation*. 2014;129:1916-1923. DOI: 10.1161/CIRCULATIONAHA.113.005528
+
+4. Royston P, Parmar MK. Restricted mean survival time: an alternative to the hazard ratio for the design and analysis of randomized trials with a time-to-event outcome. *BMC Medical Research Methodology*. 2013;13:152. DOI: 10.1186/1471-2288-13-152
