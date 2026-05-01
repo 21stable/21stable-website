@@ -1,0 +1,121 @@
+---
+title: "Jenseits von Kaplan-Meier: Warum Competing Risks die Survival-Analyse verändern"
+title_en: "Beyond Kaplan-Meier: Why Competing Risks Change Survival Analysis"
+date: "2026-05-01"
+category: "Überlebensanalyse"
+description: "Kaplan-Meier überschätzt Ereigniswahrscheinlichkeiten, wenn konkurrierende Risiken ignoriert werden. Fine-Gray-Modelle bieten eine Lösung."
+description_en: "Kaplan-Meier overestimates event probabilities when competing risks are ignored. Fine-Gray models offer a solution."
+author: "21Stable Team"
+---
+
+# Jenseits von Kaplan-Meier: Warum Competing Risks die Survival-Analyse verändern
+
+Die Kaplan-Meier-Methode ist der Goldstandard der Survival-Analyse – aber sie hat eine blinde Stelle: **Competing Risks**. Eine neue retrospektive Kohortenstudie an 1.031 Patienten mit Hirnmetastasen zeigt, warum moderne multistate-Modelle essenziell sind[1].
+
+## Das Problem
+
+In der Onkologie konkurrieren oft mehrere Ereignisse miteinander: Ein Patient kann an Tumorprogression sterben, an therapiebedingten Komplikationen oder an einer unabhängigen Ursache. Die klassische Kaplan-Meier-Schätzung **zensiert** diese konkurrierenden Ereignisse und behandelt sie als "kein Ereignis". Das führt zu einer systematischen **Überschätzung** der Wahrscheinlichkeit des Zielereignisses.
+
+Eine Studie in *Scientific Reports* zeigte: Kaplan-Meier kann die kumulative Inzidenz um bis zu **9,36% überzeichnen**[2].
+
+## Die Lösung: Fine-Gray und Cumulative Incidence Functions
+
+Das **Fine-Gray-Modell** (1999) schätzt die **Subdistribution Hazard** – die Wahrscheinlichkeit, ein bestimmtes Ereignis zu erleben, während konkurrierende Ereignisse möglich bleiben. Im Gegensatz zum Cox-Modell, das konkurrierende Ereignisse zensiert, berücksichtigt Fine-Gray:
+
+- **Cause-specific hazards** für jedes Ereignis
+- **Cumulative Incidence Functions (CIF)** statt Kaplan-Meier-Kurven
+
+## Fallbeispiel: Stereotaktische Radiochirurgie bei Hirnmetastasen
+
+Eine retrospektive Studie aus dem Leeds Gamma Knife Centre analysierte 1.031 Patienten mit 2.836 Metastasen über 11 Jahre[1]. Die Forscher nutzten bewusst:
+
+- **Kaplan-Meier** für 10-Jahres-Überlebenskurven
+- **Multistate-Modelle** für Progressionspfade
+- **Competing Risks Analysis** für Tumorprogress vs. Tod
+
+### Kernerkenntnisse
+
+| Faktor | Risiko Progression | Risiko Tod |
+|--------|-------------------|-----------|
+| Jede zusätzliche Metastase | +9,2% (p < 0,001) | Kein Effekt (p = 0,30) |
+| Tumorvolumen +1 cm³ | Kein Effekt | +2,2% |
+| Neue Metastasen post-SRS | Kein Effekt | +31% (p = 0,02) |
+
+Die Studie zeigt: **Anzahl der Metastasen beeinflusst Progressionsrisiko, nicht Sterberisiko**. Tumorvolumen ist prädiktiv für Tod, nicht für Progression. Diese differenzierte Betrachtung wäre mit reiner Kaplan-Meier-Analyse nicht möglich.
+
+## Klinische Relevanz
+
+Wenn competing risks ignoriert werden:
+
+1. **Falsche Prognosen**: Patienten erhalten unrealistische Heilungserwartungen
+2. **Fehlende Stratifikation**: Risikofaktoren werden fälschlicherweise als signifikant identifiziert
+3. **Verzerrte Studienresultate**: Endpunkte wie "progressionsfreies Überleben" werden über- oder unterschätzt
+
+Für klinische Studien mit nicht-fatalen Endpunkten (z.B. Toxizität, Rezidiv) in Populationen mit hoher Mortalität ist die **Cumulative Incidence Function essenziell**[4].
+
+## Fazit
+
+Kaplan-Meier bleibt wertvoll für reine Survival-Endpunkte. Doch bei konkurrierenden Ereignissen – Progression, Rezidiv, Toxizität – sind Fine-Gray-Modelle und CIF unverzichtbar. Die Onkologie bewegt sich weg von simplen Kurven hin zu **multistate survival models**, die der klinischen Realität gerecht werden.
+
+---
+
+# Beyond Kaplan-Meier: Why Competing Risks Change Survival Analysis
+
+Kaplan-Meier is the gold standard for survival analysis – but it has a blind spot: **Competing Risks**. A new retrospective cohort study of 1,031 brain metastases patients demonstrates why modern multistate models are essential[1].
+
+## The Problem
+
+In oncology, multiple events often compete: A patient may die from tumor progression, treatment-related complications, or an independent cause. Classic Kaplan-Meier estimation **censors** these competing events, treating them as "no event." This leads to systematic **overestimation** of the target event probability.
+
+A *Scientific Reports* study showed: Kaplan-Meier can overestimate cumulative incidence by up to **9.36%**[2].
+
+## The Solution: Fine-Gray and Cumulative Incidence Functions
+
+The **Fine-Gray model** (1999) estimates **subdistribution hazard** – the probability of experiencing a specific event while competing events remain possible. Unlike Cox models that censor competing events, Fine-Gray accounts for:
+
+- **Cause-specific hazards** for each event
+- **Cumulative Incidence Functions (CIF)** instead of Kaplan-Meier curves
+
+## Case Study: Stereotactic Radiosurgery for Brain Metastases
+
+A retrospective study from Leeds Gamma Knife Centre analyzed 1,031 patients with 2,836 metastases over 11 years[1]. Researchers deliberately used:
+
+- **Kaplan-Meier** for 10-year survival curves
+- **Multistate models** for progression pathways
+- **Competing risks analysis** for tumor progression vs. death
+
+### Key Findings
+
+| Factor | Progression Risk | Death Risk |
+|--------|------------------|-----------|
+| Each additional metastasis | +9.2% (p < 0.001) | No effect (p = 0.30) |
+| Tumor volume +1 cm³ | No effect | +2.2% |
+| New metastases post-SRS | No effect | +31% (p = 0.02) |
+
+The study reveals: **Number of metastases influences progression risk, not mortality risk**. Tumor volume predicts death, not progression. This nuanced understanding would be impossible with Kaplan-Meier alone.
+
+## Clinical Relevance
+
+When competing risks are ignored:
+
+1. **False prognoses**: Patients receive unrealistic expectations
+2. **Flawed stratification**: Risk factors incorrectly identified as significant
+3. **Biased trial results**: Endpoints like "progression-free survival" over- or underestimated
+
+For clinical trials with non-fatal endpoints (e.g., toxicity, recurrence) in high-mortality populations, **Cumulative Incidence Functions are essential**[4].
+
+## Conclusion
+
+Kaplan-Meier remains valuable for pure survival endpoints. But for competing events – progression, recurrence, toxicity – Fine-Gray models and CIF are indispensable. Oncology is moving from simple curves toward **multistate survival models** that reflect clinical reality.
+
+---
+
+## References
+
+1. Williams et al. (2026). Stereotactic radiosurgery for brain metastases: multistate and competing risk models of progression and survival from a single-centre 11-year experience. *Radiation Oncology*. https://doi.org/10.1186/s13014-025-02779-5
+
+2. Southworth et al. (2020). Influence of Competing Risks on Estimates of Recurrence Risk and Breast Cancer-specific Mortality. *Scientific Reports*. https://doi.org/10.1038/s41598-020-61093-0
+
+3. Dignam et al. (2012). The Use and Interpretation of Competing Risks Regression Models. *Clinical Cancer Research*. https://doi.org/10.1158/1078-0432.CCR-11-2097
+
+4. Austin et al. (2017). Practical recommendations for reporting Fine-Gray model analyses for competing risk data. *Statistics in Medicine*. https://doi.org/10.1002/sim.7501
