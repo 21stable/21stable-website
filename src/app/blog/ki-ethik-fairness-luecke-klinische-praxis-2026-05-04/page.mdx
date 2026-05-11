@@ -1,0 +1,64 @@
+---
+title: "Die Fairness-Lücke: Warum technische KI-Ethik in der Klinik versagt"
+title_en: "The Fairness Gap: Why Technical AI Ethics Fails in Clinical Practice"
+date: "2026-05-04"
+category: "KI-Ethik"
+description: "Neue Scoping Reviews zeigen: Trotz zahlreicher Fairness-Algorithmen bleibt die Kluft zwischen technischen Lösungen und klinischer Anwendung massiv – mit Konsequenzen für die Regulierung."
+description_en: "New scoping reviews reveal: Despite numerous fairness algorithms, the gap between technical solutions and clinical application remains massive – with regulatory consequences."
+author: "21Stable Team"
+draft: true
+---
+
+# Die Fairness-Lücke: Warum technische KI-Ethik in der Klinik versagt
+
+Künstliche Intelligenz hält Einzug in Kliniken weltweit – von der Diagnostik über die Therapieplanung bis zum Patient-Trial-Matching. Doch zwei aktuelle Scoping Reviews legen eine unbequeme Wahrheit offen: **Die Forschung zu algorithmischer Fairness und die klinische Realität driften zunehmend auseinander.** Technische Lösungen existieren, aber sie erreichen die Patienten nicht.[1,2]
+
+## Das Kernproblem: Fairness-Forschung ohne klinischen Bezug
+
+Ning et al. (2025) analysierten systematisch die Schnittstelle zwischen KI-Fairness-Techniken und Gesundheitskontexten. Ihr Befund ist ernüchternd: Die Mehrheit der Fairness-Forschung konzentriert sich auf **Group Fairness** – also die Gleichheit von Modellmetriken (z. B. False-Positive-Raten) zwischen demografischen Gruppen. Klinisch relevante Fairness-Dimensionen wie Zugangsgerechtigkeit oder Behandlungsparität bleiben weitgehend unberücksichtigt.[1]
+
+Besonders markant: In kaum einer medizinischen Fachdisziplin existiert systematische Forschung zu KI-Fairness. Bias-relevante Attribute werden fast ausschließlich auf Geschlecht und Ethnizität reduziert – Variablen wie sozioökonomischer Status, geografische Herkunft oder Komorbiditätsmuster werden ignoriert. Das Resultat ist eine **Forschungslandschaft, die technisch anspruchsvoll, aber klinisch irrelevant** ist.[1]
+
+### Konkrete Befunde
+
+- **Fachliche Lücken**: KI-Fairness-Forschung konzentriert sich auf Radiologie und Dermatologie – andere Fachgebiete wie Onkologie, Psychiatrie oder Gastroenterologie sind stark unterrepräsentiert[1]
+- **Enge Attributfokussierung**: Über 80% der Studien untersuchen nur Geschlecht und Ethnizität als Bias-relevante Merkmale[1]
+- **Fehlender Clinician-in-the-Loop**: Nur ein Bruchteil der Studien integriert klinische Expertise in die Fairness-Evaluation[1]
+
+## Regulatorische Fragmentierung verschärft das Problem
+
+Eine parallele PRISMA-ScR-gesteuerte Übersichtsarbeit kartierte regulatorische Anforderungen für AI-as-a-Medical-Device (AIaMD) über alle großen Jurisdiktionen (2017–2025). Das Ergebnis: **substanzielle Heterogenität in den Evidenzerwartungen** zwischen FDA, EMA, MHRA, PMDA und anderen Behörden.[2]
+
+Die Studienautoren identifizieren wiederkehrende Themen – Dataset-Repräsentativität, Bias-Evaluation, Change-Management, Performance-Monitoring –,但这些 Anforderungen sind weder konsistent definiert noch harmonisiert. Berichtsstandards wie SPIRIT-AI, CONSORT-AI und MI-CLAIM werden zwar häufig zitiert, aber **uneinheitlich angewendet**.[2]
+
+Die Konsequenz: Sponsoren klinischer Studien stehen vor einem regulatorischen Patchwork, das multinationale AIaMD-Entwicklung massiv erschwert – und Patienten in Ländern mit schwächerer Regulierung dem Risiko unverifizierter KI-Systeme aussetzt.
+
+## Der MELD-Algorithmus als Warnbeispiel
+
+Die npj-Digital-Medicine-Studie illustriert das Problem am Beispiel der Lebertransplantation: Der MELD-Score (Model for End-Stage Liver Disease) basiert unter anderem auf Kreatinin. Da Frauen typischerweise niedrigere Kreatininwerte aufweisen, **unterschätzt der Algorithmus die Nierendysfunktion bei Frauen** und senkt ihre Wahrscheinlichkeit, ein Lebertransplantat zu erhalten.[1] Das ist kein hypothetisches Risiko, sondern eine real existierende Diskriminierung durch einen etablierten klinischen Algorithmus.
+
+## Was zu tun ist
+
+Beide Studien kommen zu komplementären Schlussfolgerungen:
+
+1. **Lebenszyklus-Oversight statt Einmalvalidierung**: KI-Systeme benötigen kontinuierliches Post-Market-Monitoring, keine einmalige Zulassungsstudie[2]
+2. **Clinician-in-the-Loop**: Fairness-Evaluation muss klinische Expertise systematisch integrieren – nicht nur technische Metriken[1]
+3. **Regulatorische Harmonisierung**: Standardisierte Evidenz-Frameworks über Jurisdiktionen hinweg sind dringend nötig[2]
+3. **Erweiterte Bias-Attribute**: Über Geschlecht und Ethnizität hinaus müssen sozioökonomische, geografische und komorbiditätsbezogene Faktoren einbezogen werden[1]
+
+## Fazit
+
+Die Kluft zwischen technischer Fairness-Forschung und klinischer Anwendung ist keine akademische Fußnote – sie hat direkte Konsequenzen für Patienten. Solange Fairness-Algorithmen nicht in regulatorische Frameworks übersetzt werden und klinische Expertise nicht systematisch in die Evaluation einfließt, bleiben KI-Systeme in der Medizin ein Risiko für genau die Populationen, die sie am dringendsten benötigen. Die Lösung liegt nicht in mehr Algorithmen, sondern in **struktureller Integration**: Fairness muss vom Datensatz bis zur Zulassung in den klinischen Lebenszyklus eingebettet werden.
+
+## Key Findings
+
+Artificial intelligence is transforming clinical medicine, yet two recent scoping reviews expose a critical disconnect between technical fairness research and clinical reality. Ning et al. (2025) systematically mapped AI fairness research across healthcare contexts and found that the majority of studies focus on **group fairness**—equality of model performance metrics across demographic groups—while clinically relevant dimensions like treatment access and decision parity remain largely unaddressed.[1] Crucially, fewer than 20% of studies integrate clinician expertise into fairness evaluation, and bias-relevant attributes are almost exclusively limited to sex/gender and race/ethnicity.
+
+A parallel PRISMA-ScR-guided review of AI-as-a-Medical-Device (AIaMD) regulatory requirements across major jurisdictions (2017–2025) identified **substantial heterogeneity** in evidence expectations among the FDA, EMA, MHRA, and PMDA.[2] While recurring themes—dataset representativeness, bias evaluation, change management, and performance monitoring—are recognized, they are neither consistently defined nor harmonized. Reporting standards such as SPIRIT-AI and CONSORT-AI are frequently cited but inconsistently applied.
+
+The MELD algorithm for liver transplantation illustrates the real-world stakes: by relying on creatinine, which is typically lower in women, the algorithm systematically underestimates renal dysfunction in female patients, reducing their likelihood of receiving a transplant.[1] Both studies converge on actionable recommendations: lifecycle oversight instead of one-time validation, systematic integration of clinical expertise, regulatory harmonization, and expansion of bias attributes beyond sex and ethnicity. The solution is not more algorithms—it is **structural integration** of fairness from dataset curation through regulatory approval.
+
+## References
+
+1. Ning Y, Teixayavong S, Liu X, et al. A scoping review and evidence gap analysis of clinical AI fairness. *npj Digital Medicine*. 2025;8:360. https://doi.org/10.1038/s41746-025-01667-2
+2. Clinical Trial Design and Regulatory Requirements for Artificial Intelligence as a Medical Device: A PRISMA-ScR–Guided Scoping Review of Global Guidance and Evidence (2017–2025). *J Clin Med*. 2025;15(10). https://doi.org/10.3390/jcm15101937

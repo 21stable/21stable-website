@@ -1,0 +1,62 @@
+---
+title: "Müll rein, Müll raus: Die Datenqualitätskrise im maschinellen Lernen der Medizin"
+title_en: "Garbage In, Garbage Out: The Data Quality Crisis in Medical Machine Learning"
+date: "2026-05-02"
+category: "Maschinelles Lernen"
+description: "Eine Nature-Recherche deckt auf: Dutzende KI-Krankheitsmodelle wurden mit fragwürdigen Datensätzen trainiert – während Path-IO zeigt, wie es richtig geht."
+description_en: "A Nature investigation reveals dozens of AI disease models trained on dubious data — while Path-IO demonstrates what good practice looks like."
+author: "21Stable Team"
+draft: true
+---
+
+# Müll rein, Müll raus: Die Datenqualitätskrise im maschinellen Lernen der Medizin
+
+Maschinelles Lernen revolutioniert die Medizin — aber auf welchem Fundament? Eine aktuelle Recherche in *Nature* deckt auf: Dutzende KI-Modelle zur Vorhersage von Schlaganfall und Diabetes wurden mit Datensätzen trainiert, deren Herkunft und Qualität höchst fragwürdig sind[1]. Währenddessen demonstriert das Path-IO-Modell des MD Anderson Cancer Center auf der AACR-Jahrestagung 2026, dass rigorose Datenstandards und biologische Validierung den Unterschied zwischen klinischem Nutzen und potenziellem Patientenschaden ausmachen[2].
+
+## Das Ausmaß der Krise
+
+Gibson et al. untersuchten in einem medRxiv-Preprint 24 öffentlich verfügbare Datensätze, die in Dutzenden peer-reviewten Publikationen zum Training von KI-Modellen verwendet wurden[1]. Das Ergebnis ist alarmierend: Die Datensätze enthielten inkonsistente Kodierungen, unplausible Altersangaben und in mehreren Fällen identische Variablennamen, die auf Copy-Paste-Fehler ohne tatsächliche klinische Validierung hindeuten. Mindestens zwei Fachzeitschriften haben Untersuchungen zu betroffenen Studien eingeleitet.
+
+Das Problem ist nicht akademisch: Einige dieser Modelle scheinen bereits in klinischen Settings eingesetzt worden zu sein. „Zum jetzigen Zeitpunkt ist unklar, ob dies zu Fehldiagnosen geführt hat“, heißt es im Nature-Bericht — ein Satz, der jedem Kliniker einen Schauer über den Rücken jagen sollte.
+
+Diese Erkenntnisse reihen sich in eine wachsende Literatur zur mangelnden methodischen Qualität klinischer ML-Studien ein. Eine bibliometrische Analyse in *Frontiers in Oncology* zeigt, dass von über 2.500 publizierten ML-Prognosemodellen weniger als 10% extern validiert wurden[3].
+
+## Path-IO: Das Gegenbeispiel
+
+Auf dem AACR Annual Meeting 2026 präsentierten Bandyopadhyay et al. das Path-IO-Framework — ein Deep-Learning-Modell, das Pathologie-Slides analysiert und Patienten mit metastasiertem nicht-kleinzelligem Lungenkarzinom (NSCLC) nach Immuntherapie-Ansprechen stratifiziert[2].
+
+Drei Designentscheidungen heben Path-IO von der Masse ab:
+
+1. **Biologie-geleitet, nicht daten-getrieben:** Statt uninterpretierbare Muster zu erkennen, fokussiert Path-IO auf intratumorale Nischen — Gewebestrukturen, deren prognostische Bedeutung immunologisch validiert ist. Das Modell funktioniert nicht als Black Box, sondern macht erklärbare Entscheidungen.
+
+2. **Multizentrische externe Validierung:** Das Training erfolgte an 797 Patienten des MD Anderson, die externe Validierung an 280 Patienten von Mayo Clinic, Gustave Roussy und der Phase-III-Studie Lung-MAP S1400I. Insgesamt über 1.000 Patienten aus mehreren Ländern.
+
+3. **Klinische Überlegenheit gegenüber dem Standard:** Path-IO übertraf PD-L1 — den FDA-zugelassenen Biomarker — in allen Validierungskohorten. In der MD-Anderson-Kohorte hatten Hochrisikopatienten ein mehr als doppelt so hohes Risiko für Tod oder Progression (Hazard Ratio >2,0).
+
+## Was unterscheidet Path-IO von den „dubiosen“ Modellen?
+
+Die Gegenüberstellung ist lehrreich: Während die von Gibson et al. identifizierten Studien fragwürdige Sekundärdaten ohne Herkunftsnachweis nutzten, arbeitet Path-IO mit routinemäßig erhobenen Pathologie-Slides, deren Provenienz dokumentiert ist. Das mag banal klingen — ist es aber nicht. In der ML-Forschung wird die Herkunft von Trainingsdaten selten so rigoros hinterfragt wie in der klassischen klinischen Forschung.
+
+## Ausblick: Brauchen wir einen CONSORT für ML?
+
+Die klinische Forschung hat mit CONSORT, STROBE und TRIPOD etablierte Reporting-Standards. Für ML-Modelle existiert mit TRIPOD+AI eine Erweiterung[4] — doch die Durchsetzung bleibt mangelhaft. Die Nature-Recherche legt nahe, dass Journals und Reviewer dringend geschult werden müssen, um Datenqualität systematisch zu prüfen.
+
+Path-IO zeigt: Wenn Datenqualität und biologische Plausibilität von Anfang an mitgedacht werden, kann maschinelles Lernen einen echten klinischen Mehrwert liefern. Der nächste Schritt ist die prospektive Validierung — erst dann wird sich zeigen, ob der Übergang vom retrospektiven Modell zur klinischen Routine gelingt.
+
+## Key Findings
+
+Gibson et al. identified 24 publicly available datasets used to train dozens of peer-reviewed AI disease-prediction models for stroke and diabetes. These datasets contained inconsistent coding, implausible age values, and identical variable names across different datasets — strongly suggesting copy-paste errors without clinical validation[1]. At least two journals are investigating affected studies, and some models may already have been used clinically.
+
+In contrast, the Path-IO framework presented at AACR 2026 demonstrates rigorous ML development standards[2]. Trained on 797 NSCLC patients at MD Anderson and externally validated on 280 patients from three independent cohorts (Mayo Clinic, Gustave Roussy, Lung-MAP S1400I), Path-IO uses biology-guided deep learning to identify tumor microenvironment niches predictive of immunotherapy response. It consistently outperformed PD-L1 — the FDA-approved standard-of-care biomarker — across all validation cohorts, with high-risk patients facing more than double the risk of death or disease progression.
+
+A bibliometric analysis of 2,500+ ML clinical prediction models found that fewer than 10% underwent external validation[3], underscoring the systemic nature of the quality problem. TRIPOD+AI reporting standards exist[4] but enforcement remains weak.
+
+## References
+
+1. Gibson, A. D., White, N. M., Collins, G. S. & Barnett, A. G. Dubious data sets used to train artificial intelligence disease-prediction models. Preprint at *medRxiv* (2026). https://doi.org/10.64898/2026.02.24.26347028 — Berichtet in: Basu, M. Dozens of AI disease-prediction models were trained on dubious data. *Nature* (2026). https://doi.org/10.1038/d41586-026-00697-4
+
+2. Bandyopadhyay, R. et al. Path-IO: A biology-guided deep learning pathomics platform predicts immunotherapy outcomes in metastatic NSCLC. Presented at AACR Annual Meeting 2026, Abstract 4003. Berichtet in: AACR News Releases (April 2026). https://www.aacr.org/about-the-aacr/newsroom/news-releases/a-deep-learning-pathomics-platform-may-help-predict-response-to-immunotherapy-in-lung-cancer-patients/
+
+3. Li, Q. et al. Research on machine learning-based clinical prediction models: a bibliometric analysis. *Frontiers in Oncology* (2026). https://doi.org/10.3389/fonc.2026.1786176
+
+4. Collins, G. S. et al. TRIPOD+AI statement: updated reporting guidelines for clinical prediction models using regression or machine learning methods. *BMJ* 385, e078378 (2024). https://doi.org/10.1136/bmj-2023-078378

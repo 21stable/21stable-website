@@ -1,0 +1,76 @@
+---
+title: "ICH E20: Der erste globale Standard für adaptive Studiendesigns - und was RABOTS dazu beiträgt"
+title_en: "ICH E20: The First Global Standard for Adaptive Trial Designs - and What RABOTS Adds"
+date: "2026-05-06"
+category: "Studiendesign"
+description: "Die ICH E20 Guideline schafft 2026 erstmals einen internationalen Rahmen für adaptive Studien. Das neue RABOTS-Design integriert Bayesian Optimization nahtlos in Phase I/II."
+description_en: "The ICH E20 guideline establishes the first international framework for adaptive trials in 2026. The novel RABOTS design seamlessly integrates Bayesian optimization into Phase I/II."
+author: "21Stable Team"
+draft: true
+---
+
+# ICH E20: Der erste globale Standard für adaptive Studiendesigns - und was RABOTS dazu beiträgt
+
+Die klinische Forschung in der Onkologie erlebt 2026 eine regulatorische Zäsur: Mit der **ICH E20 Guideline** entsteht erstmals ein international harmonisierter Standard für adaptive Studiendesigns. Parallel dazu liefert die biostatistische Methodenforschung mit **RABOTS** ein neuartiges Werkzeug, das Bayesian Optimization direkt in das Design nahtloser Phase-I/II-Studien einbettet.
+
+## Der regulatorische Meilenstein: ICH E20
+
+Adaptive Designs - Studien, die vorab geplante Modifikationen auf Basis von Interimsdaten erlauben - sind in der Onkologie seit Jahren etabliert. Was fehlte, war ein grenzübergreifender regulatorischer Rahmen. Die Lücke schließt nun ICH E20, die im Juni 2025 als Step-2b-Draft veröffentlicht wurde und nach Abschluss der Konsultationsphase (November 2025) vor der Finalisierung im Laufe des Jahres 2026 steht[1].
+
+Die Guideline schafft drei wesentliche Klarstellungen:
+
+1. **Klassifikation adaptiver Modifikationen**: Welche Design-Änderungen sind "gut verstanden" (z. B. Group-Sequential-Designs) und welche erfordern umfangreichere Simulationen?
+2. **Dokumentationspflichten**: Simulationsstudien müssen reproduzierbar sein - inklusive Code, Randomisierungs-Seeds und vollständiger Operating-Characteristics[1].
+3. **Internationale Harmonisierung**: Erstmals werden FDA-, EMA- und PMDA-Erwartungen in einem Dokument vereint. Das reduziert den regulatorischen Aufwand für globale Zulassungsstudien erheblich.
+
+Für die Onkologie ist das kein akademisches Detail: Von 68 analysierten seamless-Studien mit konfirmatorischem Anspruch zeigte eine systematische Übersichtsarbeit, dass die häufigsten adaptiven Elemente ein Efficacy-Gating (Fortsetzung nur bei Wirksamkeit) und eine Dosis- oder Regime-Selektion waren[2]. Genau diese Design-Elemente werden durch ICH E20 nun länderübergreifend standardisiert bewertet.
+
+## RABOTS: Bayesian Optimization für das Studiendesign
+
+Parallel zur regulatorischen Entwicklung hat die biostatistische Community das methodische Arsenal erweitert. **RABOTS** (Randomized Adaptive Bayesian Optimization Two-Stage Seamless Design) - publiziert 2026 in *Pharmaceutical Statistics* - adressiert eine fundamentale Schwäche bisheriger adaptiver Designs: die Wahl der Design-Parameter selbst[3].
+
+Traditionell werden Parameter wie Interimsanalyse-Zeitpunkte, Futility-Grenzen oder Alpha-Splitting-Raten durch Ad-hoc-Entscheidungen oder grobe Grid-Searches festgelegt. RABOTS ersetzt dies durch **Bayesian Optimization (BO)**: ein Surrogat-Modell (meist Gaussian Process) modelliert die Operating-Characteristics als Funktion der Design-Parameter und navigiert den Parameterraum gezielt in Richtung optimaler Konfigurationen.
+
+Konkret funktioniert das in zwei Stufen:
+
+- **Stufe 1 (Dose-Optimierung)**: Bayesian Optimization wählt die vielversprechendsten Dosierungen für den randomisierten Vergleich aus - unter simultaner Berücksichtigung von Toxizität und Wirksamkeit. Dies adressiert direkt die Forderungen von FDA's Project Optimus nach datengetriebener Dosisfindung[4].
+
+- **Stufe 2 (Proof-of-Concept)**: Die optimierten Dosen werden in einer nahtlosen Erweiterung gegen Standard-of-Care randomisiert, wobei Patienten adaptiv den Dosen mit der höchsten bisher beobachteten Aktivität zugewiesen werden.
+
+Die Simulationen der Autoren zeigen: RABOTS identifiziert die optimale Dosis mit substanziell geringerem Stichprobenumfang als konventionelle adaptive Grid-Search-Designs - ohne Einbußen bei Power oder Typ-I-Fehler-Kontrolle[3].
+
+## Warum ICH E20 und RABOTS zusammengehören
+
+Die ICH E20 Guideline fordert explizit, dass "die Operating-Characteristics des finalen adaptiven Designs durch adäquate Simulationsstudien charakterisiert werden"[1]. RABOTS automatisiert genau diesen Prozess und dokumentiert ihn reproduzierbar - ein methodischer Match.
+
+Für klinische Forscher in der Onkologie ergeben sich daraus konkrete Implikationen:
+
+- **Frühere Evidenz**: Seamless-Designs mit integrierter Dosis-Optimierung reduzieren die Entwicklungszeit um schätzungsweise 12-18 Monate[2].
+- **Robustere Dosiswahl**: Randomisierte Backfill-Kohorten liefern unverzerrte Vergleichsdaten, bevor Phase III beginnt.
+- **Regulatorische Sicherheit**: Die Kombination aus ICH-E20-konformer Dokumentation und methodisch validierten BO-Ansätzen senkt das Risiko regulatorischer Rückfragen.
+
+## Fazit
+
+Das Jahr 2026 markiert einen doppelten Wendepunkt für adaptive Studiendesigns: Mit ICH E20 existiert erstmals ein globaler regulatorischer Standard. Und mit RABOTS steht ein Werkzeug bereit, das die Design-Optimierung selbst optimiert - durch Bayesian Optimization statt Bauchgefühl. Für die Onkologie, deren Medikamentenentwicklung mit Zulassungsraten von nur etwa 3–5 % zu den risikoreichsten überhaupt gehört[5], sind diese Fortschritte keine akademische Spielerei, sondern ein konkreter Schritt zu schnelleren und präziseren klinischen Studien.
+
+---
+
+## Key Findings
+
+2026 represents a regulatory watershed for adaptive clinical trial designs. The **ICH E20 guideline** - the first internationally harmonized standard for adaptive designs - reached Step 2b in June 2025 and is expected to be finalized this year[1]. It establishes a unified framework across FDA, EMA, and PMDA, requiring rigorous simulation-based characterization of operating characteristics and full reproducibility of design evaluations.
+
+Concurrently, Wu and colleagues published **RABOTS** (Randomized Adaptive Bayesian Optimization Two-Stage Seamless Design) in *Pharmaceutical Statistics*[3]. RABOTS replaces ad-hoc design parameter selection with Bayesian Optimization: a Gaussian Process surrogate model navigates the parameter space to identify configurations that simultaneously optimize dose selection accuracy and proof-of-concept power. Simulations demonstrate substantially smaller sample sizes compared to conventional adaptive grid-search designs without compromising power or Type I error control[3].
+
+The synergy between ICH E20's documentation requirements and RABOTS' automated, reproducible optimization pipeline is striking. For oncology - where only about 5% of drug candidates progress from Phase I to approval[5] - these advances translate directly into shorter development timelines (estimated 12-18 months savings[2]), more robust dose selection aligned with FDA's Project Optimus[4], and reduced regulatory uncertainty in global submissions.
+
+## References
+
+1. ICH. E20 Guideline on Adaptive Designs for Clinical Trials - Step 2b. European Medicines Agency; 2025. https://www.ema.europa.eu/en/ich-e20-adaptive-designs-clinical-trials-scientific-guideline
+
+2. Broglio K, et al. A Systematic Review of Adaptive Seamless Clinical Trials for Late-Phase Oncology Development. *Ther Innov Regul Sci*. 2024;58(5):917-929. https://doi.org/10.1007/s43441-024-00670-1
+
+3. Wu J, Zhu H, et al. RABOTS: A Randomized Adaptive Bayesian Optimization Two-Stage Seamless Design for Dose Optimization and Proof-of-Concept Evaluation. *Pharm Stat*. 2026;25(3):e70091. https://doi.org/10.1002/pst.70091
+
+4. FDA Oncology Center of Excellence. Project Optimus: Reforming the Dose Optimization and Dose Selection Paradigm in Oncology. https://www.fda.gov/about-fda/oncology-center-excellence/project-optimus
+
+5. Wong CH, Siah KW, Lo AW. Estimation of Clinical Trial Success Rates and Related Parameters. *Biostatistics*. 2019;20(2):273-286. https://doi.org/10.1093/biostatistics/kxx069
