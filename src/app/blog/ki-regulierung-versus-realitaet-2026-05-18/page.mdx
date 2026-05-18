@@ -1,0 +1,66 @@
+---
+title: "KI-Regulierung versus Realität: Warum Governance-Frameworks die klinische Forschung nicht erreichen"
+title_en: "AI Governance vs. Reality: Why Regulatory Frameworks Fail to Reach Clinical Research"
+date: "2026-05-18"
+category: "KI-Ethik"
+description: "Obwohl über 1.200 KI-Medizinprodukte FDA-zugelassen sind, zeigen Studien: Nur eine Minderheit der akademischen Zentren integriert Equity in ihre KI-Governance, und 50 % der Healthcare-AI-Studien weisen hohes Bias-Risiko auf."
+description_en: "Despite 1,200+ FDA-cleared AI medical devices, studies show that only a minority of academic centers integrate equity into AI governance, and 50% of healthcare AI studies carry high risk of bias."
+author: "21Stable Team"
+draft: false
+---
+
+# KI-Regulierung versus Realität: Warum Governance-Frameworks die klinische Forschung nicht erreichen
+
+Die Regulierung künstlicher Intelligenz in der Medizin schreitet auf Hochtouren voran. Die FDA hat inzwischen **über 1.200 KI-gestützte Medizinprodukte** zugelassen, der EU AI Act definiert Hochrisiko-Anwendungen im Gesundheitswesen, und die WHO veröffentlichte Leitlinien zur ethischen KI-Nutzung. Internationale Frameworks wie SPIRIT-AI und CONSORT-AI erweitern klinische Studienstandards um KI-spezifische Transparenzanforderungen.[1] Doch eine wachsende Zahl empirischer Studien zeigt: **Die Governance-Frameworks erreichen die klinische Forschungspraxis nur unzureichend.** Besonders deutlich sichtbar wird diese Lücke beim Thema Equity – der fairen Repräsentation aller Patientengruppen.
+
+## Die Governance-Lücke in akademischen Zentren
+
+Eine qualitative Studie von Nong et al., publiziert im *American Journal of Managed Care*, interviewte 17 Entscheidungsträger aus **13 akademischen medizinischen Zentren** in vier US-Census-Regionen. Fokus der semistrukturierten Interviews: Wie steuern akademische Zentren KI-Governance, und in welchem Umfang wird Equity dabei berücksichtigt?[2]
+
+Die Studie zeigt: **Nur eine Minderheit der Teilnehmer berichtete, dass Ungleichheit, Rassismus oder Bias in ihren Governance-Prozessen überhaupt thematisiert werden.** Die Mehrheit konzeptualisierte diese Probleme als isolierte Eigenschaften eines einzelnen KI-Tools – etwa unter Begriffen wie „algorithmischer Bias" oder „Fairness" – und nicht als systemische Governance-Herausforderung. Weniger Teilnehmer dachten Equity über die Technologie hinaus und stellten Fragen zu ihren Implikationen für Patienten.[2] Anders ausgedrückt: Bias wird als technisches Feature betrachtet, nicht als strukturelles Problem.
+
+## Bias im gesamten Lebenszyklus – nicht nur im Training
+
+Dass die technische Verengung des Bias-Begriffs unzureichend ist, belegt eine umfassende Übersichtsarbeit in *npj Digital Medicine*. Die Autoren analysierten **94 Publikationen** zu Bias und Fairness in Healthcare-KI und identifizierten Bias-Quellen über den gesamten Algorithmus-Lebenszyklus: von der Konzeptualisierung über die Datenerhebung und Modellentwicklung bis hin zur klinischen Implementierung und Post-Market-Überwachung.[3]
+
+In einer systematischen Bewertung von 48 Studien fanden Kumar et al., dass **50 % der Healthcare-AI-Studien ein hohes Bias-Risiko** aufwiesen, häufig aufgrund fehlender soziodemografischer Daten, unausgewogener Datensätze oder unzureichender Algorithmus-Validierung. Nur eine von fünf Studien wurde als Bias-arm eingestuft.[3] Eine parallele Analyse von **555 neuroimaging-basierten KI-Modellen** mit dem PROBAST-Framework ergab: Lediglich 15,5 % nutzten externe Validierung, 97,5 % schlossen ausschließlich Populationen aus Hocheinkommensregionen ein, und **83 % der Studien wiesen ein hohes Bias-Risiko** auf.[3]
+
+## Fairness ≠ Equality: Warum pauschale Ansätze scheitern
+
+Die npj-Digital-Medicine-Review differenziert präzise zwischen Fairness, Equality und Equity. Während Equality gleichen Zugang für alle fordert, verlangt Equity **maßgeschneiderte Ressourcen** für benachteiligte Gruppen, um vergleichbare Gesundheitsergebnisse zu erzielen.[3] Die Unterscheidung ist klinisch relevant: Fairness-Metriken wie demografische Parität, equalisierte Odds oder counterfactual Fairness müssen kontextabhängig gewählt werden. Ein pauschaler Fairness-Ansatz kann bestehende Disparitäten unbeabsichtigt verschärfen.[3]
+
+Dieses Problem wird durch die Praxis des kontinuierlichen Modell-Updates noch verschärft. Eine aktuelle empirische Evaluation auf arxiv.org (Berrios et al., 2026) zeigte anhand von **11.300 wöchentlichen Beobachtungen von 496 pädiatrischen Typ-1-Diabetes-Patienten**, dass selbst performanzerhaltende Modell-Updates die Vorhersage-Stabilität und Subgruppen-Fairness erheblich beeinträchtigen können.[4] Die Autoren argumentieren, dass Fairness-Monitoring ein integraler Bestandteil jeder klinischen ML-Pipeline sein muss – ein Anspruch, den die Governance-Realität derzeit verfehlt.
+
+## Klinische Implikationen: Ethik in KI-Studien
+
+Die Lücke zwischen Framework und Praxis manifestiert sich auch im Studiendesign selbst. Eine qualitative Analyse im *JAMA Network Open* befragte 11 Prüfärzte, die KI in klinischen Studien zur diabetischen Retinopathie einsetzten. Die Forscher identifizierten **KI-spezifische ethische Herausforderungen**, die über traditionelle Forschungsethik hinausgehen: die Bewertung des sozialen Nutzens dynamisch lernender Systeme, die Sicherstellung wissenschaftlicher Validität bei Black-Box-Modellen, faire Teilnehmerauswahl bei datenhungrigen Algorithmen und die Navigation komplexer informierter Einwilligungsprozesse.[1]
+
+## Fazit
+
+KI-Regulierung hat in den letzten Jahren beachtliche Fortschritte erzielt – auf dem Papier. Die empirische Evidenz zeigt jedoch eine **systematische Lücke zwischen Governance-Frameworks und klinischer Forschungspraxis**. Bias wird überwiegend als technisches, nicht als strukturelles Problem behandelt. Fairness-Monitoring fehlt in den meisten Governance-Prozessen. Und Equity – die gerechte Verteilung von Nutzen und Risiken über alle Patientengruppen – wird von akademischen Zentren kaum operationalisiert. Das Fazit liegt auf der Hand: Frameworks allein reichen nicht. Es braucht verbindliche, überprüfbare Standards für den gesamten KI-Lebenszyklus – nicht nur für die Zulassung, sondern auch für den Betrieb.
+
+---
+
+## Key Findings
+
+Despite the FDA having cleared over 1,200 AI-enabled medical devices and the proliferation of international governance frameworks (SPIRIT-AI, CONSORT-AI, EU AI Act), empirical research reveals a **persistent gap between regulatory intent and clinical research practice**.
+
+A qualitative study across 13 US academic medical centers found that **only a minority of institutions integrate equity considerations into their AI governance processes**. Most participants conceptualized bias as a tool-level property rather than a systemic governance challenge.[2]
+
+A comprehensive review in *npj Digital Medicine* analyzed 94 publications on bias in healthcare AI. Key findings: **50% of healthcare AI studies carry high risk of bias**, often due to absent sociodemographic data or imbalanced datasets. Only 1 in 5 studies has low bias risk. In neuroimaging AI, **83% of 555 studies** showed high bias risk—97.5% used data exclusively from high-income countries.[3]
+
+The review distinguishes between Fairness, Equality, and Equity: blanket fairness approaches can inadvertently worsen disparities when applied without context-specific calibration of fairness metrics such as demographic parity, equalized odds, or counterfactual fairness.[3]
+
+Ethical challenges unique to AI trials—dynamic social value assessment, black-box validity, fair participant selection, and complex informed consent—require governance mechanisms that extend beyond traditional research ethics frameworks.[1]
+
+---
+
+## References
+
+1. Youssef A, Nichol AA, Martinez-Martin N, et al. (2024). Ethical Considerations in the Design and Conduct of Clinical Trials of Artificial Intelligence. *JAMA Network Open*, 7(9):e2432482. https://doi.org/10.1001/jamanetworkopen.2024.32482
+
+2. Nong P, DeVore E, Lyles CR, et al. (2024). Equity and AI Governance at Academic Medical Centers. *The American Journal of Managed Care*, 30(6 Spec No.):SP468-SP472. https://doi.org/10.37765/ajmc.2024.89555
+
+3. Cross JL, Choudhury A, Chen J, Li H. (2025). Bias recognition and mitigation strategies in artificial intelligence healthcare applications. *npj Digital Medicine*, 8:166. https://doi.org/10.1038/s41746-025-01503-7
+
+4. Berrios RC, Fernandez-Luque L, Castillo C. (2026). An empirical evaluation of the risks of AI model updates using clinical data: stability, arbitrariness, and fairness. *arXiv preprint*, arXiv:2604.23954. https://arxiv.org/abs/2604.23954
