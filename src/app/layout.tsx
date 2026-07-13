@@ -43,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
+        <script dangerouslySetInnerHTML={{__html: `new Image().src='/api/track?path='+encodeURIComponent(location.pathname+location.search)+'&referrer='+encodeURIComponent(document.referrer||'')+'&session='+Math.random().toString(36).substr(2,9);`}} />
         <Providers>
           <Header />
           {children}
