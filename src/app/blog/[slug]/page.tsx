@@ -1,51 +1,41 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { readFileSync, existsSync } from 'fs'
+import { readFileSync, existsSync, readdirSync } from 'fs'
 import { join } from 'path'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
-// All blog post slugs - hardcoded for static export
-const BLOG_SLUGS = [
-  'trialmatchai-ki-patient-trial-matching-2026-03-25',
-  'win-statistics-onkologie-klinische-studien-2026-03-24',
-  'meaningful-explanations-ai-clinical-practice-2026-03-23',
-  'ngs-companion-diagnostics-precision-oncology-2026-03-19',
-  'statistische-methoden-onkologie-bayes-2026-03-17',
-  'ki-ethik-klinische-studien-2026-03-16',
-  'real-world-evidence-precision-oncology-2026-03-15',
-  'maschinelles-lernen-chemotherapie-colorectal-2026-03-14',
-  'pan-cancer-prognostic-models-survival-2026-03-13',
-  'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12',
-  'adaptives-studiendesign-onkologie-2026-03-11'
-]
-
-// English titles for metadata
-const TITLES_EN: Record<string, string> = {
-  'trialmatchai-ki-patient-trial-matching-2026-03-25': 'TrialMatchAI: AI-powered Patient-Trial Matching Revolutionizes Clinical Trial Designs',
-  'win-statistics-onkologie-klinische-studien-2026-03-24': 'Win Statistics: An Alternative to Hazard Ratios in Clinical Trials', 
-  'meaningful-explanations-ai-clinical-practice-2026-03-23': 'Beyond Compliance: Making AI Explanations Meaningful for Patients in Clinical Practice',
-  'ngs-companion-diagnostics-precision-oncology-2026-03-19': 'NGS Companion Diagnostics: The Backbone of Precision Oncology in 2026',
-  'statistische-methoden-onkologie-bayes-2026-03-17': 'Bayesian Methods: Solving the Paradoxes of Classical Statistical Tests?',
-  'ki-ethik-klinische-studien-2026-03-16': 'Ethics of EHR Data for AI Development',
-  'real-world-evidence-precision-oncology-2026-03-15': 'Life-Cycle Real-World Evidence: Bridging Evidentiary Gaps in Precision Oncology',
-  'maschinelles-lernen-chemotherapie-colorectal-2026-03-14': 'Machine Learning Predicts Chemotherapy-Induced Myelosuppression',
-  'pan-cancer-prognostic-models-survival-2026-03-13': 'Pan-Cancer Prognostic Models: ML Revolutionizes Survival Analysis',
-  'ctdna-risk-adaptive-therapy-nasopharyngeal-2026-03-12': 'Dynamic ctDNA Monitoring in Nasopharyngeal Carcinoma',
-  'adaptives-studiendesign-onkologie-2026-03-11': 'Adaptive Trial Designs: Efficiency Through Bayesian Methods'
+// All blog post slugs - dynamically discovered at build time
+function getAllSlugs(): string[] {
+  const blogDir = join(process.cwd(), 'src/app/blog')
+  return readdirSync(blogDir)
+    .filter(d => {
+      if (d === '[slug]' || d.startsWith('BlogPost')) return false
+      return existsSync(join(blogDir, d, 'page.mdx'))
+    })
+    .sort()
 }
 
 export async function generateStaticParams() {
-  return BLOG_SLUGS.map(slug => ({ slug }))
+  return getAllSlugs().map(slug => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   
+  // Read title from frontmatter
+  const filePath = join(process.cwd(), 'src/app/blog', slug, 'page.mdx')
+  let title = 'Blog'
+  if (existsSync(filePath)) {
+    const content = readFileSync(filePath, 'utf-8')
+    const titleMatch = content.match(/^title:\s*"(.+)"/m)
+    if (titleMatch) title = titleMatch[1]
+  }
+  
   return {
-    title: `${TITLES_EN[slug] || 'Blog'} — 21Stable`,
+    title: `${title} — 21Stable`,
     description: 'Expert articles on AI in oncology, cancer research and clinical trials.',
   }
 }
@@ -98,7 +88,7 @@ function mdxToHtml(content: string): string {
       if (line.trim() === '') return ''
       if (line.startsWith('|')) return ''
       if (line.startsWith('**')) return `<p class="font-bold my-4 text-foreground">${line.replace(/\*\*/g, '')}</p>`
-      if (line.startsWith('# ')) return '' // Skip H1, title shown separately
+      if (line.startsWith('# ')) return ''
       return `<p class="my-3 text-muted leading-relaxed">${line}</p>`
     })
     .join('')
@@ -124,7 +114,7 @@ export default async function BlogPostPage({ params }: Props) {
   const contentHtml = mdxToHtml(body)
   
   const post = {
-    title: TITLES_EN[slug] || data.title || slug,
+    title: data.title || slug,
     date: data.date || new Date().toISOString().split('T')[0],
     author: data.author || '21Stable Team'
   }

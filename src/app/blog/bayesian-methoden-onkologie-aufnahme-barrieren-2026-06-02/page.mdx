@@ -1,0 +1,143 @@
+---
+title: "Bayesianische Methoden in der Onkologie: Nur 0,75 % der Studien nutzen sie – warum?"
+title_en: "Bayesian Methods in Oncology: Only 0.75% of Trials Use Them – Why?"
+date: "2026-06-02"
+category: "Statistische Methoden"
+description: "Trotz klarer Vorteile verwenden nur 0,75 % aller onkologischen Studien Bayesianische Methoden. Eine systematische Analyse zeigt die Barrieren – und neue Entwicklungen, die das ändern könnten."
+description_en: "Despite clear advantages, only 0.75% of oncology trials use Bayesian methods. A systematic analysis reveals the barriers – and recent developments that could change this."
+author: "21Stable Team"
+draft: false
+---
+
+# Bayesianische Methoden in der Onkologie: Nur 0,75 % der Studien nutzen sie – warum?
+
+## Einleitung
+
+Bayesianische Statistik bietet theoretisch ideale Voraussetzungen für onkologische Studien: Flexibilität bei kleinen Stichproben, transparente Entscheidungsfindung, Integration von Vorwissen – alles zentrale Anforderungen in einem Feld, das von seltenen Subgruppen, schnellen Therapiewechseln und ethischen Zwängen geprägt ist. Die Realität sieht anders aus: **Nur 640 von 84.850 onkologischen Studien (0,75 %)**, die zwischen 2004 und 2024 auf ClinicalTrials.gov registriert wurden, verwendeten Bayesianische Methoden[1].
+
+Diese Zahl stammt aus der bislang umfassendsten Querschnittsanalyse zu Bayesianischen Ansätzen in der Onkologie, veröffentlicht im März 2025 in *Frontiers in Pharmacology* durch Lopez-Rey et al.[1]. Das Team um Caridad Pontes analysierte sämtliche onkologischen Interventionstudien über einen Zeitraum von 20 Jahren – mit überraschenden Ergebnissen.
+
+## Kernerkenntnis
+
+Die zentrale Befund der Analyse: **Die Adoption Bayesianischer Methoden hat sich seit 2011 abgeflacht.** Zwar stieg die absolute Zahl Bayesianischer Studien – aber nur im Gleichschritt mit dem allgemeinen Wachstum onkologischer Forschung, nicht als anteiliger Zuwachs.
+
+Die Verteilung zeigt ein klares Muster:
+
+- **Phase I:** 263 Studien (41,1 %)
+- **Phase II:** 215 Studien (33,6 %)
+- **Phase II/III:** 9 Studien (1,4 %)
+- **Phase III:** 14 Studien (2,2 %)
+
+60,6 % aller Bayesianischen Studien waren **einarmige Designs**, meist mit binären Endpunkten (Overall Response Rate). Dosiseskalation (CRM, BOIN, BLRM) dominierte als Anwendungsszenario – nicht die Auswertung komplexer Überlebensdaten.
+
+Besonders auffällig: **Nur 23 Studien (3,6 %)** verwendeten Bayesianische Designs in konfirmatorischen Phasen (II/III oder III). Das bedeutet: Trotz methodischer Anerkennung trauen sich weder Industrie noch akademische Sponsoren, Bayesianische Verfahren als primäre Evidenz für die Zulassung einzusetzen.
+
+## Forschungsmethodik
+
+Die Querschnittsstudie[1] verfolgte einen dreistufigen Identifikationsansatz:
+
+1. **ClinicalTrials.gov-Screening:** Automatisierte Suche nach Bayesianischen Deskriptoren (Bayes, prior/posterior distribution, credible interval, BOIN, BLRM, Bayesian hierarchical model) in 384.298 registrierten Studien
+2. **PubMed-Ergänzung:** Peer-reviewte Publikationen mit NCT-Referenzen
+3. **Manuelle Validierung:** Abgleich von Cross-Referenzen und manuelle Überprüfung jeder identifizierten Studie
+
+Die Datenextraktion erfolgte mit dem `ctrdata` R-Paket[1] und umfasste Studienphase, Stichprobengröße, Studiendesign, primäre/sekundäre Endpunkte und therapeutische Indikation. Hämatologische Indikationen dominierten.
+
+Parallel dazu erschienen 2025/2026 drei regulatorische Katalysatoren, die Bayesianischen Methoden neuen Schub geben könnten:
+
+- **ICH E20** (Juni 2025, Step 2b): Erste globale Leitlinie für adaptive Designs mit expliziten Bayesianischen Komponenten[2]
+- **FDA Draft Guidance** (Januar 2026): Bayesianische Methoden als primäres Analyseframework[3]
+- **COMPACT-Design** (Qiu & Li, 2025): Erstes Bayesianisches Phase-I/II-Design für Kombinationstherapien mit PFS als primärem Endpunkt unter Verwendung der Restricted Mean Survival Time (RMST)[4]
+
+## Klinische Relevanz
+
+### Warum ist die 0,75 %-Quote ein Problem?
+
+Die Diskrepanz zwischen methodischem Potenzial und realer Nutzung hat praktische Konsequenzen:
+
+1. **Verschwendete Ressourcen in Phase II:** Einarmige Phase-II-Studien mit Frequentist-Auswertung und Response-Rate-Endpunkten scheitern häufig am Übergang zu Phase III, weil die Evidenzlage für Go/No-Go-Entscheidungen unzureichend ist. Bayesianische Designs könnten durch die Integration von Vorwissen robustere prädiktive Wahrscheinlichkeiten liefern.
+
+2. **Kombinationstherapien ohne methodische Basis:** Das NCI-ComboMATCH-Programm und die Zunahme von Immuntherapie-Kombinationen erfordern Dosisoptimierung jenseits des klassischen „more-is-better"-Paradigmas. Das COMPACT-Design[4] adressiert genau dieses Problem: Es verwendet PFS (nicht nur Response) und Pareto-Verteilungen zur Modellierung von Long-Term-Respondern in Immuntherapie-Studien.
+
+3. **Regulatorische Asymmetrie:** Während FDA und ICH methodisch aufgeschlossen sind, fehlt es an praktischer Erfahrung bei Sponsoren und Statistikern. Die Studie von Lopez-Rey et al.[1] zeigt: 33,1 % der Bayesianischen Studien wurden von einzelnen Krankenhäusern gesponsert, nur 31,2 % von der Industrie – ein umgekehrtes Verhältnis im Vergleich zu Frequentist-Studien, in denen die Industrie dominiert.
+
+### Das COMPACT-Design als Lösungsansatz
+
+Das COMPACT-Design[4] illustriert, wohin die Reise geht: ein zwei-stufiges Bayesianisches randomisiertes Design für Kombinationstherapien mit PFS-Endpunkt, RMST als Effektmaß und adaptiver Randomisierung. Es vermeidet komplexe parametrische Modellierung und setzt auf lokale Daten ("borrowing information across dose combinations"). Dadurch bleibt es für klinische Teams interpretierbar – ein zentraler Punkt, den die Lopez-Rey-Studie[1] als Barriere identifiziert.
+
+## Fazit
+
+Die 0,75 % sind ein Weckruf. Bayesianische Methoden sind kein statistisches Orchideenfach – sie adressieren genuine Probleme onkologischer Forschung: kleine Populationen, schnelle Therapieentwicklung, Dosisoptimierung jenseits der maximal tolerierten Dosis.
+
+Drei Faktoren könnten die Quote in den nächsten Jahren verändern:
+1. **FDA Draft Guidance 2026** – erstmals Bayesianische Methoden als primäres Zulassungsframework
+2. **ICH E20** – global harmonisierte Standards für adaptive Designs mit Bayesianischen Komponenten
+3. **Praktische Tools wie COMPACT** – Bayesianische Designs, die klinisch interpretierbar bleiben
+
+Die nächste systematische Erhebung in fünf Jahren wird zeigen, ob diese Katalysatoren gewirkt haben. Bis dahin bleibt die Empfehlung der Autoren[1]: Bayesianische Methoden sollten nicht nur in Dosisfindungsstudien, sondern verstärkt in konfirmatorischen Settings mit kleinen Populationen und ungedecktem medizinischem Bedarf eingesetzt werden.
+
+---
+
+## Key Findings
+
+A comprehensive cross-sectional analysis by Lopez-Rey et al. (2025)[1] examined 84,850 oncology clinical trials registered on ClinicalTrials.gov between 2004 and 2024. Only **640 (0.75%)** used Bayesian methods.
+
+## Core Insight
+
+The adoption rate of Bayesian methods in oncology has plateaued since 2011. While absolute numbers increased, this merely paralleled the overall growth of oncology research rather than reflecting proportional adoption gains.
+
+Distribution by phase:
+- **Phase I:** 263 studies (41.1%)
+- **Phase II:** 215 studies (33.6%)
+- **Phase II/III:** 9 studies (1.4%)
+- **Phase III:** 14 studies (2.2%)
+
+Single-arm designs dominated (60.6%), primarily using binary endpoints such as overall response rate. Only 23 studies (3.6%) applied Bayesian methods in confirmatory settings.
+
+## Methodology
+
+Lopez-Rey et al.[1] employed a three-stage identification strategy:
+- Automated ClinicalTrials.gov screening using Bayesian descriptors
+- PubMed enrichment via peer-reviewed publications with NCT identifiers
+- Manual validation and cross-reference verification
+
+Data extraction used the `ctrdata` R package. Trial characteristics including phase, sample size, design, endpoints, and therapeutic indication were systematically captured.
+
+Three concurrent regulatory developments in 2025/2026 may serve as catalysts:
+- **ICH E20** (June 2025, Step 2b): First global guideline for adaptive trials with explicit Bayesian components[2]
+- **FDA Draft Guidance** (January 2026): Bayesian methods recognized as primary analysis framework[3]
+- **COMPACT Design** (Qiu & Li, 2025): First Bayesian Phase I/II design using PFS as the primary endpoint with restricted mean survival time (RMST)[4]
+
+## Clinical Relevance
+
+### Why the 0.75% matters
+
+1. **Phase II resource waste:** Single-arm Phase II trials with frequentist analysis frequently fail at the Phase II/III transition. Bayesian designs incorporating prior information could provide more robust predictive probabilities for Go/No-Go decisions.
+
+2. **Combination therapies without methodological basis:** The NCI ComboMATCH initiative and growing immunotherapy combinations require dose optimization beyond the "more-is-better" paradigm. COMPACT[4] addresses this using PFS rather than response rate and Pareto distributions to model long-term durable responses.
+
+3. **Regulatory asymmetry:** While FDA and ICH are methodologically receptive, practical experience is lacking. Hospitals sponsored 33.1% of Bayesian trials versus 31.2% by industry — the inverse of the frequentist trial landscape.
+
+### COMPACT as a path forward
+
+COMPACT[4] employs a two-stage Bayesian randomized design with PFS as the endpoint, RMST as the effect measure, and adaptive randomization. It avoids complex parametric modeling by borrowing information locally across dose combinations, maintaining interpretability for clinical teams — a key barrier identified by Lopez-Rey et al.[1].
+
+## Conclusion
+
+The 0.75% figure is a wake-up call. Bayesian methods address genuine oncology research challenges: small populations, rapid therapeutic development, and dose optimization beyond maximum tolerated dose.
+
+Three catalysts may shift this:
+1. **FDA Draft Guidance 2026** — Bayesian methods as primary regulatory framework
+2. **ICH E20** — globally harmonized adaptive design standards
+3. **Practical tools like COMPACT** — clinically interpretable Bayesian designs
+
+The next systematic survey in five years will reveal whether these catalysts have worked. Until then, the authors' recommendation[1] stands: Bayesian methods should be applied not only in dose-finding but increasingly in confirmatory settings with small populations and unmet medical need.
+
+## References
+
+1. Lopez-Rey BG, Carot-Sans G, Ouchi D, Torres F, Pontes C (2025). Use of Bayesian approaches in oncology clinical trials: A cross-sectional analysis. *Frontiers in Pharmacology*, 16:1548997. https://doi.org/10.3389/fphar.2025.1548997
+
+2. ICH (2025). E20 Adaptive Designs for Clinical Trials: Draft Guideline (Step 2b, June 2025). International Council for Harmonisation. https://www.ich.org/news/ich-e20-draft-guideline-available-now-ich-website
+
+3. FDA (2026). Use of Bayesian Methodology in Clinical Trials of Drug and Biological Products: Draft Guidance. U.S. Food and Drug Administration. https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-bayesian-methodology-clinical-trials-drug-and-biological-products
+
+4. Qiu J, Li Y (2025). A randomized Bayesian phase I-II dose optimization design for combination cancer therapies with progression-free survival end point (COMPACT). *BMC Medical Research Methodology*, 25:2665. https://doi.org/10.1186/s12874-025-02665-4

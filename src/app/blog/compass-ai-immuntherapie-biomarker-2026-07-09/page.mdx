@@ -1,0 +1,54 @@
+---
+title: "COMPASS: KI-Foundation-Modell sagt Immuntherapie-Response pan-Krebs voraus"
+title_en: "COMPASS: AI Foundation Model Predicts Immunotherapy Response Across Cancers"
+date: "2026-07-09"
+category: "Biostatistik"
+description: "Ein neues Concept-Bottleneck-Foundation-Modell übertrifft TMB und PD-L1 bei der Vorhersage von Immuntherapie-Ergebnissen — trainiert auf 33 Krebsarten, validiert in 16 Kohorten."
+description_en: "A new concept-bottleneck foundation model outperforms TMB and PD-L1 in predicting immunotherapy outcomes — trained on 33 cancer types, validated across 16 cohorts."
+author: "21Stable Team"
+draft: false
+---
+
+# COMPASS: KI-Foundation-Modell sagt Immuntherapie-Response pan-Krebs voraus
+
+Immun-Checkpoint-Inhibitoren (ICI) haben die Onkologie revolutioniert — doch nur eine Minderheit der Patienten erreicht ein dauerhaftes Ansprechen. Die etablierten prädiktiven Biomarker Tumormutationslast (TMB) und PD-L1-Expression liefern unvollständige Informationen: Viele High-TMB-Tumoren bleiben refraktär, während einige Low-TMB-Tumoren robust ansprechen. Eine pan-Krebs-Analyse mit 27.810 ICI-behandelten Patienten bestätigte kürzlich die schwachen und inkonsistenten Assoziationen dieser Marker mit dem Therapieerfolg [1].
+
+Ein in *Nature Medicine* publiziertes Forscherteam hat nun **COMPASS** entwickelt — ein pan-Krebs-Foundation-Modell, das aus Transkriptomdaten interpretierbare Tumor-Immun-Konzepte ableitet und das Ansprechen auf Immuntherapien vorhersagt [1].
+
+## Die Architektur: Concept Bottleneck mit biologischer Verankerung
+
+COMPASS nutzt eine **Concept-Bottleneck-Architektur**: Ein Transformer-basierter Gen-Encoder verarbeitet die Expressionsprofile von 15.672 proteinkodierenden Genen und projiziert sie auf 132 kuratierte Gensignaturen. Diese Signaturen umfassen Immunzelltypen, funktionelle Zustände, Signalwege sowie nicht-immunologische Tumorbiologie (Stroma-Programme, DNA-Schadensantwort). Ein hierarchischer Concept-Projektor aggregiert diese schrittweise zu höherwertigen Repräsentationen der Tumor-Immun-Mikroumgebung (TIME), bevor ein schlanker Klassifikator die Response vorhersagt.
+
+Das Pretraining erfolgte mittels **selbstüberwachtem kontrastivem Lernen** auf Transkriptomen aus 33 Krebsarten. Anschließend wurde COMPASS auf 1.133 Patienten aus 16 klinischen Kohorten mit sieben Tumorentitäten feinabgestimmt — darunter anti-PD-1/PD-L1, anti-CTLA-4 und Kombinationstherapien.
+
+## Ergebnisse: Signifikant besser als TMB und PD-L1
+
+In der Leave-one-cohort-out-Validierung erreichte COMPASS unter 22 Modellen die beste durchschnittliche Performance: **+8,5 % Accuracy** und **+15,7 % Area Under the Precision-Recall Curve (AUPRC)**. In einer zurückgehaltenen Phase-II-Studie zum metastasierten Urothelkarzinom zeigten von COMPASS als Responder klassifizierte Patienten ein **signifikant längeres Überleben (Hazard Ratio = 4,7; P = 1,7 × 10⁻⁷)** — und übertrafen damit sowohl TMB als auch PD-L1-IHC als prädiktive Biomarker deutlich.
+
+## Mechanistische Einblicke jenseits grober Immunphänotypen
+
+Ein entscheidender Vorteil von COMPASS ist die Interpretierbarkeit: Das Modell generiert **personalisierte Response-Maps**, die Genexpression mit Immun-Konzepten verknüpfen. Dabei identifizierte COMPASS drei zentrale Treiber:
+
+- **T-Zell-Erschöpfung** (T cell exhaustion)
+- **Myeloide Programme** (immunsuppressive Mikroumgebung)
+- **Immunregulatorische Signalwege** (TGFβ, vaskuläre Exklusion)
+
+Besonders aufschlussreich: COMPASS löste Fälle auf, in denen die kanonische Immunphänotypisierung (inflamed, excluded, desert) irreführend war. *Inflamed non-responders* wiesen TGFβ-getriebene Suppression oder CD4⁺/B-Zell-Dysfunktion auf, während *non-inflamed responders* residuale zytotoxische Aktivität ohne immunsuppressive Signale zeigten.
+
+## Klinische Relevanz
+
+Die Implikationen sind erheblich: COMPASS ermöglicht eine **parameter-effiziente Adaptation an kleine klinische Kohorten** — ein kritischer Vorteil in der personalisierten Onkologie, wo große randomisierte Studien für jede Tumorentität und Therapielinie nicht praktikabel sind. Die vier Fine-Tuning-Strategien (Full, Partial, Linear Probing, No Fine-Tuning) erlauben eine flexible Anpassung an unterschiedliche Kohortengrößen.
+
+Für die klinische Praxis bedeutet dies: Statt auf grobe, oft unzuverlässige Einzelmarker wie PD-L1 oder TMB zu setzen, könnte ein Transkriptom-basiertes Foundation-Modell künftig eine **präzisere Patientenselektion** ermöglichen — und damit sowohl Übertherapie als auch verpasste Therapiechancen reduzieren.
+
+## Key Findings
+
+COMPASS, a concept-bottleneck foundation model published in *Nature Medicine*, predicts immunotherapy response across seven cancer types using bulk tumor transcriptomes. Pretrained via self-supervised contrastive learning on 33 cancer types and fine-tuned on 1,133 patients from 16 clinical cohorts, COMPASS outperformed 22 competing models by **+8.5% accuracy and +15.7% AUPRC** in leave-one-cohort-out evaluation [1].
+
+In a held-out phase 2 trial of metastatic urothelial carcinoma, COMPASS-predicted responders showed significantly longer survival (**HR = 4.7, P = 1.7 × 10⁻⁷**), substantially outperforming both TMB and PD-L1 IHC as predictive biomarkers. The model generates personalized response maps linking gene expression to 132 curated immune concepts, identifying key drivers including T cell exhaustion, myeloid programs, and TGFβ-driven immunosuppression. Critically, COMPASS resolved cases where canonical immune phenotypes (inflamed, excluded, desert) were misleading — inflamed non-responders exhibited TGFβ-driven suppression or CD4⁺/B cell dysfunction, while non-inflamed responders displayed residual cytotoxic activity without immunosuppressive signals [1].
+
+The parameter-efficient architecture supports transfer to small clinical cohorts via four fine-tuning strategies, making transcriptome-based precision immunotherapy prediction feasible across diverse clinical settings.
+
+## References
+
+1. Shen, W. et al. (2026). Generalizable AI predicts immunotherapy outcomes across cancers and treatments. *Nature Medicine*. https://doi.org/10.1038/s41591-026-04502-7

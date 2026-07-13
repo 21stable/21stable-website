@@ -1,0 +1,139 @@
+---
+title: "Wenn eine KI um Einwilligung bittet: Das RESPECT-System und die Zukunft des Informed Consent"
+title_en: "When an AI Asks for Consent: The RESPECT System and the Future of Informed Consent"
+date: "2026-06-08"
+category: "Biostatistik"
+description: "Die Stanford-Studie RESPECT etabliert erstmals eine RAG-basierte KI für Informed Consent in klinischen Studien – mit neuartiger Refusal-Utility-Curve zur Sicherheitsbewertung."
+description_en: "Stanford's RESPECT study establishes the first RAG-based AI for informed consent in clinical trials – with a novel Refusal-Utility Curve for safety evaluation."
+author: "21Stable Team"
+draft: false
+---
+
+# Wenn eine KI um Einwilligung bittet: Das RESPECT-System und die Zukunft des Informed Consent
+
+Der Informed Consent gilt als ethisches Fundament jeder klinischen Studie. Doch in der Praxis ist er oft ein standardisiertes, schwer verständliches Dokumentenpaket, das mehr der juristischen Absicherung dient als der tatsächlichen Patientenaufklärung[1]. Eine im Mai 2026 in *npj Digital Medicine* publizierte Stanford-Studie stellt nun die Frage: **Kann eine KI den Informed Consent verbessern – und wo liegen die Grenzen?**
+
+## RESPECT: Ein RAG-basierter KI-Assistent für die Studieneinwilligung
+
+Das Forschungsteam um Jane Paik Kim an der Stanford University School of Medicine entwickelte mit **RESPECT (RESearch Participant Engagement and Consent Tool)** das erste RAG-basierte (Retrieval-Augmented Generation) LLM-System für den Informed Consent in der klinischen Forschung[1].
+
+Das System funktioniert nach einem klaren Prinzip: Statt generische Antworten eines Large Language Models zu verwenden, greift RESPECT ausschließlich auf das konkrete Informed-Consent-Dokument der jeweiligen Studie zurück. Der RAG-Mechanismus durchsucht das Quell-Dokument und generiert Antworten, die sich strikt an den genehmigten Inhalten orientieren – ein fundamentaler Unterschied zu frei antwortenden Chatbots.
+
+Die **Leave-one-out-Cross-Validation** des Systems zeigte eine hohe Genauigkeit in der Informationsabfrage: Die RAG-Komponente findet und extrahiert die relevanten Passagen zuverlässig aus den Quell-Dokumenten[1].
+
+## Die Refusal-Utility-Curve: Ein neues Sicherheitsparadigma
+
+Der methodisch innovativste Beitrag der Studie ist die **Refusal–Utility Curve (RUC)** – ein Bewertungsrahmen, der zwei Dimensionen von LLM-Sicherheit gleichzeitig misst[1]:
+
+1. **Appropriate Refusal**: Wie oft lehnt das System Fragen ab, die es *nicht* beantworten sollte? (z. B. medizinische Empfehlungen außerhalb der Studienunterlagen)
+2. **Utility**: Wie oft beantwortet es legitime Fragen korrekt?
+
+Die RUC visualisiert den Trade-off zwischen diesen beiden Dimensionen – analog zur ROC-Kurve (Receiver Operating Characteristic) in der Diagnostik. Je höher die Fläche unter der Kurve, desto besser die Balance.
+
+Das Ergebnis: RESPECT zeigte **signifikant höhere Appropriate-Refusal-Raten als GPT-4**, allerdings auf Kosten einer reduzierten Utility bei legitimen Fragen[1]. Anders formuliert: Das System ist vorsichtiger – und genau das ist im Informed-Consent-Kontext erwünscht. Eine KI, die außerhalb ihres Kompetenzbereichs spekuliert, gefährdet die Validität der Einwilligung.
+
+## Informed Consent: Das ungelöste Problem der Breite
+
+Warum ist diese Forschung klinisch relevant? Eine im Mai 2025 in *Current Oncology Reports* publizierte systematische PRISMA-Review zu KI-gestützter Entscheidungsfindung in der Onkologie identifiziert den Informed Consent als einen der kritischsten ethischen Engpässe[2]. Die zentralen Befunde:
+
+- **Transparenzdefizit:** Patienten verstehen oft nicht, dass und wie ein KI-Modell an ihrer Behandlungsentscheidung beteiligt ist.
+- **Dynamische Modelle:** KI-Systeme, die sich während einer laufenden Studie weiterentwickeln (kontinuierliches Lernen), bewegen sich in einer regulatorischen Grauzone: Wurde der ursprüngliche Consent für *diese Version* des Modells erteilt?
+- **Accountability-Lücke:** Wer haftet, wenn eine KI-gestützte Entscheidung zu einem Schaden führt – der Prüfarzt, der Sponsor oder der Modellentwickler?
+
+RESPECT adressiert den Transparenzaspekt direkt: Das System macht die Quell-Dokumente seiner Antworten nachvollziehbar und verweigert die Antwort, wenn die Frage außerhalb des genehmigten Consent-Textes liegt[1].
+
+## Governance: Der organisatorische Rahmen
+
+Parallel zur technologischen Entwicklung entstehen organisatorische Governance-Modelle. Ein Team am Memorial Sloan Kettering Cancer Center (MSKCC) publizierte 2025 in *npj Digital Medicine* einen Erfahrungsbericht über ein Jahr Responsible-AI-Governance in der Onkologie[3]:
+
+- **26 KI-Modelle** (inkl. LLMs) und 2 Ambient-AI-Piloten wurden durch das Governance-System registriert und evaluiert
+- **33 Nomogramme** wurden retrospektiv überprüft
+- Die Autoren betonen, dass Onkologie-spezifische KI-Risiken – etwa die Verschärfung bestehender Versorgungsdisparitäten – domänenspezifische Governance erfordern, die über generische KI-Ethik-Leitlinien hinausgeht[3]
+
+Zudem veröffentlichte die American Society of Clinical Oncology (ASCO) sechs Leitprinzipien für den verantwortungsvollen KI-Einsatz in der Onkologie, die neben Transparenz und Fairness auch **Accountability, Patient-Centeredness, Equity und Safety** umfassen[4].
+
+## Praktische Implikationen: Was bedeutet das für klinische Studien?
+
+**1. Der Informed Consent wird interaktiv.**
+Systeme wie RESPECT zeigen, dass eine KI den Informed Consent nicht ersetzt, sondern ergänzt: Sie beantwortet patientenspezifische Rückfragen zum Studienprotokoll und entlastet Prüfärzte, ohne die genehmigten Inhalte zu verlassen.
+
+**2. Safety-by-Design statt nachträglicher Prüfung.**
+Die RUC-Methodik etabliert ein quantitatives Maß für KI-Sicherheit, das vor dem Deployment evaluiert werden kann – vergleichbar mit Sensitivität und Spezifität in der Diagnostik.
+
+**3. Governance muss domänenspezifisch sein.**
+Die MSKCC- und ASCO-Erfahrungen zeigen, dass Onkologie-spezifische KI-Risiken (Disparitäten, Tumorheterogenität) nicht durch generische IT-Governance abgedeckt werden[3,4].
+
+## Fazit
+
+Die RESPECT-Studie markiert einen methodischen Fortschritt: Sie liefert nicht nur ein funktionierendes KI-System für den Informed Consent, sondern mit der Refusal-Utility-Curve auch ein **quantitatives Evaluations-Framework**, das Sicherheit und Nutzen systematisch abwägt[1]. Die höhere Verweigerungsrate gegenüber GPT-4 ist dabei kein Nachteil – im Informed Consent ist ein konservatives System, das Unklarheit eingesteht, dem eloquenten Bluff vorzuziehen.
+
+---
+
+## Key Findings
+
+Informed consent is the ethical foundation of all clinical research. In practice, however, it often consists of standardized, difficult-to-understand document packages that serve legal protection more than genuine patient education[1]. A Stanford study published in *npj Digital Medicine* in May 2026 asks: **Can AI improve informed consent – and where are the limits?**
+
+### RESPECT: A RAG-Based AI Assistant for Study Consent
+
+A research team led by Jane Paik Kim at Stanford University School of Medicine developed **RESPECT (RESearch Participant Engagement and Consent Tool)** – the first Retrieval-Augmented Generation (RAG)-based LLM system for informed consent in clinical research[1].
+
+Rather than using an LLM's generic knowledge, RESPECT grounds all responses in the specific informed consent document of the respective study. The RAG mechanism searches the source document and generates answers strictly based on approved content – a fundamental difference from freely responding chatbots.
+
+Leave-one-out cross-validation demonstrated high accuracy in information retrieval: the RAG component reliably extracts relevant text passages from source documents[1].
+
+### The Refusal-Utility Curve: A New Safety Paradigm
+
+The study's most innovative methodological contribution is the **Refusal–Utility Curve (RUC)** – an evaluation framework measuring two dimensions of LLM safety simultaneously[1]:
+
+1. **Appropriate Refusal**: How often does the system refuse to answer questions it *should not* answer? (e.g., medical recommendations beyond study materials)
+2. **Utility**: How often does it correctly answer legitimate questions?
+
+The RUC visualizes the trade-off between these dimensions – analogous to the ROC curve in diagnostics. The higher the area under the curve, the better the balance.
+
+The result: RESPECT showed **significantly higher appropriate refusal rates compared to GPT-4**, albeit at the cost of reduced utility for legitimate questions[1]. In other words, the system is more cautious – precisely what is desirable in an informed consent context. An AI that speculates outside its competence domain jeopardizes consent validity.
+
+### Informed Consent: The Unresolved Breadth Problem
+
+A systematic PRISMA review on AI-driven decision-making in oncology, published in *Current Oncology Reports* in 2025, identifies informed consent as one of the most critical ethical bottlenecks[2]:
+
+- **Transparency deficit:** Patients often do not understand that and how an AI model is involved in their treatment decision.
+- **Dynamic models:** AI systems that continue learning during an ongoing trial operate in a regulatory gray zone: Was the original consent granted for *this version* of the model?
+- **Accountability gap:** Who is liable when an AI-assisted decision causes harm – the investigator, the sponsor, or the model developer?
+
+RESPECT directly addresses the transparency aspect: the system makes the source documents of its answers traceable and refuses to answer when a question falls outside the approved consent text[1].
+
+### Governance: The Organizational Framework
+
+Parallel to technological development, organizational governance models are emerging. A team at Memorial Sloan Kettering Cancer Center (MSKCC) published an experience report on one year of Responsible AI governance in oncology in *npj Digital Medicine* in 2025[3]:
+
+- **26 AI models** (including LLMs) and 2 ambient AI pilots were registered and evaluated through the governance system
+- **33 nomograms** were retrospectively reviewed
+- The authors emphasize that oncology-specific AI risks – such as exacerbating existing care disparities – require domain-specific governance that goes beyond generic AI ethics guidelines[3]
+
+Additionally, ASCO published six guiding principles for responsible AI use in oncology, encompassing **Accountability, Patient-Centeredness, Equity, Safety, Transparency, and Fairness**[4].
+
+### Practical Implications for Clinical Trials
+
+1. **Informed consent becomes interactive.** Systems like RESPECT demonstrate that AI supplements rather than replaces informed consent: it answers patient-specific questions about the study protocol and relieves investigators without departing from approved content.
+
+2. **Safety-by-design instead of post-hoc review.** The RUC methodology establishes a quantitative measure for AI safety that can be evaluated *before deployment* – comparable to sensitivity and specificity in diagnostics.
+
+3. **Governance must be domain-specific.** The MSKCC and ASCO experiences show that oncology-specific AI risks (disparities, tumor heterogeneity) are not covered by generic IT governance[3,4].
+
+### Conclusion
+
+The RESPECT study marks a methodological advance: it provides not only a functioning AI system for informed consent but also a **quantitative evaluation framework** – the Refusal-Utility Curve – that systematically weighs safety against utility[1]. The higher refusal rate compared to GPT-4 is not a drawback – in informed consent, a conservative system that admits uncertainty is preferable to eloquent bluffing.
+
+---
+
+## References
+
+1. Giorgi S, Ryan K, Kim JP. (2026). RESPECT: a conversational AI system for informed consent with accuracy, safety, and stakeholder-centered evaluation. *npj Digital Medicine*. https://doi.org/10.1038/s41746-026-02691-6
+
+2. (2025). Artificial Intelligence and Decision-Making in Oncology: A Review of Ethical, Legal, and Informed Consent Challenges. *Current Oncology Reports*. https://doi.org/10.1007/s11912-025-01698-8
+
+3. (2025). Responsible Artificial Intelligence governance in oncology. *npj Digital Medicine*. https://doi.org/10.1038/s41746-025-01794-w
+
+4. American Society of Clinical Oncology (ASCO). (2024). Principles for the Responsible Use of Artificial Intelligence in Oncology. https://www.asco.org/news-initiatives/policy-news-analysis/asco-sets-six-guiding-principles-ai-oncology
+
+5. Welch ML et al. (2026). A practical framework for operationalising responsible and equitable AI in health care: tackling bias, inequity, and implementation challenges. *The Lancet Digital Health*. https://doi.org/10.1016/j.landig.2025.100957

@@ -1,0 +1,143 @@
+---
+title: "PRO-ADD: Wenn Patienten die optimale Dosis mitbestimmen – ein neues Studiendesign für die Onkologie"
+title_en: "PRO-ADD: When Patients Help Determine the Optimal Dose – A New Trial Design for Oncology"
+date: "2026-06-23"
+category: "Statistische Methoden"
+description: "Das PRO-ADD-Design integriert erstmals Patient-Reported Outcomes systematisch in die Dosisfindung onkologischer Studien – und verändert damit das Paradigma der maximal tolerierten Dosis."
+description_en: "The PRO-ADD design systematically integrates patient-reported outcomes into oncology dose-finding trials for the first time – shifting the paradigm away from maximum tolerated dose."
+author: "21Stable Team"
+draft: false
+---
+
+# PRO-ADD: Wenn Patienten die optimale Dosis mitbestimmen
+
+## Einleitung
+
+Die Dosisfindung in der Onkologie folgt seit Jahrzehnten einem simplen Prinzip: Eskaliere die Dosis, bis die Toxizität zu hoch wird – die maximal tolerierte Dosis (MTD) ist das Ziel. Dieses Paradigma stammt aus der Ära zytotoxischer Chemotherapien, in der „mehr" tatsächlich „wirksamer" bedeutete. Für moderne Immuntherapien, zielgerichtete Therapien und bispezifische Antikörper gilt diese Annahme nicht mehr. Die FDA-Initiative **Project Optimus** fordert deshalb seit 2023 explizit eine Dosisoptimierung jenseits der MTD[1].
+
+Doch wie findet man die optimale Dosis, wenn nicht allein der Kliniker über Toxizität entscheidet? Die Antwort könnte in den Daten liegen, die bisher kaum systematisch genutzt wurden: **Patient-Reported Outcomes (PROs)** – also das, was Patienten selbst über ihre Symptome, Nebenwirkungen und Lebensqualität berichten.
+
+Das im April 2026 in *Statistical Methods in Medical Research* publizierte **PRO-ADD-Design** (Patient-Reported Outcomes Aided Dose-optimisation Design) von Alger, Mandrekar, Yap und Yin[2] schließt diese Lücke mit einem modularen, Bayesianischen Framework.
+
+## Kernerkenntnis
+
+PRO-ADD ist das erste Studiendesign, das **drei Endpunkte simultan** in die Dosisoptimierung einbezieht:
+
+1. **Clinician-assessed DLTs** (dosislimitierende Toxizitäten, klassisch)
+2. **Patient-Reported Outcomes** (PROs, z. B. PRO-CTCAE)
+3. **Preliminary Efficacy** (frühe Wirksamkeitssignale)
+
+Die zentrale Innovation: PRO-ADD identifiziert nicht einfach die höchste tolerierbare Dosis, sondern die **tolerabelste wirksame Dosis** – also jene Dosisstufe, die Wirksamkeit zeigt, ohne die vom Patienten berichtete Verträglichkeit zu kompromittieren.
+
+In Simulationsstudien mit realistischen Szenarien für Immuntherapien und zielgerichtete Therapien zeigte PRO-ADD konsistent überlegene Leistung: Das Design vermied unnötige Dosissteigerungen zu höheren, aber nicht wirksameren Dosisstufen und identifizierte zuverlässig die Dosis mit dem besten Verhältnis aus Wirksamkeit und patientenberichteter Verträglichkeit[2].
+
+## Forschungsmethodik
+
+PRO-ADD ist ein **modulares Bayesianisches Framework**, das auf existierenden modellbasierten und modell-assistierten Designs aufbaut. Die Autoren implementierten es als Erweiterung des BOIN-Designs (Bayesian Optimal Interval), einem der am häufigsten eingesetzten Dosisfindungsdesigns in der Onkologie[2].
+
+### Design-Struktur
+
+Das Design arbeitet in zwei Stufen:
+
+1. **Dosiseskalation (Stufe 1):** Bayesianische Eskalation basierend auf DLTs, analog zu BOIN, aber mit erweitertem Beobachtungsfenster für späte Toxizitäten (relevant für Immuntherapien)
+2. **Dosisoptimierung (Stufe 2):** Sobald die vorläufige MTD identifiziert ist, werden zusätzliche Patienten randomisiert auf die MTD und eine oder zwei niedrigere Dosisstufen. Die finale Dosisentscheidung integriert dann alle drei Endpunkte über eine **Utility-Funktion**, die klinische Toxizität, PRO-basierte Verträglichkeit und frühe Wirksamkeit gewichtet.
+
+### Simulationsdesign
+
+Die Autoren evaluierten PRO-ADD in sechs Szenarien, die typische Herausforderungen moderner Onkologie-Studien abbilden[2]:
+
+- **Szenario 1–2:** Klassisches Monotonie-Szenario (höhere Dosis = höhere Wirksamkeit)
+- **Szenario 3–4:** Plateau-Szenario (Wirksamkeit erreicht Sättigung, Toxizität steigt weiter)
+- **Szenario 5–6:** Nicht-monotones Szenario (optimale Dosis liegt unterhalb der MTD)
+
+In jedem Szenario wurde PRO-ADD mit dem Standard-BOIN-Design verglichen. Die Metriken umfassten die Wahrscheinlichkeit der korrekten Dosisidentifikation, die Rate an Überdosierungen und die Anzahl der Patienten, die auf suboptimalen Dosisstufen behandelt wurden.
+
+## Klinische Relevanz
+
+### Warum PROs in der Dosisfindung?
+
+Die Diskrepanz zwischen klinischer und patientenberichteter Toxizität ist gut dokumentiert. Eine Analyse des NCI PRO-CTCAE-Datensatzes zeigte, dass Kliniker **bis zu 50 % der symptomatischen Nebenwirkungen** übersehen, die Patienten berichten[3]. Für die Dosisfindung bedeutet das: Eine Dosis, die nach klinischen Kriterien „tolerabel" erscheint, kann für Patienten mit erheblichen, nicht erfassten Symptomen verbunden sein – Fatigue, Übelkeit, Appetitlosigkeit.
+
+Das ist kein akademisches Problem. In der Praxis führt eine schlecht verträgliche Dosis zu Dosisreduktionen, Therapieunterbrechungen und Non-Adhärenz – alles Faktoren, die die Wirksamkeit in der realen Anwendung untergraben.
+
+### Project Optimus und regulatorischer Kontext
+
+Die FDA hat mit Project Optimus[1] klargestellt, dass die MTD als alleiniges Dosiskriterium nicht mehr akzeptabel ist. Sponsoren müssen jetzt in frühen Phasen eine Dosisoptimierung durchführen – idealerweise mit randomisierten Dosisvergleichen. PRO-ADD liefert dafür ein fertiges, validiertes Framework.
+
+Die zeitgleiche Publikation der **OPTIMISE-AR-Toolkit-Empfehlungen** im *Lancet Oncology* (Januar 2026)[4] durch Alger, Regnault, Dueck et al. unterstreicht den regulatorischen Rückenwind: Erstmals existieren konsentierte Standards, *wie* PRO-Daten in Dosisfindungsstudien analysiert und visualisiert werden sollen. PRO-ADD operationalisiert diese Empfehlungen in einem konkreten Studiendesign.
+
+### Praktische Implikationen
+
+Für klinische Forscher bedeutet PRO-ADD:
+
+- **Keine zusätzliche Komplexität in der Durchführung:** Das Design baut auf etablierten BOIN-Regeln auf, die in den meisten akademischen und industriellen Statistikgruppen bekannt sind
+- **Modularität:** Die PRO-Komponente kann je nach Therapieklasse und Patientenpopulation angepasst werden
+- **Interpretierbarkeit:** Die Utility-basierte Entscheidungsregel liefert eine transparente, nachvollziehbare Dosisempfehlung
+
+## Fazit
+
+PRO-ADD markiert einen Paradigmenwechsel in der onkologischen Dosisfindung: Weg von der Frage „Wie viel verträgt der Patient maximal?" hin zu „Welche Dosis bietet das beste Verhältnis aus Wirksamkeit und Verträglichkeit – aus Sicht des Patienten?".
+
+Die Kombination aus methodischer Rigorosität (Bayesianisches Framework, umfangreiche Simulationen) und praktischer Anwendbarkeit (BOIN-basiert, modular) macht PRO-ADD zu einem Kandidaten für den neuen Standard in der frühen onkologischen Entwicklung. Dass die FDA mit Project Optimus und der Bayesian Guidance 2026[5] den regulatorischen Rahmen dafür geschaffen hat, ist kein Zufall – es ist die logische Konsequenz aus der Erkenntnis, dass die MTD als alleiniges Ziel ausgedient hat.
+
+---
+
+## Key Findings
+
+PRO-ADD (Patient-Reported Outcomes Aided Dose-optimisation Design), published in April 2026 by Alger, Mandrekar, Yap, and Yin in *Statistical Methods in Medical Research*[2], is the first modular Bayesian framework that simultaneously integrates three endpoints for dose optimization in oncology:
+
+1. Clinician-assessed dose-limiting toxicities (DLTs)
+2. Patient-reported outcomes (PROs)
+3. Preliminary efficacy signals
+
+## Core Insight
+
+Traditional dose-finding in oncology targets the maximum tolerated dose (MTD) — a paradigm inherited from cytotoxic chemotherapy where higher doses generally meant greater efficacy. For modern immunotherapies and targeted agents, this assumption no longer holds. PRO-ADD addresses this by identifying the **most tolerable effective dose** rather than simply the highest tolerable dose.
+
+In simulation studies across six realistic scenarios, PRO-ADD consistently:
+- Avoided unnecessary escalation to higher doses offering no additional efficacy benefit
+- Correctly identified the optimal dose balancing efficacy and patient-reported tolerability
+- Outperformed standard BOIN designs in scenarios where the optimal dose was below the MTD[2]
+
+## Methodology
+
+PRO-ADD extends the BOIN (Bayesian Optimal Interval) design — one of the most widely used dose-finding frameworks in oncology — with a two-stage structure:
+
+1. **Dose escalation (Stage 1):** Bayesian escalation based on DLTs with extended observation windows for late-onset toxicities (critical for immunotherapies)
+2. **Dose optimization (Stage 2):** Once the provisional MTD is identified, additional patients are randomized to the MTD and one or two lower dose levels. Final dose selection integrates all three endpoints via a utility function weighting clinical toxicity, PRO-based tolerability, and early efficacy.
+
+The authors evaluated PRO-ADD across six scenarios representing typical challenges in modern oncology trials: monotonic dose-response, plateau scenarios (efficacy saturation with increasing toxicity), and non-monotonic scenarios where the optimal dose lies below the MTD[2].
+
+## Clinical Relevance
+
+### The PRO gap in dose-finding
+
+Clinician-reported toxicity systematically underestimates patient-experienced symptoms. NCI PRO-CTCAE data show that clinicians miss up to 50% of symptomatic adverse events reported by patients[3]. A dose deemed "tolerable" by clinical criteria may carry substantial unreported symptom burden — fatigue, nausea, anorexia — that leads to dose reductions, treatment interruptions, and non-adherence in real-world use.
+
+### Regulatory alignment
+
+The FDA's Project Optimus[1] mandates dose optimization beyond MTD in early-phase oncology trials. PRO-ADD provides a validated, ready-to-implement framework that satisfies this requirement. The concurrent publication of the OPTIMISE-AR toolkit in *Lancet Oncology* (January 2026)[4] by Alger, Regnault, Dueck et al. provides the first consensus standards for analyzing and visualizing PRO data in dose-finding trials — standards that PRO-ADD operationalizes in a concrete trial design.
+
+### Practical advantages
+
+- **Familiar foundation:** Built on BOIN rules already known to most academic and industry statistics groups
+- **Modularity:** The PRO component can be tailored to specific therapy classes and patient populations
+- **Transparency:** The utility-based decision rule produces interpretable, auditable dose recommendations
+
+## Conclusion
+
+PRO-ADD represents a paradigm shift in oncology dose-finding: from "how much can the patient maximally tolerate?" to "which dose offers the best balance of efficacy and tolerability — from the patient's perspective?"
+
+The combination of methodological rigor (Bayesian framework, extensive simulations) and practical applicability (BOIN-based, modular) positions PRO-ADD as a candidate for the new standard in early-phase oncology development. The FDA's Project Optimus and 2026 Bayesian Guidance[5] have created the regulatory framework — PRO-ADD provides the statistical tool to operationalize it.
+
+## References
+
+1. FDA (2023). Project Optimus: Reforming the Dose Optimization and Dose Selection Paradigm in Oncology. U.S. Food and Drug Administration. https://www.fda.gov/about-fda/oncology-center-excellence/project-optimus
+
+2. Alger E, Mandrekar SJ, Yap C, Yin J (2026). PRO-ADD: Patient-empowered dose-finding trials integrating safety, preliminary efficacy and patient-reported outcomes for optimal dose selection. *Statistical Methods in Medical Research*, pp. 9622802261435969. https://doi.org/10.1177/09622802261435969
+
+3. Basch E, Dueck AC, Rogak LJ, et al. (2021). Feasibility of Implementing the Patient-Reported Outcomes Version of the Common Terminology Criteria for Adverse Events in a Multicenter Trial: NCCTG N1048. *Journal of Clinical Oncology*, 36(31):3120–3125. https://doi.org/10.1200/JCO.2018.78.8620
+
+4. Alger E, Regnault A, Dueck AC, Pe M, Grayling MJ, Calvert MJ, et al. (2026). A practical toolkit with recommendations for analysing and visualising patient-reported outcomes in early phase dose-finding oncology trials (OPTIMISE-AR). *The Lancet Oncology*, 27(1):18–30. https://doi.org/10.1016/S1470-2045(26)00018-5
+
+5. FDA (2026). Use of Bayesian Methodology in Clinical Trials of Drug and Biological Products: Draft Guidance. U.S. Food and Drug Administration. https://www.fda.gov/regulatory-information/search-fda-guidance-documents/use-bayesian-methodology-clinical-trials-drug-and-biological-products
