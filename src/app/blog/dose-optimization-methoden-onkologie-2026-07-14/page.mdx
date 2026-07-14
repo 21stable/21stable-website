@@ -1,0 +1,104 @@
+---
+title: "Dosisoptimierung in der Onkologie: 315 Methoden, ein Paradigmenwechsel"
+title_en: "Dose Optimization in Oncology: 315 Methods, One Paradigm Shift"
+date: "2026-07-14"
+category: "Biostatistik"
+description: "Eine Wissensdatenbank von 315 adaptiven Dosisfindungs-Methoden zeigt die methodische Explosion seit FDA's Project Optimus. Welche Designs setzen sich durch?"
+description_en: "A knowledge base of 315 adaptive dose-finding methods reveals the methodological explosion since FDA's Project Optimus. Which designs are prevailing?"
+author: "21Stable Team"
+draft: false
+---
+
+# Dosisoptimierung in der Onkologie: 315 Methoden, ein Paradigmenwechsel
+
+Die onkologische Arzneimittelentwicklung durchläuft einen fundamentalen Wandel: Weg vom Dogma „die höchste tolerierbare Dosis ist die wirksamste", hin zu einer datengetriebenen Dosisoptimierung, die Wirksamkeit und Toxizität gemeinsam bewertet. Auslöser war die **Project Optimus**-Initiative der FDA, die 2021 eine Abkehr vom klassischen MTD-Paradigma (Maximum Tolerated Dose) forderte. Fünf Jahre später ist die methodische Antwort der Biostatistik-Community überwältigend — und in einer bemerkenswerten Wissensdatenbank dokumentiert[1].
+
+## Die Wissensdatenbank: 315 Methoden im systematischen Review
+
+Kessels et al. (2026) publizierten in *Pharmaceutical Statistics* die bislang umfassendste systematische Übersicht über adaptive Dosisfindungs-Designs. Mittels einer methodischen Literaturrecherche identifizierten sie **315 Artikel** zu adaptiven Dosisfindungs-Methoden — die überwältigende Mehrheit davon motiviert durch onkologische Fragestellungen. Die Autoren klassifizierten jedes Design nach 16 Merkmalen: Studiendesign-Typ, Anzahl der Dosisstufen, berücksichtigte Endpunkte, Randomisierungsstrategie, Backfill-Mechanismen und regulatorische Kompatibilität[1].
+
+Das Ergebnis ist eine strukturierte Wissensdatenbank, die als Open-Access-Ressource unter https://doi.org/10.1002/pst.70074 verfügbar ist und Forschern wie Sponsoren eine evidenzbasierte Design-Selektion ermöglicht. Die schiere Anzahl von 315 publizierten Methoden illustriert die Intensität, mit der die Biostatistik-Community auf Project Optimus reagiert hat.
+
+## Drei Design-Familien, die den Wandel prägen
+
+Aus der Fülle der Methoden kristallisieren sich drei Design-Familien heraus, die den Paradigmenwechsel operationalisieren:
+
+### 1. Seamless Phase-I/II-Designs mit Backfill
+
+Traditionell werden Phase I (Dosiseskalation, Toxizität) und Phase II (Wirksamkeitssignale) sequenziell durchgeführt — mit erheblichem Zeit- und Patientenverlust zwischen den Phasen. **Seamless-Designs** integrieren beide Phasen in ein einziges Protokoll. Ein aktuelles Beispiel ist das in *Pharmaceutical Statistics* (2026) publizierte Two-Stage-Design mit Backfill und Joint Monitoring: Während der Dosiseskalation werden zusätzliche Patienten in bereits als sicher bewertete Dosiskohorten rekrutiert (Backfill), um parallel Wirksamkeitsdaten zu generieren. Ein gemeinsames Monitoring von Toxizität und Wirksamkeit erlaubt Echtzeit-Entscheidungen über Dosiserweiterung oder -abbruch[2].
+
+### 2. Bayesian Optimization Designs (RABOTS)
+
+Das RABOTS-Design (Randomized Adaptive Bayesian Optimization Two-Stage Seamless) kombiniert Bayes'sche Optimierung mit adaptiver Randomisierung in einem nahtlosen Zwei-Stufen-Design. Stufe 1 identifiziert mittels BOIN-ähnlicher Regeln den relevanten Dosisbereich; Stufe 2 randomisiert Patienten adaptiv zwischen den Kandidatendosen, wobei die Randomisierungswahrscheinlichkeiten kontinuierlich auf Basis des akkumulierten Nutzen-Risiko-Profils aktualisiert werden. Simulationen zeigen, dass RABOTS die Wahrscheinlichkeit, die optimale Dosis zu identifizieren, gegenüber sequenziellen Ansätzen um 15–25 Prozentpunkte erhöht[3].
+
+### 3. BLRM-EffTox: Bayes'sche Logistische Regression mit Wirksamkeits-Toxizitäts-Abwägung
+
+Das BLRM-EffTox-Design (2026) erweitert das etablierte Bayesian Logistic Regression Model (BLRM) um eine explizite Modellierung des Wirksamkeits-Toxizitäts-Trade-offs. Anders als klassische EffTox-Designs, die auf präspezifizierten Konturplots basieren, nutzt BLRM-EffTox eine seamless Two-Stage-Architektur: Stufe 1 modelliert die Dosis-Toxizitäts-Beziehung via BLRM; Stufe 2 integriert ein Wirksamkeitsmodell und identifiziert den Dosisbereich, der den erwarteten Nettonutzen maximiert. Die Methode ist explizit für Immuntherapien und zielgerichtete Substanzen konzipiert, bei denen die Dosis-Wirkungs-Beziehung nicht monoton ist[4].
+
+## Die regulatorische Dimension: Project Optimus in der Praxis
+
+Die FDA hat mit Project Optimus nicht nur eine Empfehlung ausgesprochen, sondern die Erwartungshaltung an Sponsoren fundamental verändert. Der im Januar 2023 veröffentlichte Guidance-Draft verlangt von Sponsoren, mindestens zwei Dosisstufen in randomisierten Kohorten zu evaluieren, bevor eine Dosis für die pivotalen Studien ausgewählt wird. Die Konsequenz: Das traditionelle 3+3-Design — jahrzehntelang der Standard in Phase-I-Onkologiestudien — ist regulatorisch obsolet geworden.
+
+Die methodische Vielfalt der 315 publizierten Designs ist dabei Fluch und Segen zugleich. Einerseits existiert für nahezu jede Studiensituation ein passendes Design. Andererseits erschwert die Heterogenität der Methoden die Vergleichbarkeit zwischen Studien und die regulatorische Bewertung. Die Wissensdatenbank von Kessels et al. adressiert dieses Problem, indem sie Designs nach standardisierten Kriterien klassifiziert und vergleichbar macht[1].
+
+## Klinische Relevanz: Warum Dosisoptimierung Leben rettet
+
+Die klinische Bedeutung der Dosisoptimierung geht weit über methodische Eleganz hinaus. Eine 2024 in *Clinical Trials* publizierte Übersicht von Yuan & Zhou dokumentiert Fälle, in denen die ursprünglich zugelassene Dosis nach Markteinführung aufgrund von Toxizität reduziert werden musste — mit teils jahrelanger Exposition von Patienten gegenüber überhöhten Dosen. Die Autoren schätzen, dass eine prospektive Dosisoptimierung bei modernen zielgerichteten Therapien die Rate schwerwiegender unerwünschter Ereignisse (Grade ≥3) um 20–40% senken könnte, ohne die Wirksamkeit zu kompromittieren[5].
+
+Für die onkologische Praxis bedeutet dies: Die in Phase I/II gewählte Dosis determiniert das Toxizitätsprofil, mit dem Tausende Patienten in Phase III und nach Zulassung behandelt werden. Eine suboptimale Dosiswahl ist kein statistisches Problem — sie ist ein klinisches.
+
+## Fazit
+
+Die methodische Revolution in der onkologischen Dosisfindung ist in vollem Gange. Die Wissensdatenbank von Kessels et al. mit 315 klassifizierten Methoden ist zugleich Bestandsaufnahme und Wegweiser. Für Biostatistiker in der onkologischen Arzneimittelentwicklung lautet die zentrale Frage nicht mehr, ob ein adaptives Dosisfindungs-Design eingesetzt werden soll, sondern welches. Die Antwort hängt von der spezifischen Studiensituation ab — aber die Werkzeuge liegen bereit.
+
+---
+
+## Key Findings
+
+Oncology drug development is undergoing a fundamental transformation: away from the dogma that "the highest tolerable dose is the most effective," toward data-driven dose optimization that jointly evaluates efficacy and toxicity. The catalyst was the FDA's **Project Optimus** initiative, launched in 2021, which demanded a departure from the classical MTD (Maximum Tolerated Dose) paradigm. Five years later, the biostatistics community's methodological response is overwhelming—and documented in a remarkable knowledge base[1].
+
+### The Knowledge Base: 315 Methods in a Systematic Review
+
+Kessels et al. (2026) published the most comprehensive systematic review of adaptive dose-finding designs to date in *Pharmaceutical Statistics*. Through a methodological literature search, they identified **315 articles** on adaptive dose-finding methods—the overwhelming majority motivated by oncology questions. The authors classified each design according to 16 characteristics: trial design type, number of dose levels, endpoints considered, randomization strategy, backfill mechanisms, and regulatory compatibility[1].
+
+The result is a structured knowledge base, available as an open-access resource at https://doi.org/10.1002/pst.70074, enabling both researchers and sponsors to make evidence-based design selections. The sheer number of 315 published methods illustrates the intensity with which the biostatistics community has responded to Project Optimus.
+
+### Three Design Families Shaping the Transformation
+
+From the wealth of methods, three design families are emerging that operationalize the paradigm shift:
+
+**1. Seamless Phase I/II Designs with Backfill.** Traditionally, Phase I (dose escalation, toxicity) and Phase II (efficacy signals) are conducted sequentially—with substantial time and patient loss between phases. Seamless designs integrate both phases into a single protocol. A recent example is the two-stage design with backfill and joint monitoring published in *Pharmaceutical Statistics* (2026): during dose escalation, additional patients are recruited into dose cohorts already assessed as safe (backfill) to generate parallel efficacy data. Joint monitoring of toxicity and efficacy enables real-time decisions on dose expansion or discontinuation[2].
+
+**2. Bayesian Optimization Designs (RABOTS).** The RABOTS design (Randomized Adaptive Bayesian Optimization Two-Stage Seamless) combines Bayesian optimization with adaptive randomization in a seamless two-stage framework. Stage 1 identifies the relevant dose range using BOIN-like rules; Stage 2 adaptively randomizes patients among candidate doses, with randomization probabilities continuously updated based on the accumulated benefit-risk profile. Simulations show that RABOTS increases the probability of identifying the optimal dose by 15–25 percentage points compared to sequential approaches[3].
+
+**3. BLRM-EffTox: Bayesian Logistic Regression with Efficacy-Toxicity Trade-off.** The BLRM-EffTox design (2026) extends the established Bayesian Logistic Regression Model (BLRM) with explicit modeling of the efficacy-toxicity trade-off. Unlike classical EffTox designs based on prespecified contour plots, BLRM-EffTox employs a seamless two-stage architecture: Stage 1 models the dose-toxicity relationship via BLRM; Stage 2 integrates an efficacy model and identifies the dose range that maximizes expected net benefit. The method is explicitly designed for immunotherapies and targeted agents, where the dose-response relationship is non-monotonic[4].
+
+### The Regulatory Dimension: Project Optimus in Practice
+
+With Project Optimus, the FDA has not merely issued a recommendation but fundamentally changed expectations for sponsors. The guidance draft published in January 2023 requires sponsors to evaluate at least two dose levels in randomized cohorts before selecting a dose for pivotal trials. The consequence: the traditional 3+3 design—the standard in Phase I oncology trials for decades—has become regulatorily obsolete.
+
+The methodological diversity of the 315 published designs is both a blessing and a curse. On one hand, a suitable design exists for virtually every trial situation. On the other, the heterogeneity of methods complicates comparability between trials and regulatory assessment. The knowledge base by Kessels et al. addresses this problem by classifying designs according to standardized criteria, making them comparable[1].
+
+### Clinical Relevance: Why Dose Optimization Saves Lives
+
+The clinical significance of dose optimization extends far beyond methodological elegance. A 2024 review published in *Clinical Trials* by Yuan & Zhou documents cases where the originally approved dose had to be reduced post-marketing due to toxicity—with patients exposed to excessive doses for years in some cases. The authors estimate that prospective dose optimization for modern targeted therapies could reduce the rate of serious adverse events (Grade ≥3) by 20–40% without compromising efficacy[5].
+
+For oncology practice, this means: the dose selected in Phase I/II determines the toxicity profile to which thousands of patients will be exposed in Phase III and post-approval. A suboptimal dose choice is not a statistical problem—it is a clinical one.
+
+### Conclusion
+
+The methodological revolution in oncology dose finding is in full swing. The knowledge base by Kessels et al., with 315 classified methods, is both an inventory and a roadmap. For biostatisticians in oncology drug development, the central question is no longer whether to use an adaptive dose-finding design, but which one. The answer depends on the specific trial situation—but the tools are ready.
+
+---
+
+## References
+
+1. Kessels R, Long Y, Spijker R, Schuit E, Hollestelle M, van Lieshout C, Steeghs N, van de Ven PM. (2026). A Knowledge Base of Designs and Statistical Methods for Adaptive Clinical Dose-Finding Trials. *Pharmaceutical Statistics*, 25:e70074. https://doi.org/10.1002/pst.70074
+
+2. A Seamless Two-Stage Phase I/II Trial Design With Backfill and Joint Monitoring for Dose Optimization. (2026). *Pharmaceutical Statistics*, 25:e70092. https://doi.org/10.1002/pst.70092
+
+3. RABOTS: A Randomized Adaptive Bayesian Optimization Two-Stage Seamless Design for Dose Optimization and Proof-of-Concept Evaluation. (2026). *Pharmaceutical Statistics*, 25:e70091. https://doi.org/10.1002/pst.70091
+
+4. BLRM-EffTox: A seamless two-stage phase 1 Bayesian logistic regression design incorporating efficacy-toxicity trade-off for dose optimization. (2026). *Journal of Biopharmaceutical Statistics*. https://doi.org/10.1080/10543406.2026.2627385
+
+5. Yuan Y, Zhou H. (2024). Statistical and practical considerations in planning and conduct of dose-optimization trials. *Clinical Trials*, 21(3):298-307. https://doi.org/10.1177/17407745231207085
