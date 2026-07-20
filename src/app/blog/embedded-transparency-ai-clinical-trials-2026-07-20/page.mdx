@@ -1,0 +1,152 @@
+---
+title: "Embedded Transparency: Warum Transparenz in KI-gestützten klinischen Studien mehr ist als Open Source"
+title_en: "Embedded Transparency: Why Transparency in AI-Enabled Clinical Trials Means More Than Open Source"
+date: "2026-07-20"
+category: "KI-Ethik"
+description: "Ein Nature-Commentary definiert 'Embedded Transparency' als strukturelle Voraussetzung für gerechte KI-Studien – und zeigt, warum Offenlegung allein nicht reicht."
+description_en: "A Nature commentary defines 'Embedded Transparency' as a structural prerequisite for equitable AI trials – and shows why disclosure alone is insufficient."
+author: "21Stable Team"
+draft: false
+---
+
+# Embedded Transparency: Warum Transparenz in KI-gestützten klinischen Studien mehr ist als Open Source
+
+Transparenz ist das am häufigsten beschworene ethische Prinzip in der KI-Governance – und zugleich das am schlechtesten operationalisierte. Ein am 11. Juli 2026 in *npj Digital Medicine* (Nature) publizierter Commentary von Blom und Ruzzenenti fordert nun eine grundlegende Neudefinition: Nicht die technische Offenlegung von Code und Modellgewichten sei entscheidend, sondern eine **strukturell eingebettete Transparenz**, die demografische Prüfbarkeit, dokumentierte Unsicherheitsbehandlung und stakeholder-gerechte Erklärbarkeit von Beginn an in das KI-Design integriert[1].
+
+## Das Disclosure-Transparency-Paradox
+
+Die zentrale konzeptionelle Unterscheidung des Artikels ist ebenso einfach wie folgenreich: **Disclosure** (Offenlegung) bedeutet, dass Informationen technisch verfügbar sind – publizierter Code, Modellgewichte, statistische Parameter. **Transparency** (Transparenz) hingegen erfordert, dass diese Informationen die richtigen Adressaten in nutzbarer Form erreichen. Ein Model Card, das auf einer Unternehmenswebsite abgelegt wird, erfüllt Disclosure. Die Fähigkeit eines Klinikers, einer Ethikkommission oder eines Studienteilnehmers, die Entscheidungslogik eines sie betreffenden KI-Systems zu hinterfragen, erfüllt Transparency[1].
+
+Diese Unterscheidung ist nicht akademisch. Sie hat unmittelbare Konsequenzen für die klinische Forschung: Wenn ein KI-System zur Patientenstratifizierung in einer onkologischen Studie eingesetzt wird, nützt es dem Prüfarzt wenig, dass der Quellcode auf GitHub liegt. Was er braucht, ist die Möglichkeit, die demografische Zusammensetzung der Trainingsdaten mit der seiner eigenen Patientenpopulation abzugleichen – und zu verstehen, unter welchen Bedingungen das Modell Unsicherheit signalisiert oder eine Entscheidung verweigert.
+
+## Drei Formen der Opazität – und warum post-hoc-Erklärungen nicht reichen
+
+Blom und Ruzzenenti greifen auf Burrells einflussreiche Taxonomie zurück und unterscheiden drei Formen algorithmischer Intransparenz[1]:
+
+1. **Algorithmische Opazität:** Die internen Repräsentationen des Modells sind in klinischen Begriffen nicht interpretierbar. Tiefe neuronale Netze operieren mit Millionen von Parametern, die keine direkte Entsprechung in pathophysiologischen Konzepten haben.
+
+2. **Epistemische Opazität:** Das Verhalten des Modells kann von Fachexperten nicht zuverlässig antizipiert werden. Ein Modell, das in 95 % der Fälle korrekt klassifiziert, kann in den verbleibenden 5 % katastrophal falsch liegen – ohne dass ein Kliniker vorhersagen kann, wann.
+
+3. **Prozedurale Opazität:** Die Bedingungen, unter denen das Modell deployed, neu trainiert oder aktualisiert wird, sind für die Betroffenen nicht sichtbar. Ein KI-System, das während einer laufenden Studie stillschweigend aktualisiert wird, untergräbt die Integrität der Evidenzgenerierung.
+
+Post-hoc-Erklärungsmethoden wie LIME oder SHAP adressieren allenfalls die erste Form der Opazität – und selbst das nur unvollständig. Wie Rudin argumentiert hat und Blom und Ruzzenenti bekräftigen, produzieren diese Methoden Approximationen der Modelllogik, die selbst Modelle sind – und diese Approximationen sind im Allgemeinen weder treu (faithful) noch stabil[1]. Für klinische Studien, in denen Entscheidungen über Therapiezuweisungen auf KI-Outputs basieren, ist das ein unhaltbarer Zustand.
+
+## Embedded Transparency: Vier strukturelle Eigenschaften
+
+Der Artikel definiert Embedded Transparency als die strukturelle Integration von vier Eigenschaften bereits in der Designphase eines KI-Systems[1]:
+
+1. **Ex-ante-Interpretierbarkeit:** Die Entscheidungslogik des Modells muss von Fachexperten anhand der nativen Repräsentationen des Modells nachvollziehbar sein – nicht durch nachträgliche Approximationen. Das bedeutet in der Praxis: Bevorzugung inhärent interpretierbarer Architekturen (etwa Generalized Additive Models oder Decision Trees mit begrenzter Tiefe) gegenüber Black-Box-Modellen, wenn die klinischen Konsequenzen schwerwiegend sind.
+
+2. **Demografische Prüfbarkeit:** Inputs, Outputs und intermediäre Repräsentationen müssen auf demografische Verzerrungen hin auditierbar sein. Ein KI-gestütztes Rekrutierungssystem muss nicht nur berichten, wie viele Patienten es insgesamt identifiziert hat, sondern aufgeschlüsselt nach Alter, Geschlecht, Ethnizität und sozioökonomischem Status – und zwar in Echtzeit während der laufenden Rekrutierung, nicht retrospektiv nach Studienabschluss.
+
+3. **Dokumentierte Unsicherheitsbehandlung:** Das System muss explizit ausweisen, bei welchen Fällen es keine Entscheidung trifft (Abstention) und mit welcher Konfidenz es seine Vorhersagen trifft. Ein Modell, das bei 98 % der Patienten eine hohe Konfidenz ausgibt und bei 2 % rät, ist klinisch wertvoller als eines, das bei 100 % eine moderate Konfidenz vortäuscht.
+
+4. **Stakeholder-relative Erklärung:** Unterschiedliche Adressaten benötigen unterschiedliche Erklärungen. Der Prüfarzt braucht klinisch kontextualisierte Begründungen; der Patient eine laienverständliche Darstellung; die Ethikkommission eine nachvollziehbare Dokumentation der Fairness-Audits; die Zulassungsbehörde eine lückenlose Nachvollziehbarkeit der Modellentscheidungen im Kontext der GxP-Anforderungen.
+
+## Die regulatorische Landschaft: FDA/EMA-Prinzipien als Rahmen
+
+Die Forderung nach Embedded Transparency fügt sich in eine sich verdichtende regulatorische Landschaft ein. Am 14. Januar 2026 veröffentlichten FDA und EMA gemeinsam zehn Leitprinzipien für gute KI-Praxis in der Arzneimittelentwicklung[2]. Diese Prinzipien – darunter „Human-centric by design", „Risk-based approach", „Data governance and documentation" und „Clear, essential information" – sind zwar derzeit nicht bindend, bilden aber die Grundlage für künftige regulatorische Guidance auf beiden Seiten des Atlantiks.
+
+Die zehn Prinzipien im Überblick[2]:
+
+- **Human-centric by design:** KI-Entwicklung muss an ethischen und patientenzentrierten Werten ausgerichtet sein
+- **Risk-based approach:** Validierung, Risikominderung und Überwachung proportional zum Risikograd des Einsatzgebiets
+- **Adherence to standards:** Einhaltung rechtlicher, ethischer, technischer, wissenschaftlicher und GxP-Anforderungen
+- **Clear context of use:** Präzise definierter Anwendungsbereich für jede KI-Anwendung
+- **Multidisciplinary expertise:** Integration interdisziplinärer Expertise über den gesamten KI-Lebenszyklus
+- **Data governance and documentation:** Nachvollziehbare, verifizierbare Dokumentation der Datenherkunft und -verarbeitung
+- **Model design and development practices:** Best Practices in Softwareentwicklung, Interpretierbarkeit und prädiktiver Performance
+- **Risk-based performance assessment:** Evaluation des gesamten Mensch-KI-Systems mit einsatzrelevanten Daten und Metriken
+- **Life cycle management:** Kontinuierliches Monitoring und periodische Re-Evaluierung (inkl. Data Drift)
+- **Clear, essential information:** Verständliche Kommunikation von Fähigkeiten, Limitationen und Performance an Nutzer und Patienten
+
+Die Embedded-Transparency-Definition von Blom und Ruzzenenti operationalisiert mehrere dieser Prinzipien – insbesondere „Data governance and documentation", „Clear, essential information" und „Model design and development practices" – auf eine Weise, die über generische Compliance hinausgeht.
+
+## Research Integrity: Die Frontiers-Review
+
+Parallel dazu hat eine im Juni 2026 in *Frontiers in Public Health* publizierte kritische Übersichtsarbeit die Schnittstelle von Forschungsintegrität und Datenethik in KI-gestützten Gesundheitssystemen untersucht[3]. Die Autoren analysierten peer-reviewte Literatur von 2019 bis 2025 und identifizierten eine fundamentale Spannung: Die datenintensive Natur der KI-Entwicklung kollidiert systematisch mit etablierten Prinzipien der Patientenautonomie und des Datenschutzes.
+
+Drei Befunde sind für die klinische Forschung unmittelbar relevant[3]:
+
+- **Peer Review scheitert an KI-Studien:** Traditionelle Begutachtungsverfahren können Studien nicht adäquat bewerten, deren methodische Details in Millionen von Modellparametern statt in expliziten analytischen Schritten liegen.
+- **Historische Ungleichheiten werden kodiert:** Trainingsdatensätze, die bestehende Versorgungsdisparitäten abbilden, riskieren, diese Ungleichheiten zu verstärken – selbst wenn demografische Attribute explizit aus den Features ausgeschlossen werden, da Bias über komplexe indirekte Pfade operiert.
+- **Governance muss mit dem technischen Reifegrad skalieren:** Die Autoren schlagen ein integriertes Governance-Modell vor, das die regulatorischen Anforderungen progressiv verschärft, während KI-Systeme vom Training über reale Tests zum Post-Marketing-Monitoring fortschreiten.
+
+## Was das für die klinische Forschung bedeutet
+
+Die Konvergenz dieser drei Publikationen – Nature, FDA/EMA, Frontiers – markiert einen Wendepunkt. Die Botschaft ist klar: Transparenz in KI-gestützten klinischen Studien ist kein binärer Zustand („Open Source" vs. „proprietär"), sondern ein mehrdimensionales strukturelles Merkmal, das von Beginn an in das Systemdesign eingebettet werden muss.
+
+Für Sponsoren, CROs und Prüfzentren ergeben sich daraus konkrete Implikationen:
+
+- **Studienprotokolle müssen KI-Transparenz operationalisieren:** Nicht als generischen Verweis auf „Fairness" oder „Explainability", sondern als spezifizierten Prozess mit definierten Metriken, Audit-Zeitpunkten und Verantwortlichkeiten.
+- **Demografische Prüfbarkeit ist kein Nice-to-have:** KI-Systeme in klinischen Studien müssen in Echtzeit demografisch stratifizierte Performance-Metriken liefern – nicht erst im Clinical Study Report.
+- **Unsicherheitskommunikation gehört ins Studiendesign:** Protokolle müssen definieren, wie das KI-System mit Unsicherheit umgeht, wann es eine Entscheidung verweigert und wie diese Fälle klinisch eskaliert werden.
+- **Ethikkommissionen brauchen KI-spezifische Bewertungskompetenz:** Das MRCT/WCG-Framework vom Juni 2025 bietet hierfür eine erste strukturierte Grundlage, die jedoch in der Breite noch nicht implementiert ist[4].
+
+## Fazit
+
+Embedded Transparency ist mehr als ein neuer Begriff. Es ist die Antwort auf ein strukturelles Defizit: Die gegenwärtige KI-Governance in klinischen Studien verwechselt Offenlegung mit Transparenz – und produziert damit eine trügerische Sicherheit. Ein Model Card auf GitHub schützt keinen Patienten vor einer verzerrten Risikostratifizierung. Was schützt, ist ein System, dessen Entscheidungslogik von Beginn an für Kliniker nachvollziehbar, für Ethikkommissionen prüfbar und für Patienten verständlich ist. Die Technologie dafür existiert. Die regulatorischen Rahmenbedingungen entstehen. Was fehlt, ist die konsequente Umsetzung.
+
+---
+
+## Key Findings
+
+A commentary published July 11, 2026 in *npj Digital Medicine* (Nature) by Blom and Ruzzenenti introduces the concept of **Embedded Transparency** as a structural prerequisite for equitable AI-enabled clinical trials[1].
+
+### The Disclosure-Transparency Distinction
+
+The authors draw a critical distinction: **Disclosure** means technical availability of information (published code, model weights, statistical parameters). **Transparency** requires that information reaches the right audience in a usable form. A model card on a corporate website satisfies disclosure; a clinician's, ethics committee's, or participant's ability to interrogate the decision logic affecting them satisfies transparency[1].
+
+### Three Forms of Opacity
+
+Drawing on Burrell's taxonomy, the article distinguishes three forms of algorithmic opacity[1]:
+
+1. **Algorithmic opacity:** Internal model representations are not interpretable in clinical terms.
+2. **Epistemic opacity:** Model behavior cannot be reliably anticipated by domain experts.
+3. **Procedural opacity:** Conditions of deployment, retraining, or update are invisible to those affected.
+
+Post-hoc explanation methods (LIME, SHAP) address at most the first form – and even that incompletely, as these approximations are generally neither faithful nor stable[1].
+
+### Four Properties of Embedded Transparency
+
+The article defines Embedded Transparency as the structural integration of four properties at the design stage[1]:
+
+1. **Ex-ante interpretability:** Model decision logic must be inspectable by domain experts using native representations – not post-hoc approximations.
+2. **Demographic auditability:** Inputs, outputs, and intermediate representations must be auditable for demographic bias in real time during ongoing trials.
+3. **Documented uncertainty handling:** Explicit designation of cases where the model abstains, with confidence-calibrated predictions.
+4. **Stakeholder-relative explanation:** Different audiences (clinicians, patients, ethics committees, regulators) require different forms of explanation.
+
+### Regulatory Context: FDA/EMA Joint Principles
+
+On January 14, 2026, the FDA and EMA jointly published ten Guiding Principles for Good AI Practice in Drug Development[2]. These non-binding principles – including human-centric design, risk-based approach, data governance, and clear essential information – provide the regulatory framework within which Embedded Transparency operates. The principles apply across the full medicines lifecycle, from early research and clinical trials through manufacturing and post-market surveillance[2].
+
+### Research Integrity: The Frontiers Review
+
+A critical appraisal published in *Frontiers in Public Health* (June 2026) examined research integrity and data ethics in AI-driven healthcare, analyzing peer-reviewed literature from 2019–2025[3]. Key findings:
+
+- Traditional peer review struggles to evaluate AI studies where methodological details reside in millions of model parameters rather than explicit analytical steps.
+- Training datasets reflecting historical healthcare disparities risk encoding and amplifying bias through complex indirect pathways.
+- Governance frameworks must scale with technical maturity, progressively tightening oversight as AI systems advance from training to real-world deployment[3].
+
+### Implications for Clinical Research
+
+- Study protocols must operationalize AI transparency as a specified process with defined metrics, audit points, and responsibilities.
+- Demographic auditability must be real-time, not retrospective.
+- Uncertainty communication must be integrated into study design, including explicit abstention criteria and clinical escalation pathways.
+- Ethics committees require AI-specific assessment competence – partially addressed by the MRCT/WCG framework (June 2025) but not yet widely implemented[4].
+
+### Conclusion
+
+Embedded Transparency is not a new buzzword. It is the answer to a structural deficit: current AI governance in clinical trials conflates disclosure with transparency, producing false reassurance. A model card on GitHub does not protect a patient from biased risk stratification. What protects is a system whose decision logic is, from the design stage, inspectable by clinicians, auditable by ethics committees, and comprehensible to patients. The technology exists. The regulatory frameworks are emerging. What is missing is consistent implementation.
+
+---
+
+## References
+
+1. Blom JMC, Ruzzenenti L, et al. (2026). Embedded transparency in artificial intelligence: a prerequisite for equity and representation in AI-enabled clinical trials. *npj Digital Medicine*, 9:2987. https://doi.org/10.1038/s41746-026-02987-7
+
+2. FDA & EMA. (2026, January 14). Guiding Principles of Good AI Practice in Drug Development. https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development
+
+3. Frontiers in Public Health. (2026). Research integrity and data ethics in AI-driven integrated healthcare: a critical appraisal. *Frontiers in Public Health*, 14:1838551. https://doi.org/10.3389/fpubh.2026.1838551
+
+4. MRCT Center & WCG. (2025, June 24). Framework for Review of Clinical Research Involving AI. https://mrctcenter.org/resource/framework-for-review-of-clinical-research-involving-ai/
