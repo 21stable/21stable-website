@@ -1,0 +1,82 @@
+---
+title: "Overall Survival als Sicherheitsendpunkt: Die SBR-Special-Section und die neue FDA-Guidance"
+title_en: "Overall Survival as a Safety Endpoint: The SBR Special Section and the New FDA Guidance"
+date: "2026-07-21"
+category: "Biostatistik"
+description: "Die SBR-Special-Section 'Overall Survival in Oncology Trials' und die FDA-Draft-Guidance von August 2025 definieren OS neu: nicht nur als Goldstandard der Wirksamkeit, sondern als obligaten Sicherheitsendpunkt."
+description_en: "The SBR Special Section on Overall Survival in Oncology Trials and the FDA's August 2025 draft guidance redefine OS: not just as the gold standard for efficacy, but as a mandatory safety endpoint."
+author: "21Stable Team"
+draft: false
+---
+
+# Overall Survival als Sicherheitsendpunkt: Die neue regulatorische und methodische Landschaft
+
+Overall Survival (OS) ist der unbestrittene Goldstandard unter den Endpunkten onkologischer Studien — objektiv, klinisch relevant und frei von Bewertungsbias. Doch die Erfolge moderner Krebstherapien haben ein Paradoxon geschaffen: Je länger Patienten überleben, desto schwieriger wird es, randomisierte Studien auf OS als primären Wirksamkeitsendpunkt zu powern. Die Folge: Surrogatendpunkte wie Progressionsfreies Überleben (PFS) dominieren die Zulassungslandschaft, während OS-Daten oft erst Jahre nach der Zulassung vorliegen — oder nie.
+
+Im Juni 2026 hat *Statistics in Biopharmaceutical Research* (SBR) eine Special Section mit dem Titel **"Overall Survival in Oncology Trials and Drug Development"** publiziert, die dieses Spannungsfeld systematisch aufarbeitet [1]. Die Gasteditoren Ruixiao Lu (Alumis), Lisa R. Rodriguez (GSK) und Ying Lu (Stanford University) versammeln darin methodische Beiträge, die auf einem wegweisenden FDA-AACR-ASA-Workshop vom Juli 2023 aufbauen.
+
+## Der regulatorische Kontext: FDA-Draft-Guidance vom August 2025
+
+Die Special Section ist keine isolierte akademische Übung. Sie reagiert auf die FDA-Draft-Guidance **"Approaches to Assessment of Overall Survival in Oncology Clinical Trials"** vom 19. August 2025 [2]. Diese Guidance markiert einen Paradigmenwechsel: OS wird nicht mehr nur als Wirksamkeitsendpunkt betrachtet, sondern explizit als **präspezifizierter Sicherheitsendpunkt** eingefordert — selbst dann, wenn der primäre Endpunkt ein Surrogat wie PFS ist.
+
+Die Logik der FDA: Surrogatendpunkte können einen Wirksamkeitsvorteil vortäuschen, während ein OS-Nachteil unentdeckt bleibt. Ein prominentes historisches Beispiel ist die BELLINI-Studie (Venetoclax bei multiplem Myelom), in der ein PFS-Vorteil mit einem signifikanten OS-Nachteil einherging. Die Guidance fordert daher, dass in jeder randomisierten onkologischen Zulassungsstudie OS-Daten erhoben und als Sicherheitssignal analysiert werden müssen — unabhängig vom primären Endpunkt.
+
+## Das "6 Choose 4"-Framework: Strukturierte OS-Sicherheitsüberwachung
+
+Einer der zentralen Beiträge der SBR-Special-Section ist das **"6 Choose 4"-Framework** von Yung et al. [3]. Die Autoren identifizieren sechs grundlegende strategische Dimensionen der OS-Sicherheitsüberwachung:
+
+1. **Analysepopulation** (ITT vs. Per-Protocol)
+2. **Adjustierung für Crossover** (RPSFT, IPCW, 2-Stage)
+3. **Informatives Censoring** (Sensitivitätsanalysen)
+4. **Nicht-Proportionale Hazards** (Restricted Mean Survival Time, Weighted Log-Rank)
+5. **Multiplizität** (Alpha-Allokation für OS als sekundären Endpunkt)
+6. **Futility-Monitoring** (vorzeitiger Abbruch bei OS-Schaden)
+
+Das Framework postuliert, dass jedes OS-Monitoring-Programm mindestens vier dieser sechs Dimensionen adressieren muss — daher "6 Choose 4". Die Wahl hängt vom spezifischen klinischen Kontext ab: Bei Immuntherapien mit verzögertem Wirkeintritt sind nicht-proportionale Hazards und Crossover-Adjustierung prioritär; bei zielgerichteten Therapien mit bekanntem Sicherheitsprofil rücken informative Censoring und Futility-Analysen in den Vordergrund.
+
+## Surrogatendpunkte unter Druck: Die NSCLC-Metaanalyse
+
+Parallel zur SBR-Special-Section präsentierte das ASCO 2026 Annual Meeting eine Metaanalyse zur Surrogatvalidität von PFS und ORR in fortgeschrittenen NSCLC-Studien [4]. Die Analyse umfasste randomisierte Phase-III-Studien aus der Post-2015-Ära der Immuncheckpoint-Inhibitoren und zielgerichteten Therapien. Das Ergebnis ist ernüchternd: Die Korrelation zwischen PFS-Hazard-Ratios und OS-Hazard-Ratios war schwach (R² < 0,3), und ORR zeigte praktisch keine prädiktive Validität für OS.
+
+Dies bestätigt einen breiteren Trend: In einer separaten Analyse von PFS2 als Surrogatendpunkt für OS in Brustkrebsstudien fanden Forscher zwar eine moderate Korrelation auf Studienebene, aber unzureichende patientenindividuelle Surrogatvalidität [5]. Die Botschaft ist konsistent: Surrogatendpunkte beschleunigen die Zulassung, ersetzen aber keine robuste OS-Erhebung.
+
+## Methodische Implikationen für die Biostatistik
+
+Die SBR-Special-Section und die FDA-Guidance haben konkrete Konsequenzen für die biostatistische Praxis:
+
+- **Studiendesign:** OS muss von Beginn an als ko-primärer oder sekundärer Sicherheitsendpunkt mit formaler Alpha-Allokation geplant werden — nicht als explorative Nachbetrachtung.
+- **Fallzahlplanung:** Die Power für OS-Sicherheitsanalysen (Non-Inferiority oder Schadensdetektion) erfordert größere Fallzahlen als reine PFS-Studien.
+- **Crossover-Problem:** In Studien, die Crossover nach Progression erlauben (ethisch oft geboten), muss die OS-Analyse methodisch für diesen Confounder adjustieren. RPSFT- und IPCW-Methoden sind hier State of the Art, aber nicht ohne Annahmen.
+- **Nicht-proportionale Hazards:** Immuntherapien zeigen häufig delayed treatment effects — der klassische Log-Rank-Test verliert an Power. Gewichtete Log-Rank-Tests (Fleming-Harrington) und RMST-basierte Analysen werden zum methodischen Standard.
+
+## Fazit
+
+Die SBR-Special-Section markiert einen Reifungsschritt der onkologischen Biostatistik. Sie dokumentiert den Übergang von einer Ära, in der OS der selbstverständliche primäre Endpunkt war, zu einer Ära, in der OS als **Sicherheitsguardrail** in einer zunehmend Surrogat-getriebenen Zulassungslandschaft fungiert. Die FDA-Guidance von 2025 gibt die regulatorische Richtung vor; die methodischen Beiträge der Special Section liefern das statistische Werkzeug dafür.
+
+Für Biostatistiker in der Onkologie bedeutet dies: OS-Monitoring ist kein optionales Add-on mehr, sondern integraler Bestandteil jedes Studienprotokolls — mit allen Konsequenzen für Fallzahl, Alpha-Allokation und Analysemethodik.
+
+---
+
+## Key Findings
+
+The June 2026 SBR Special Section "Overall Survival in Oncology Trials and Drug Development" [1], guest-edited by Lu, Rodriguez, and Lu, addresses the methodological challenges of OS assessment in an era where surrogate endpoints dominate oncology drug approvals. Building on the FDA's August 2025 draft guidance [2], which mandates OS as a pre-specified safety endpoint in all randomized oncology trials, the special section provides a comprehensive methodological toolkit.
+
+The "6 Choose 4" framework by Yung et al. [3] identifies six strategic dimensions of OS safety monitoring — analysis population, crossover adjustment, informative censoring, non-proportional hazards, multiplicity, and futility monitoring — and argues that at least four must be addressed in any OS monitoring program. The choice depends on the therapeutic context: immunotherapy trials prioritize non-proportional hazards and crossover adjustment, while targeted therapy trials emphasize informative censoring and futility analyses.
+
+A concurrent ASCO 2026 meta-analysis of NSCLC trials [4] found weak correlation between PFS hazard ratios and OS (R² < 0.3) in the post-2015 immunotherapy era, reinforcing the FDA's position that surrogate endpoints cannot replace robust OS data collection. A separate analysis of PFS2 as a surrogate for OS in breast cancer [5] showed moderate trial-level but insufficient patient-level surrogacy.
+
+The practical implications are clear: OS must be planned from the outset as a co-primary or secondary safety endpoint with formal alpha allocation, adequate power, and appropriate methodology for crossover adjustment and non-proportional hazards.
+
+---
+
+## References
+
+1. Lu R, Rodriguez LR, Lu Y. SBR Special Section "Overall Survival in Oncology Trials and Drug Development". *Statistics in Biopharmaceutical Research*. 2026. https://doi.org/10.1080/19466315.2026.2641960
+
+2. U.S. Food and Drug Administration. Approaches to Assessment of Overall Survival in Oncology Clinical Trials: Draft Guidance for Industry. August 2025. Docket No. FDA-2024-D-5850. https://www.fda.gov/regulatory-information/search-fda-guidance-documents/approaches-assessment-overall-survival-oncology-clinical-trials
+
+3. Yung G, et al. "6 Choose 4": A Framework to Understand and Facilitate Discussion of Strategies for Overall Survival Safety Monitoring. *Statistics in Biopharmaceutical Research*. 2026. https://doi.org/10.1080/19466315.2026.2637573
+
+4. Surrogate end points for overall survival: A meta-analysis exploring adequacy of progression-free survival and objective response in randomized NSCLC trials. *Journal of Clinical Oncology*. 2026;44(16_suppl):e20702. https://doi.org/10.1200/JCO.2026.44.16_suppl.e20702
+
+5. Progression-free survival 2 (PFS2) as a surrogate endpoint for overall survival (OS) in breast cancer randomized controlled clinical trials. *ESMO Open*. 2026. https://doi.org/10.1016/j.esmoop.2026.106062
