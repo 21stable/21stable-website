@@ -1,0 +1,105 @@
+---
+title: "Repräsentationale Wahrhaftigkeit: Die übersehene Frage in der KI-Ethik klinischer Forschung"
+title_en: "Representational Veracity: The Overlooked Question in AI Ethics for Clinical Research"
+date: "2026-08-24"
+category: "KI-Ethik"
+description: "Ein neues Framework zeigt: KI-Modelle können akkurat, reproduzierbar und formal fair sein – und trotzdem auf einer falschen Repräsentation beruhen."
+description_en: "A new framework shows AI models can be accurate, reproducible, and formally fair — yet still rest on a false representation."
+author: "21Stable Team"
+draft: false
+---
+
+# Repräsentationale Wahrhaftigkeit: Die übersehene Frage in der KI-Ethik klinischer Forschung
+
+Die ethische Aufsicht über datenwissenschaftliche Gesundheitsforschung konzentriert sich seit Jahren auf vier Säulen: Privatsphäre, Einwilligung, Bias und Fairness. Diese Anliegen sind notwendig – aber sie sind unzureichend. Denn jede dieser Säulen setzt stillschweigend eine Antwort auf eine Frage voraus, die fast nie explizit gestellt wird: *Repräsentieren die Ziele, Proxys, Labels und Populationsdeskriptoren, auf denen eine Studie beruht, die Personen und Phänomene, die sie zu beschreiben vorgeben, zum Zeitpunkt der Nutzung noch wahrheitsgemäß?*
+
+Genau diese Frage benennt ein im August 2026 im *Journal of Medical Internet Research* publiziertes Viewpoint von Adebamowo und Kollegen als **Repräsentationale Wahrhaftigkeit** (Representational Veracity, RV) und entwickelt sie zu einem Konstrukt für die vorgelagerte ethische Prüfung[1].
+
+## Die Kernaussage: Ein Modell kann „fair" sein und trotzdem falsch liegen
+
+Die zentrale These der Autoren ist unbequem: Ein Modell kann akkurat, reproduzierbar und formal fair sein – und dennoch auf einer Repräsentation beruhen, die zu dünn, zu instabil oder normativ fehlgeleitet ist für den vorgesehenen Einsatz[1]. Die bestehende Governance fragt, *ob* ein Modell performt. RV fragt, *ob die Repräsentation wahrhaftig genug ist* für die Behauptungen, die auf ihr aufbauen.
+
+Das ist mehr als eine semantische Spitzfindigkeit. Die Autoren zeigen anhand eines **Polygenic Risk Score (PRS)**-Fallbeispiels, wie ein Score das Risiko genau in jenen Populationen fehlklassifizieren kann, die in seiner Ableitung am wenigsten repräsentiert sind – während Code, Pipeline und interne Validierungsstatistiken vollständig intakt bleiben[1]. Die formale Korrektheit verschleiert die inhaltliche Verzerrung.
+
+## Vier Bewertungsdomänen entlang der Datenreise
+
+Adebamowo et al. leiten vier Domänen analytisch ab, indem sie für jeden Übergang in der „Datenreise" fragen, was stabil bleiben muss, damit ein gespeichertes Artefakt weiterhin für das steht, was es ursprünglich repräsentierte[1]:
+
+1. **Materielle Provenienz** (material provenance): Woher stammen die Daten, und ist ihre Herkunft intakt?
+2. **Informationelle Deskriptoren** (informational descriptors): Beschreiben die Labels und Klassifikationen das Phänomen korrekt?
+3. **Normative Autorisierung** (normative authorization): Wurde die Verwendung der Daten tatsächlich autorisiert?
+4. **Relationale Gemeinschaft** (relational community): Steht die Repräsentation in einer lebendigen Beziehung zur beschriebenen Gemeinschaft?
+
+Entscheidend: Diese Domänen interagieren, ersetzen einander aber nicht. Eine intakte Provenienz kann ein schlecht gewähltes Ziel nicht reparieren; ein transparenter Labeling-Prozess kann keine Autorisierung verleihen, die nie existierte[1].
+
+## Vier wiederkehrende Fehlermodi
+
+Die Autoren identifizieren vier typische Versagensmuster, jeweils verankert in einem publizierten Fall[1]:
+
+- **Proxy-Substitution:** Ein Proxy ersetzt das eigentliche Ziel, ohne dass die Substitution gerechtfertigt wird.
+- **Kategorie-Fehlzuordnung:** Personen werden Kategorien zugeordnet, die sie nicht zutreffend beschreiben.
+- **Label-Generierungsfehler:** Labels entstehen fehlerhaft und vererben sich in die Analyse.
+- **Deskriptor-Sedimentation:** Deskriptoren verfestigen sich über Zeit und verlieren den Bezug zur sich verändernden Realität.
+
+## Von der Theorie zur Praxis: Zehn Reviewer-Prompts
+
+Das Framework bleibt nicht abstrakt. Die Autoren übersetzen RV in Instrumente, die Prüfgremien direkt nutzen können: zehn Reviewer-Prompts, die ein Editor in ein Review-Formular einfügen kann, eine Begründungsvorlage und ein Scoring-Rubric als Anhänge sowie ein **gestuftes Modell**, das eine vollständige Prüfung nur bei Subgruppen-, Equity-, Transportabilitäts-, Public-Health- oder klinischen Implementierungsansprüchen auslöst[1].
+
+Die Zielgruppe ist bewusst breit: Forschende, Informatiker, Ethikkommissionen, Institutional Review Boards, Datenzugangskomitees, Förderer, Regulierer und Journal-Editoren.
+
+## Warum das jetzt relevant ist
+
+Die Arbeit von Adebamowo et al. trifft einen Nerv, weil sie eine Lücke benennt, die parallel in der europäischen Regulierung sichtbar wird. Während der EU AI Act und die FDA-Guidance zu KI in der Arzneimittelentwicklung primär auf technische Validierung und Risikomanagement fokussieren, adressiert RV eine vorgelagerte, konzeptionelle Frage: die Wahrhaftigkeit der Repräsentation selbst[2][3].
+
+Gleichzeitig zeigt eine im August 2026 in *BMC Health Services Research* publizierte Studie, wie schnell sich die Wahrnehmung von KI-generierten Gesundheitsinformationen verschiebt: In einer gepaarten Umfrage mit 224 Teilnehmenden wurde die KI-generierte Antwort hinsichtlich Verständlichkeit und Empathie signifikant besser bewertet als die menschliche Antwort (alle p < .001)[4]. Die Autoren warnen jedoch ausdrücklich, dass diese Wahrnehmung nicht mit klinischer Validität gleichzusetzen ist – ein weiterer Beleg dafür, dass formale Qualität und inhaltliche Wahrhaftigkeit auseinanderfallen können.
+
+## Fazit
+
+Repräsentationale Wahrhaftigkeit ist kein Ersatz für bestehende Governance, sondern eine notwendige vorgelagerte Schicht. Die Botschaft an die klinische Forschung ist klar: Forschende sollten nicht nur rechtfertigen müssen, ob ihre Modelle performen, sondern ob ihre Repräsentationen wahrhaftig genug sind für die Behauptungen, die sie tragen. In einer Zeit, in der KI-Modelle zunehmend klinische Entscheidungen beeinflussen, ist diese Frage keine akademische Übung – sie ist eine Frage der Patientensicherheit.
+
+---
+
+## Key Findings
+
+A viewpoint published in the *Journal of Medical Internet Research* (August 2026) by Adebamowo and colleagues introduces **Representational Veracity (RV)** as a construct for upstream ethical review of data science health research[1].
+
+### The Core Argument
+
+Prevailing ethical oversight — focused on privacy, consent, bias, and fairness — presupposes an answer to a question that is rarely asked directly: *Do the targets, proxies, labels, and population descriptors on which a study rests still truthfully represent the persons and phenomena they are taken to describe, at the point of use rather than the point of collection?*[1]
+
+The authors demonstrate that a model may be accurate, reproducible, and formally fair while resting on a representation that is too thin, too unstable, or too normatively misdirected for the proposed use. A polygenic risk score (PRS) case study shows how a score can misclassify risk in the populations least represented in its derivation while its code, pipeline, and internal validation statistics remain intact[1].
+
+### Four Assessment Domains
+
+RV is assessed along four analytically derived domains, each asking what must remain stable across the data journey[1]:
+
+1. **Material provenance** — intact data origin
+2. **Informational descriptors** — correct labels and classifications
+3. **Normative authorization** — genuine authorization for use
+4. **Relational community** — living relationship to the described community
+
+These domains interact but do not substitute for one another: intact provenance cannot repair a poorly chosen target, and a transparent labeling process cannot confer authorization it never had[1].
+
+### Four Recurrent Failure Modes
+
+The authors anchor four failure modes in published cases: proxy substitution, category misassignment, label generation error, and descriptor sedimentation[1].
+
+### Translation into Practice
+
+The framework is operationalized through ten reviewer prompts, a justification template and scoring rubric, and a tiered model that triggers full review only for subgroup, equity, transportability, public health, or clinical implementation claims[1].
+
+### Context
+
+A paired survey study (n = 224) published in *BMC Health Services Research* (August 2026) found that AI-generated health responses were rated significantly more favorably than human responses on comprehensibility and empathy (all p < .001), while the authors caution that perceived quality is not equivalent to clinical validity[4].
+
+---
+
+## References
+
+1. Adebamowo, C., Adebamowo, S. N., Akintola, A., Ikhane, P., Akintola, S., Ogundiran, T., Jegede, A., Adeyemo, O., Callier, S., Imam-Tamim, M. K., & Uthman, I. (2026). Representational Veracity in Data Science Health Research: Targets, Proxies, Labels, and Descriptors. *Journal of Medical Internet Research*. https://doi.org/10.2196/102537
+
+2. Barucci, A., Colcelli, V., De Masi, S., Falconi, M., Leo, M. C., Marzola, A., Romagnuolo, I., Sforzi, C., & Pini, R. (2026). Ethical and Regulatory Frameworks for Artificial Intelligence in Clinical Research: A European Perspective on the Artificial Intelligence Act for Ethics Committees and Researchers. *European Cardiology Review*, 21, e01. PMID: 41676363.
+
+3. U.S. Food and Drug Administration. (2025). Considerations for the Use of Artificial Intelligence to Support Regulatory Decision-Making for Drug and Biological Products: Draft Guidance for Industry. *Federal Register*, 90(4), 1157.
+
+4. Schulz, C., Adämmer, P., Fechner, E., Kassberg, E., Laux, I., Pollatscheck, E., Porsch, K., Romamti, L., Tymchuk, I., & Gräske, J. (2026). User evaluation of AI- and human-generated responses in digital health communication: a paired survey study. *BMC Health Services Research*, 26(1), 1155. https://doi.org/10.1186/s12913-026-15305-4

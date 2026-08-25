@@ -1,0 +1,46 @@
+---
+title: "KI-basierte TIL-Quantifizierung beim triple-negativen Mammakarzinom: Unabhängige Validierung mit Überlebensdaten"
+title_en: "AI-Based TIL Quantification in Triple-Negative Breast Cancer: Independent Validation Against Survival Outcomes"
+date: "2026-08-25"
+category: "Biostatistik"
+description: "Die CATALINA-Studie validiert KI-gestützte TIL-Scores an 1.759 Patientinnen aus sieben randomisierten Studien – mit überraschendem Ergebnis zur prognostischen Zusatzleistung."
+description_en: "The CATALINA study validates AI-derived TIL scores in 1,759 patients from seven randomised trials, with a surprising finding on incremental prognostic value."
+author: "21Stable Team"
+draft: false
+---
+
+# KI-basierte TIL-Quantifizierung beim triple-negativen Mammakarzinom
+
+Tumor-infiltrierende Lymphozyten (TILs) gelten als robuster prognostischer Marker beim triple-negativen Mammakarzinom (TNBC). Ihre manuelle Bestimmung durch Pathologen ist jedoch zeitaufwendig und unterliegt erheblicher Inter-Observer-Variabilität. KI-gestützte Verfahren versprechen eine standardisierte, reproduzierbare Alternative – doch ihr klinischer Nutzen musste bislang unabhängig gegen harte Endpunkte validiert werden [1].
+
+## Kernerkenntnis: KI-Scores sind prognostisch, aber nicht inkrementell
+
+Die CATALINA-Studie von Dixon-Douglas et al. (2026) liefert die bislang größte unabhängige Validierung computergestützter TIL-Scores (cTIL). Zwei zuvor trainierte, gesperrte KI-Pipelines wurden ohne Retraining auf 220 digitalisierte HE-Whole-Slide-Images angewendet und mit pathologenbestimmten stromalen TILs (sTIL) verglichen. Die Korrelation zwischen cTIL- und sTIL-Scores war mit r = 0,375–0,473 nur moderat [1].
+
+Der entscheidende Befund: Beide Score-Typen waren nach Adjustierung für klinisch-pathologische Faktoren unabhängig mit dem 5-Jahres-Überleben assoziiert. Für sTIL betrug die Hazard Ratio (HR) für das invasive krankheitsfreie Überleben (IDFS) 0,73 (95%-KI 0,66–0,82), für den cTIL-Score (percentage_lymphocyte) 0,80 (0,73–0,89). In Modellen, die bereits sTIL enthielten, lieferte der cTIL-Score jedoch keinen signifikanten zusätzlichen prognostischen Beitrag [1].
+
+## Forschungsmethodik
+
+CATALINA nutzte prospektiv erhobene Langzeit-Outcome-Daten aus sieben randomisierten adjuvanten Studien mit insgesamt 1.759 Patientinnen, von denen 1.356 vollständige Daten aufwiesen. Die statistische Auswertung umfasste multivariable Cox-Regressionsmodelle mit Adjustierung für klinisch-pathologische Variablen und Studienheterogenität. Die 5-Jahres-Diskrimination wurde mittels zeitabhängiger Area-under-the-ROC-Curve (AUC) geschätzt [1].
+
+Sowohl sTIL- als auch cTIL-Scores verbesserten die 5-Jahres-AUC gegenüber rein klinisch-pathologischen Variablen. Die Kombination aus klinisch-pathologischen Faktoren plus sTIL plus cTIL erbrachte jedoch keine signifikant bessere Diskrimination als klinisch-pathologische Faktoren plus sTIL allein [1].
+
+## Klinische Relevanz
+
+Die Ergebnisse stützen den Einsatz von cTIL als reproduzierbaren prognostischen Biomarker – insbesondere dort, wo eine routinemäßige oder flächendeckende pathologische TIL-Beurteilung nicht verfügbar ist. Die moderate Korrelation mit sTIL deutet darauf hin, dass KI-Modelle teils andere morphologische Merkmale erfassen als menschliche Pathologen, was die fehlende inkrementelle Prognoseleistung erklären könnte [1].
+
+Für die Praxis bedeutet dies: KI-basierte TIL-Quantifizierung ist kein Ersatz, sondern eine komplementäre, skalierbare Option. Die methodische Stärke der Studie – gesperrte Modelle, externe Validierung, gepoolte RCT-Daten – setzt zugleich einen Maßstab für die rigorose biostatistische Evaluation von KI-Biomarkern in der Onkologie.
+
+## Key Findings
+
+Tumour-infiltrating lymphocytes (TILs) are a robust prognostic marker in triple-negative breast cancer, but manual scoring is labour-intensive and subject to inter-observer variability. The CATALINA study by Dixon-Douglas et al. (2026) provides the largest independent validation of AI-derived TIL scores (cTIL) to date, deploying two locked AI pipelines without retraining on 220 digitised whole-slide images [1].
+
+Correlation between cTIL and pathologist-scored stromal TILs (sTIL) was modest (r = 0.375–0.473). Both score types were independently associated with 5-year invasive disease-free survival after adjustment for clinicopathological factors: HR 0.73 (95% CI 0.66–0.82) for sTIL versus 0.80 (0.73–0.89) for the cTIL percentage_lymphocyte score. However, cTIL did not maintain a statistically significant prognostic association in models already adjusted for sTIL [1].
+
+Methodologically, CATALINA pooled prospectively collected outcome data from seven randomised adjuvant trials (1,759 patients; 1,356 with complete data), using multivariable Cox regression and time-dependent AUC for 5-year discrimination. Both sTIL and cTIL improved AUC over clinicopathological variables alone, but cTIL added no significant incremental value beyond sTIL [1].
+
+These findings support cTIL as a reproducible prognostic biomarker, particularly where routine pathologist assessment is unavailable, while underscoring that AI models may capture partly distinct morphological features from human pathologists.
+
+## References
+
+1. Dixon-Douglas JR, Drubay D, Salgado R, et al. Artificial intelligence-based tumour infiltrating lymphocyte quantification in patients with triple-negative breast cancer: an independent validation study. *The Lancet Oncology*. 2026;27(9):1181-1192. https://doi.org/10.1016/S1470-2045(26)00339-6
