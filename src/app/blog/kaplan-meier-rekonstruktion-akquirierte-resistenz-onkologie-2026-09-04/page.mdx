@@ -1,0 +1,110 @@
+---
+title: "Kaplan-Meier-Rekonstruktion: Die Überlebenskurve als Datenquelle"
+title_en: "Kaplan-Meier Reconstruction: The Survival Curve as a Data Source"
+date: "2026-09-04"
+category: "Überlebensanalyse"
+description: "Rekonstruierte Patienten-Pseudodaten aus publizierten Überlebenskurven ermöglichen neue Erkenntnisse zur erworbenen Immuntherapie-Resistenz."
+description_en: "Reconstructed pseudo-patient data from published survival curves yield new insights into acquired immunotherapy resistance."
+author: "21Stable Team"
+draft: false
+---
+
+# Kaplan-Meier-Rekonstruktion: Die Überlebenskurve als Datenquelle
+
+In der Onkologie wird seit Jahrzehnten davor gewarnt, Überlebensergebnisse verschiedener Studien direkt zu vergleichen. Meist folgt auf diese Mahnung dennoch ein Vergleich zweier Mediane – etwa auf ASCO oder ESMO. Eine methodisch sauberere Alternative, die in mehreren 2026-Publikationen an Bedeutung gewinnt, ist die **Rekonstruktion patientenindividueller Pseudodaten (pseudo-IPD)** aus publizierten Kaplan-Meier-Kurven.
+
+## Die Methode
+
+Die von Guyot und Kollegen entwickelte Rekonstruktionsmethode extrahiert die Koordinaten der veröffentlichten Überlebenskurve und kombiniert sie mit den angegebenen Numbers-at-Risk[3]. Daraus lässt sich ein plausibler Datensatz pseudo-individueller Patientendaten erzeugen, der die aggregierten Überlebensverläufe der Studie nahezu exakt nachbildet.
+
+Mit solchen Datensätzen lassen sich nicht mehr nur zwei Mediane nebeneinanderstellen, sondern **vollständige Überlebensverteilungen**, *Restricted Mean Survival Times* (RMST), Landmark-Auswertungen oder modellbasierte Hazard Ratios vergleichen.
+
+## Kernerkenntnis: Die Last der erworbenen Resistenz
+
+In einer 2026 im *Journal of the National Comprehensive Cancer Network* (JNCCN) erschienenen Arbeit analysierte die Gruppe um Garitaonaindia und Donia, was mit Patientinnen und Patienten geschieht, die zunächst von einer Checkpoint-Inhibitor-Therapie profitieren[1].
+
+Dazu identifizierten sie in rekonstruierten Datensätzen diejenigen, die den **6-Monats-Landmark** überlebten, und untersuchten deren weiteren Verlauf:
+
+- Geschätzte Inzidenz der **erworbenen Resistenz (ARI) nach 3 Jahren: 73,5 %** (95 %-KI, 71,6–75,4)
+- Weltweit könnten jährlich **rund 1.001.815 Patientinnen und Patienten** eine ARI entwickeln
+- Spannte sich von 25,4 % (dMMR-Kolorektalkarzinom) bis 83,1 % (Plattenepithelkarzinom des Ösophagus)
+
+## Forschungsmethodik
+
+Die Autoren führten eine **gepoolte Analyse digitalisierter progressionsfreier Überlebenskurven (PFS)** aus EMA- und FDA-zugelassenen Phase-III-Studien zu Checkpoint-Inhibitoren bei soliden Tumoren durch. Eingeschlossen wurden Tumorentitäten mit einer objektiven Ansprechrate (ORR) ≥ 20 %.
+
+- **15.199 Patientinnen und Patienten** über **11 Tumorentitäten** und **41 Phase-III-Studien**
+- PFS ≥ 6 Monate diente als Proxy für das Ansprechen (basierend auf der SITC-Definition der ARI)
+- Krebsmortalitätsdaten aus **GLOBOCAN 2022** zur Schätzung der globalen Inzidenz
+
+Die Analyse zeigte zudem einen **Zusammenhang mit der Ansprechtiefe**: Die ARI-Rate korrelierte negativ mit der Rate kompletter Remissionen (CR) und partieller Remissionen (PR) (ρ = –0,63 und –0,66), positiv mit stabiler Erkrankung (ρ = +0,68). Dies blieb nach Adjustierung für die Tumorentität bestehen.
+
+## Klinische Relevanz
+
+1. **Erworbene Resistenz ist nicht tumorbedingt, sondern ansprechabhängig**: In einer separaten europäischen Real-World-Analyse über Melanom, NSCLC und Nierenzellkarzinom waren die Ergebnisse nach Gruppierung nach Ansprechkategorie (CR vs. PR) bemerkenswert ähnlich[2].
+2. **Efficacy-Effectiveness-Lücke quantifizierbar**: Rekonstruierte Daten ermöglichen, zu messen, wie stark Routine-Ergebnisse von den Zulassungsdaten abweichen. Im metastasierten Melanom war die Lücke bei BRAF/MEK-Inhibition auch unter formal Trial-eligible-Patienten ausgeprägt – ein Hinweis auf Confounding by Indication[4].
+3. **Post-Behandlungszustände wie pCR** definieren eine klinisch kohärente Population, in der Restrisiko und der Beitrag zusätzlicher Therapie untersucht werden können[5].
+
+## Fazit
+
+Die Rekonstruktion von Kaplan-Meier-Kurven verwandelt Überlebensgrafiken in analysobare Daten und erweitert damit die Werkzeugkiste der Überlebensanalyse erheblich. Sie erlaubt Landmark-Analysen zur erworbenen Resistenz, gepoolte Subgruppenanalysen und die Quantifizierung der Efficacy-Effectiveness-Lücke – ohne Zugriff auf die Originaldaten.
+
+Gleichzeitig zeigt sie, wie viel mehr mit verantwortungsvollem **Datenaustausch patientenindividueller Daten** möglich wäre. Publizierte Kurven sind nicht nur Bilder, sondern Daten, die wir gelernt haben, zu entschlüsseln – sie sollten nicht die einzige bleiben, die unabhängige Forscher nutzen können.
+
+---
+
+## Key Findings
+
+In oncology, we are repeatedly warned against comparing survival outcomes across separate trials – usually followed by a comparison of two medians anyway. A methodologically cleaner alternative gaining traction in several 2026 publications is the **reconstruction of pseudo-individual patient data (pseudo-IPD)** from published Kaplan-Meier curves.
+
+### The Method
+
+The reconstruction method developed by Guyot and colleagues extracts the coordinates of the published survival curve and combines them with the reported numbers at risk[3]. This yields a plausible set of pseudo-IPD that closely reproduces the trial's aggregate survival trajectories.
+
+Instead of placing two medians side by side, these datasets allow comparison of **full survival distributions**, *restricted mean survival times* (RMST), landmark outcomes, or model-derived hazard ratios.
+
+### Key Finding: The Burden of Acquired Resistance
+
+In a 2026 publication in the *Journal of the National Comprehensive Cancer Network* (JNCCN), Garitaonaindia, Donia and colleagues examined what happens to patients who initially benefit from immune checkpoint inhibition[1].
+
+They isolated, in reconstructed datasets, the group that survived the **6-month landmark** and examined their subsequent trajectory:
+
+- Estimated **acquired resistance (ARI) incidence at 3 years: 73.5%** (95% CI, 71.6–75.4)
+- Globally, roughly **1,001,815 patients per year** may develop ARI
+- Ranging from 25.4% (dMMR colorectal cancer) to 83.1% (squamous esophageal carcinoma)
+
+### Methodology
+
+The authors performed a **pooled analysis of digitized progression-free survival (PFS) curves** from EMA- and FDA-approved phase III trials of checkpoint inhibitors in solid tumors. Only tumors with an objective response rate (ORR) ≥ 20% were included.
+
+- **15,199 patients** across **11 tumor types** and **41 phase III trials**
+- PFS ≥ 6 months served as a proxy for response (based on the SITC definition of ARI)
+- Cancer mortality data from **GLOBOCAN 2022** estimated global incidence
+
+The analysis also revealed an association with **response depth**: ARI rate correlated negatively with complete (CR) and partial response (PR) rates (ρ = –0.63 and –0.66), positively with stable disease (ρ = +0.68). These associations persisted after adjustment for tumor type.
+
+### Clinical Relevance
+
+1. **Acquired resistance is response-driven, not tumor-driven**: In a separate European real-world analysis across melanoma, NSCLC and renal cell carcinoma, outcomes were strikingly similar once patients were grouped by response category (CR vs. PR)[2].
+2. **Efficacy-effectiveness gap is quantifiable**: Reconstructed data allow measuring how far routine-practice outcomes deviate from approval-defining data. In metastatic melanoma, the gap for BRAF/MEK inhibition persisted even among formally trial-eligible patients – suggestive of confounding by indication[4].
+3. **Post-treatment states such as pCR** define a clinically coherent population in which residual risk and the contribution of additional therapy can be explored[5].
+
+### Conclusion
+
+Reconstructing Kaplan-Meier curves turns survival plots into analyzable data, substantially expanding the survival-analysis toolbox. It enables landmark analyses of acquired resistance, pooled subgroup analyses, and quantification of the efficacy-effectiveness gap – without access to the original data.
+
+At the same time, it highlights how much more could be achieved with responsible **sharing of patient-level data**. Published curves are not merely images but data we have learned to unlock – they should not remain the only trial data independent researchers can access.
+
+---
+
+## References
+
+1. Garitaonaindia Y, et al. Acquired Resistance to Immune Checkpoint Inhibitors Across Tumor Types: A Reconstructed Individual Patient Data Analysis. *Journal of the National Comprehensive Cancer Network*. 2026;24(6). DOI: 10.6004/jnccn.2025.7142
+
+2. Garitaonaindia Y, et al. Outcome of Patients with Objective Response to Immune Checkpoint Blockade Across Melanoma, NSCLC and Renal Cell Carcinoma. *European Journal of Cancer*. 2026. DOI: 10.1016/j.ejca.2026.00653-2
+
+3. Guyot P, et al. Enhanced secondary analysis of survival data: reconstructing the data from published Kaplan-Meier survival curves. *BMC Medical Research Methodology*. 2012;12:9. DOI: 10.1186/1471-2288-12-9
+
+4. Garitaonaindia Y, Donia M. et al. Efficacy-Effectiveness Gap in Metastatic Melanoma: A Reconstructed Individual Patient Data Analysis. *Journal of the National Cancer Institute*. 2026. DOI: 10.1093/jnci/djag196
+
+5. Garitaonaindia Y, Witteveen S, Dionisio E, et al. Prognostic dynamics of pathological complete response and ctDNA clearance after neoadjuvant/perioperative immunotherapy in cancer: a reconstructed individual patient analysis. *Journal of the National Cancer Institute*. 2026. DOI: 10.1093/jnci/djag197
